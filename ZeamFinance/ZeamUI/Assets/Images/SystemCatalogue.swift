@@ -33,6 +33,11 @@ public extension UIImage {
 	enum ImageCatalogue: String {
 		case profileImage
 	}
+	
+	static var buttonLeftArrow: UIImage { .SystemCatalogue.buttonLeftArrow.image.resized(size: .init(width: 20, height: 8))}
+	static var buttonRightArrow: UIImage { .SystemCatalogue.buttonRightArrow.image.resized(size: .init(width: 20, height: 8))}
+	//static var buttonLeftArrow: UIImage { .SystemCatalogue.buttonLeftArrow.resized(size: .init(width: 20, height: 8))}
+	//static var buttonLeftArrow: UIImage { .SystemCatalogue.buttonLeftArrow.resized(size: .init(width: 20, height: 8))}
 }
 
 

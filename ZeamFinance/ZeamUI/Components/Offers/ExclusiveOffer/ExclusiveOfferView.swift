@@ -36,7 +36,9 @@ class ExclusiveView: UIView {
 	}
 	
 	private func bodyView() -> UIView {
-		let arrowImage = UIImageView(image: UIImage.SystemCatalogue.buttonRightArrow.image)
+		let arrowImage = UIImageView(image: UIImage.buttonRightArrow)
+		arrowImage.setFrame(.init(width: 20, height: 8))
+		descriptionLabel.numberOfLines = 0
 		let stack: UIStackView = .VStack(subViews: [brandLogo, descriptionLabel, arrowImage].compactMap { $0 } ,spacing: 8, alignment: .leading)
 		descriptionLabel.numberOfLines = 2
 		return stack

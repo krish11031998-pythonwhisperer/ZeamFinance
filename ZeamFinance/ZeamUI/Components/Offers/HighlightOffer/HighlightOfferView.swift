@@ -43,7 +43,7 @@ extension OfferViewModel{
 	
 	static var zeeTest: OfferViewModel {
 		.init(brand: "Zee5", category: "entertainment",
-			  offerDescription: "gets additinal 10% off on zee5 annual subscription")
+			  offerDescription: "get 10% instant discount on purchase of products across fashion category. minimum transaction amount of ₹1750 and lorem ipsum")
 	}
 }
 
@@ -87,7 +87,7 @@ class HighlightOfferView: UIView {
 	private lazy var button: CustomButton = {
 		let button = CustomButton()
 		button.configureButton(.init(title: "View Details".bold(size: 13),
-									 trailingImg: .init(img: UIImage.SystemCatalogue.buttonRightArrow.image)))
+									 trailingImg: .init(img: UIImage.buttonRightArrow)))
 		return button
 	}()
 	
