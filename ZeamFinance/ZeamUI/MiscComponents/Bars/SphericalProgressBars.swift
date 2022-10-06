@@ -13,14 +13,15 @@ class SphericalProgressBars: UIView {
 	private var lineWidth: CGFloat
 	private var scoreLabel: UILabel = { .init() }()
 	private var scoreIndicator: UILabel = { .init() }()
-	private var shape: CAShapeLayer?
+	private var chartShape: CAShapeLayer?
+	private var indicatorShape: CAShapeLayer?
 	private lazy var scoreView: UIStackView = {
 		let stack = UIStackView.VStack(subViews: [scoreLabel, scoreIndicator], spacing: 4, alignment: .center)
 		stack.backgroundColor = .clear
 		return stack
 	}()
 	private lazy var colorBG: UIView = { .init() }()
-	
+	private lazy var indicator: UIView = { .init() }()
 	init(frame: CGRect, lineWidth: CGFloat) {
 		self.lineWidth = lineWidth
 		super.init(frame: frame)
@@ -34,13 +35,16 @@ class SphericalProgressBars: UIView {
 	}
 	
 	private func setupViews() {
+		let width = 2 * (bounds.width.half - lineWidth - 10)
 		colorBG = UIView()
 		colorBG.backgroundColor = userInterface == .light ? .popWhite300 : .popBlack300
-		colorBG.cornerRadius = 40
+		colorBG.cornerRadius = width.half
 		addSubview(colorBG)
-		setFittingConstraints(childView: colorBG, width: 80, height: 80, centerX: 0, centerY: 0)
+		setFittingConstraints(childView: colorBG, width: width,
+							  height: width, centerX: 0, centerY: 0)
 		addSubview(scoreView)
 		setFittingConstraints(childView: scoreView, width: 40, height: 40, centerX: 0, centerY: 0)
+		indicator.setFrame(.init(squared: 6))
 	}
 	
 	private func color(score: Int) -> UIColor {
@@ -70,16 +74,17 @@ class SphericalProgressBars: UIView {
 	}
 	
 	private func addCircularBar(_ score: Int) {
-		if shape != nil {
-			shape?.removeFromSuperlayer()
+		if chartShape != nil {
+			chartShape?.removeFromSuperlayer()
 		}
-		shape = layer.addCircularProgress(startAngle: .pi * 0.67,
+		chartShape = layer.addCircularProgress(startAngle: .pi * 0.67,
 								  endAngle: .pi * 0.33,
-								  //radiusOffset: 0,
+								  radiusOffset: -lineWidth,
 								  lineWidth: lineWidth,
 								  strokeColor: color(score: score),
 								  clockwise: true,
 								  animateStrokeEnd: true)
+		border(color: .popBlack100, borderWidth: 1, cornerRadius: min(bounds.width, bounds.height).half)
 	}
 	
 	public func configureView(_ score: Int) {
@@ -87,7 +92,7 @@ class SphericalProgressBars: UIView {
 		"\(score)".bold(color: .textColor, size: 16).render(target: scoreLabel)
 		scoreIndicator(score).render(target: scoreIndicator)
 		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-			self.shape?.animate(animation: .circularProgress(to: CGFloat(score)/900.0, duration: 1))
+			self.chartShape?.animate(animation: .circularProgress(to: CGFloat(score)/900.0, duration: 1))
 		}
 	}
 	

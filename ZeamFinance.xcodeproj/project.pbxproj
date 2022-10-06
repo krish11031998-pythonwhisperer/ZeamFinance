@@ -17,6 +17,7 @@
 		EF639A6828EF08A700787C58 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6728EF08A700787C58 /* ProfileView.swift */; };
 		EF639A6A28EF0AA200787C58 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6928EF0AA200787C58 /* ProfileViewController.swift */; };
 		EF639A6C28EF137D00787C58 /* CreditScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6B28EF137D00787C58 /* CreditScore.swift */; };
+		EF639A6E28EF575600787C58 /* circlingBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6D28EF575600787C58 /* circlingBall.swift */; };
 		EF89A99028EC262100598521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A98F28EC262100598521 /* AppDelegate.swift */; };
 		EF89A99228EC262100598521 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A99128EC262100598521 /* SceneDelegate.swift */; };
 		EF89A99428EC262100598521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A99328EC262100598521 /* ViewController.swift */; };
@@ -120,6 +121,7 @@
 		EF639A6728EF08A700787C58 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EF639A6928EF0AA200787C58 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EF639A6B28EF137D00787C58 /* CreditScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScore.swift; sourceTree = "<group>"; };
+		EF639A6D28EF575600787C58 /* circlingBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circlingBall.swift; sourceTree = "<group>"; };
 		EF89A98C28EC262100598521 /* ZeamFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeamFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF89A98F28EC262100598521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF89A99128EC262100598521 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -618,6 +620,7 @@
 				EF89AA8A28EDBADD00598521 /* CuratedBackgroundShape.swift */,
 				EF639A5428EE109800787C58 /* ActiveBoosterCard.swift */,
 				EF639A6428EED53800787C58 /* CircularProgressShape.swift */,
+				EF639A6D28EF575600787C58 /* circlingBall.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -810,6 +813,7 @@
 				EF89AA4428ECC11700598521 /* CustomCollectionTableCell.swift in Sources */,
 				EF89AA4828ECC20100598521 /* CollectionDataSource.swift in Sources */,
 				EF89A9F328EC3F3300598521 /* Int.swift in Sources */,
+				EF639A6E28EF575600787C58 /* circlingBall.swift in Sources */,
 				EF89AA8428ED5E5D00598521 /* ExclusiveOfferTableCell.swift in Sources */,
 				EF89AA8B28EDBADD00598521 /* CuratedBackgroundShape.swift in Sources */,
 				EF639A5C28EEA35400787C58 /* DualLabel.swift in Sources */,
