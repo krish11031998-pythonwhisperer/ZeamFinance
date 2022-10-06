@@ -1,0 +1,1172 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF639A5528EE109800787C58 /* ActiveBoosterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A5428EE109800787C58 /* ActiveBoosterCard.swift */; };
+		EF639A5828EEA15200787C58 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A5728EEA15200787C58 /* TransactionCell.swift */; };
+		EF639A5C28EEA35400787C58 /* DualLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A5B28EEA35400787C58 /* DualLabel.swift */; };
+		EF639A5E28EEA5C000787C58 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A5D28EEA5C000787C58 /* TransactionViewController.swift */; };
+		EF639A6128EEC6B900787C58 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6028EEC6B900787C58 /* CardView.swift */; };
+		EF639A6328EED4A100787C58 /* SphericalProgressBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6228EED4A100787C58 /* SphericalProgressBars.swift */; };
+		EF639A6528EED53800787C58 /* CircularProgressShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6428EED53800787C58 /* CircularProgressShape.swift */; };
+		EF639A6828EF08A700787C58 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6728EF08A700787C58 /* ProfileView.swift */; };
+		EF639A6A28EF0AA200787C58 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6928EF0AA200787C58 /* ProfileViewController.swift */; };
+		EF639A6C28EF137D00787C58 /* CreditScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6B28EF137D00787C58 /* CreditScore.swift */; };
+		EF89A99028EC262100598521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A98F28EC262100598521 /* AppDelegate.swift */; };
+		EF89A99228EC262100598521 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A99128EC262100598521 /* SceneDelegate.swift */; };
+		EF89A99428EC262100598521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A99328EC262100598521 /* ViewController.swift */; };
+		EF89A99928EC262100598521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF89A99828EC262100598521 /* Assets.xcassets */; };
+		EF89A99C28EC262100598521 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF89A99A28EC262100598521 /* LaunchScreen.storyboard */; };
+		EF89A9A728EC262100598521 /* ZeamFinanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9A628EC262100598521 /* ZeamFinanceTests.swift */; };
+		EF89A9B128EC262100598521 /* ZeamFinanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9B028EC262100598521 /* ZeamFinanceUITests.swift */; };
+		EF89A9B328EC262100598521 /* ZeamFinanceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9B228EC262100598521 /* ZeamFinanceUITestsLaunchTests.swift */; };
+		EF89A9C528EC27D100598521 /* RenderableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9C428EC27D100598521 /* RenderableText.swift */; };
+		EF89A9CF28EC28C800598521 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9CE28EC28C800598521 /* String.swift */; };
+		EF89A9D128EC28E200598521 /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9D028EC28E200598521 /* CustomFonts.swift */; };
+		EF89A9DD28EC29BA00598521 /* Satoshi-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF89A9D228EC29BA00598521 /* Satoshi-MediumItalic.otf */; };
+		EF89A9DE28EC29BA00598521 /* Satoshi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF89A9D328EC29BA00598521 /* Satoshi-Bold.otf */; };
+		EF89A9DF28EC29BA00598521 /* Satoshi-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF89A9D428EC29BA00598521 /* Satoshi-BlackItalic.otf */; };
+		EF89A9E028EC29BA00598521 /* Satoshi-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF89A9D528EC29BA00598521 /* Satoshi-Italic.otf */; };
+		EF89A9E128EC29BA00598521 /* Satoshi-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF89A9D628EC29BA00598521 /* Satoshi-Light.otf */; };
+		EF89A9E228EC29BA00598521 /* Satoshi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF89A9D728EC29BA00598521 /* Satoshi-Regular.otf */; };
+		EF89A9E328EC29BA00598521 /* Satoshi-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF89A9D828EC29BA00598521 /* Satoshi-LightItalic.otf */; };
+		EF89A9E428EC29BA00598521 /* Satoshi-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF89A9D928EC29BA00598521 /* Satoshi-Medium.otf */; };
+		EF89A9E528EC29BA00598521 /* Satoshi-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF89A9DA28EC29BA00598521 /* Satoshi-Variable.ttf */; };
+		EF89A9E628EC29BA00598521 /* Satoshi-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF89A9DB28EC29BA00598521 /* Satoshi-BoldItalic.otf */; };
+		EF89A9E728EC29BA00598521 /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF89A9DC28EC29BA00598521 /* Satoshi-Black.otf */; };
+		EF89A9EA28EC3E0200598521 /* SystemCatalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9E928EC3E0200598521 /* SystemCatalogue.swift */; };
+		EF89A9EC28EC3ED700598521 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9EB28EC3ED700598521 /* Helpers.swift */; };
+		EF89A9F228EC3F3300598521 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9EE28EC3F3300598521 /* CGSize.swift */; };
+		EF89A9F328EC3F3300598521 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9EF28EC3F3300598521 /* Int.swift */; };
+		EF89A9F428EC3F3300598521 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9F028EC3F3300598521 /* CGFloat.swift */; };
+		EF89A9F528EC3F3300598521 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9F128EC3F3300598521 /* UIEdgeInsets.swift */; };
+		EF89A9FD28EC3F4100598521 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9F728EC3F4100598521 /* UIStackView.swift */; };
+		EF89A9FE28EC3F4100598521 /* ViewHeirachy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9F828EC3F4100598521 /* ViewHeirachy.swift */; };
+		EF89A9FF28EC3F4100598521 /* ViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9F928EC3F4100598521 /* ViewStyling.swift */; };
+		EF89AA0028EC3F4100598521 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9FA28EC3F4100598521 /* UIViewController.swift */; };
+		EF89AA0128EC3F4100598521 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9FB28EC3F4100598521 /* Views.swift */; };
+		EF89AA0228EC3F4100598521 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A9FC28EC3F4100598521 /* UILabel.swift */; };
+		EF89AA0628EC3F6900598521 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA0428EC3F6900598521 /* Response.swift */; };
+		EF89AA0728EC3F6900598521 /* NetworkReqeust.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA0528EC3F6900598521 /* NetworkReqeust.swift */; };
+		EF89AA1228EC401F00598521 /* TableViewFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA0928EC401F00598521 /* TableViewFunction.swift */; };
+		EF89AA1328EC401F00598521 /* TableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA0A28EC401F00598521 /* TableRow.swift */; };
+		EF89AA1428EC401F00598521 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA0B28EC401F00598521 /* Configurable.swift */; };
+		EF89AA1528EC401F00598521 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA0C28EC401F00598521 /* TableSection.swift */; };
+		EF89AA1628EC401F00598521 /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA0E28EC401F00598521 /* CustomTableCell.swift */; };
+		EF89AA1728EC401F00598521 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA1028EC401F00598521 /* Animation.swift */; };
+		EF89AA1A28EC45CC00598521 /* ColorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA1928EC45CC00598521 /* ColorBuilder.swift */; };
+		EF89AA3128EC53DA00598521 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA3028EC53DA00598521 /* CustomButton.swift */; };
+		EF89AA3428EC582E00598521 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA3328EC582E00598521 /* ButtonViewController.swift */; };
+		EF89AA3728EC5DAE00598521 /* CustomButtonConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA3628EC5DAE00598521 /* CustomButtonConfigs.swift */; };
+		EF89AA3B28EC795000598521 /* SpotlightOfferCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA3A28EC795000598521 /* SpotlightOfferCard.swift */; };
+		EF89AA3D28EC7E4B00598521 /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA3C28EC7E4B00598521 /* OffersViewController.swift */; };
+		EF89AA4028EC82BF00598521 /* CollectionColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA3F28EC82BF00598521 /* CollectionColumn.swift */; };
+		EF89AA4228ECBE2700598521 /* CollectionViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA4128ECBE2700598521 /* CollectionViewFunctions.swift */; };
+		EF89AA4428ECC11700598521 /* CustomCollectionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA4328ECC11700598521 /* CustomCollectionTableCell.swift */; };
+		EF89AA4628ECC17700598521 /* CollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA4528ECC17700598521 /* CollectionSection.swift */; };
+		EF89AA4828ECC20100598521 /* CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA4728ECC20100598521 /* CollectionDataSource.swift */; };
+		EF89AA4B28ECCF4300598521 /* HighlightOfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA4A28ECCF4300598521 /* HighlightOfferView.swift */; };
+		EF89AA4D28ECD2FA00598521 /* HighlightOfferCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA4C28ECD2FA00598521 /* HighlightOfferCollectionCell.swift */; };
+		EF89AA4F28ECEF9100598521 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA4E28ECEF9100598521 /* CategoriesView.swift */; };
+		EF89AA5228ECF24800598521 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA5128ECF24800598521 /* CategoryCollectionCell.swift */; };
+		EF89AA7328ED482C00598521 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA6828ED482C00598521 /* CircularProgressBar.swift */; };
+		EF89AA7428ED482C00598521 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA6A28ED482C00598521 /* SearchViewController.swift */; };
+		EF89AA7528ED482C00598521 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA6B28ED482C00598521 /* SearchBar.swift */; };
+		EF89AA7628ED482C00598521 /* SentimentTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA6D28ED482C00598521 /* SentimentTextLabel.swift */; };
+		EF89AA7728ED482C00598521 /* GenericButtonWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA6E28ED482C00598521 /* GenericButtonWrapper.swift */; };
+		EF89AA7828ED482C00598521 /* SymbolImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA7028ED482C00598521 /* SymbolImage.swift */; };
+		EF89AA7928ED482C00598521 /* ImageHeaderSubHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA7128ED482C00598521 /* ImageHeaderSubHeaderView.swift */; };
+		EF89AA7A28ED482C00598521 /* ProgressBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA7228ED482C00598521 /* ProgressBars.swift */; };
+		EF89AA7D28ED4CD700598521 /* TrendingOffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA7C28ED4CD700598521 /* TrendingOffersView.swift */; };
+		EF89AA7F28ED50B500598521 /* TrendingOfferTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA7E28ED50B500598521 /* TrendingOfferTableCell.swift */; };
+		EF89AA8228ED5AD500598521 /* ExclusiveOfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8128ED5AD500598521 /* ExclusiveOfferView.swift */; };
+		EF89AA8428ED5E5D00598521 /* ExclusiveOfferTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8328ED5E5D00598521 /* ExclusiveOfferTableCell.swift */; };
+		EF89AA8628ED62A300598521 /* ExclusiveOfferCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8528ED62A300598521 /* ExclusiveOfferCollectionCell.swift */; };
+		EF89AA8828ED7F8500598521 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8728ED7F8500598521 /* TableDataSource.swift */; };
+		EF89AA8B28EDBADD00598521 /* CuratedBackgroundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8A28EDBADD00598521 /* CuratedBackgroundShape.swift */; };
+		EF89AA8E28EDBC6000598521 /* ShapesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8D28EDBC6000598521 /* ShapesViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF89A9A328EC262100598521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF89A98428EC262100598521 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF89A98B28EC262100598521;
+			remoteInfo = ZeamFinance;
+		};
+		EF89A9AD28EC262100598521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF89A98428EC262100598521 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF89A98B28EC262100598521;
+			remoteInfo = ZeamFinance;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF639A5428EE109800787C58 /* ActiveBoosterCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveBoosterCard.swift; sourceTree = "<group>"; };
+		EF639A5728EEA15200787C58 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		EF639A5B28EEA35400787C58 /* DualLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualLabel.swift; sourceTree = "<group>"; };
+		EF639A5D28EEA5C000787C58 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		EF639A6028EEC6B900787C58 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		EF639A6228EED4A100787C58 /* SphericalProgressBars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SphericalProgressBars.swift; sourceTree = "<group>"; };
+		EF639A6428EED53800787C58 /* CircularProgressShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressShape.swift; sourceTree = "<group>"; };
+		EF639A6728EF08A700787C58 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		EF639A6928EF0AA200787C58 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EF639A6B28EF137D00787C58 /* CreditScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScore.swift; sourceTree = "<group>"; };
+		EF89A98C28EC262100598521 /* ZeamFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeamFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF89A98F28EC262100598521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF89A99128EC262100598521 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EF89A99328EC262100598521 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF89A99828EC262100598521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF89A99B28EC262100598521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF89A99D28EC262100598521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF89A9A228EC262100598521 /* ZeamFinanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZeamFinanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF89A9A628EC262100598521 /* ZeamFinanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeamFinanceTests.swift; sourceTree = "<group>"; };
+		EF89A9AC28EC262100598521 /* ZeamFinanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZeamFinanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF89A9B028EC262100598521 /* ZeamFinanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeamFinanceUITests.swift; sourceTree = "<group>"; };
+		EF89A9B228EC262100598521 /* ZeamFinanceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeamFinanceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EF89A9C428EC27D100598521 /* RenderableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderableText.swift; sourceTree = "<group>"; };
+		EF89A9CE28EC28C800598521 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		EF89A9D028EC28E200598521 /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
+		EF89A9D228EC29BA00598521 /* Satoshi-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-MediumItalic.otf"; sourceTree = "<group>"; };
+		EF89A9D328EC29BA00598521 /* Satoshi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Bold.otf"; sourceTree = "<group>"; };
+		EF89A9D428EC29BA00598521 /* Satoshi-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BlackItalic.otf"; sourceTree = "<group>"; };
+		EF89A9D528EC29BA00598521 /* Satoshi-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Italic.otf"; sourceTree = "<group>"; };
+		EF89A9D628EC29BA00598521 /* Satoshi-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Light.otf"; sourceTree = "<group>"; };
+		EF89A9D728EC29BA00598521 /* Satoshi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.otf"; sourceTree = "<group>"; };
+		EF89A9D828EC29BA00598521 /* Satoshi-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-LightItalic.otf"; sourceTree = "<group>"; };
+		EF89A9D928EC29BA00598521 /* Satoshi-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.otf"; sourceTree = "<group>"; };
+		EF89A9DA28EC29BA00598521 /* Satoshi-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Variable.ttf"; sourceTree = "<group>"; };
+		EF89A9DB28EC29BA00598521 /* Satoshi-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BoldItalic.otf"; sourceTree = "<group>"; };
+		EF89A9DC28EC29BA00598521 /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.otf"; sourceTree = "<group>"; };
+		EF89A9E928EC3E0200598521 /* SystemCatalogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCatalogue.swift; sourceTree = "<group>"; };
+		EF89A9EB28EC3ED700598521 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		EF89A9EE28EC3F3300598521 /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
+		EF89A9EF28EC3F3300598521 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		EF89A9F028EC3F3300598521 /* CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		EF89A9F128EC3F3300598521 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
+		EF89A9F728EC3F4100598521 /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		EF89A9F828EC3F4100598521 /* ViewHeirachy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHeirachy.swift; sourceTree = "<group>"; };
+		EF89A9F928EC3F4100598521 /* ViewStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStyling.swift; sourceTree = "<group>"; };
+		EF89A9FA28EC3F4100598521 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		EF89A9FB28EC3F4100598521 /* Views.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		EF89A9FC28EC3F4100598521 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		EF89AA0428EC3F6900598521 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		EF89AA0528EC3F6900598521 /* NetworkReqeust.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReqeust.swift; sourceTree = "<group>"; };
+		EF89AA0928EC401F00598521 /* TableViewFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewFunction.swift; sourceTree = "<group>"; };
+		EF89AA0A28EC401F00598521 /* TableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRow.swift; sourceTree = "<group>"; };
+		EF89AA0B28EC401F00598521 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		EF89AA0C28EC401F00598521 /* TableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
+		EF89AA0E28EC401F00598521 /* CustomTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
+		EF89AA1028EC401F00598521 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		EF89AA1928EC45CC00598521 /* ColorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBuilder.swift; sourceTree = "<group>"; };
+		EF89AA3028EC53DA00598521 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		EF89AA3328EC582E00598521 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
+		EF89AA3628EC5DAE00598521 /* CustomButtonConfigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonConfigs.swift; sourceTree = "<group>"; };
+		EF89AA3A28EC795000598521 /* SpotlightOfferCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightOfferCard.swift; sourceTree = "<group>"; };
+		EF89AA3C28EC7E4B00598521 /* OffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
+		EF89AA3F28EC82BF00598521 /* CollectionColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionColumn.swift; sourceTree = "<group>"; };
+		EF89AA4128ECBE2700598521 /* CollectionViewFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFunctions.swift; sourceTree = "<group>"; };
+		EF89AA4328ECC11700598521 /* CustomCollectionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionTableCell.swift; sourceTree = "<group>"; };
+		EF89AA4528ECC17700598521 /* CollectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSection.swift; sourceTree = "<group>"; };
+		EF89AA4728ECC20100598521 /* CollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDataSource.swift; sourceTree = "<group>"; };
+		EF89AA4A28ECCF4300598521 /* HighlightOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightOfferView.swift; sourceTree = "<group>"; };
+		EF89AA4C28ECD2FA00598521 /* HighlightOfferCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightOfferCollectionCell.swift; sourceTree = "<group>"; };
+		EF89AA4E28ECEF9100598521 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		EF89AA5128ECF24800598521 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
+		EF89AA6828ED482C00598521 /* CircularProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		EF89AA6A28ED482C00598521 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EF89AA6B28ED482C00598521 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		EF89AA6D28ED482C00598521 /* SentimentTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentimentTextLabel.swift; sourceTree = "<group>"; };
+		EF89AA6E28ED482C00598521 /* GenericButtonWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericButtonWrapper.swift; sourceTree = "<group>"; };
+		EF89AA7028ED482C00598521 /* SymbolImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolImage.swift; sourceTree = "<group>"; };
+		EF89AA7128ED482C00598521 /* ImageHeaderSubHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHeaderSubHeaderView.swift; sourceTree = "<group>"; };
+		EF89AA7228ED482C00598521 /* ProgressBars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBars.swift; sourceTree = "<group>"; };
+		EF89AA7C28ED4CD700598521 /* TrendingOffersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingOffersView.swift; sourceTree = "<group>"; };
+		EF89AA7E28ED50B500598521 /* TrendingOfferTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingOfferTableCell.swift; sourceTree = "<group>"; };
+		EF89AA8128ED5AD500598521 /* ExclusiveOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusiveOfferView.swift; sourceTree = "<group>"; };
+		EF89AA8328ED5E5D00598521 /* ExclusiveOfferTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusiveOfferTableCell.swift; sourceTree = "<group>"; };
+		EF89AA8528ED62A300598521 /* ExclusiveOfferCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExclusiveOfferCollectionCell.swift; sourceTree = "<group>"; };
+		EF89AA8728ED7F8500598521 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
+		EF89AA8A28EDBADD00598521 /* CuratedBackgroundShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuratedBackgroundShape.swift; sourceTree = "<group>"; };
+		EF89AA8D28EDBC6000598521 /* ShapesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF89A98928EC262100598521 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF89A99F28EC262100598521 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF89A9A928EC262100598521 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF639A5628EEA14500787C58 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				EF639A5728EEA15200787C58 /* TransactionCell.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		EF639A5928EEA31B00787C58 /* Bars */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA6828ED482C00598521 /* CircularProgressBar.swift */,
+				EF89AA7228ED482C00598521 /* ProgressBars.swift */,
+				EF639A6228EED4A100787C58 /* SphericalProgressBars.swift */,
+			);
+			path = Bars;
+			sourceTree = "<group>";
+		};
+		EF639A5A28EEA34200787C58 /* TextBasedComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EF639A5B28EEA35400787C58 /* DualLabel.swift */,
+			);
+			path = TextBasedComponents;
+			sourceTree = "<group>";
+		};
+		EF639A5F28EEC6AD00787C58 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				EF639A6028EEC6B900787C58 /* CardView.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		EF639A6628EF089900787C58 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EF639A6728EF08A700787C58 /* ProfileView.swift */,
+				EF639A6B28EF137D00787C58 /* CreditScore.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		EF89A98328EC262100598521 = {
+			isa = PBXGroup;
+			children = (
+				EF89A98E28EC262100598521 /* ZeamFinance */,
+				EF89A9A528EC262100598521 /* ZeamFinanceTests */,
+				EF89A9AF28EC262100598521 /* ZeamFinanceUITests */,
+				EF89A98D28EC262100598521 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF89A98D28EC262100598521 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF89A98C28EC262100598521 /* ZeamFinance.app */,
+				EF89A9A228EC262100598521 /* ZeamFinanceTests.xctest */,
+				EF89A9AC28EC262100598521 /* ZeamFinanceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF89A98E28EC262100598521 /* ZeamFinance */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA3228EC581B00598521 /* Views */,
+				EF89A9C128EC27A500598521 /* ZeamUI */,
+				EF89A98F28EC262100598521 /* AppDelegate.swift */,
+				EF89A99128EC262100598521 /* SceneDelegate.swift */,
+				EF89A99828EC262100598521 /* Assets.xcassets */,
+				EF89A99A28EC262100598521 /* LaunchScreen.storyboard */,
+				EF89A99D28EC262100598521 /* Info.plist */,
+			);
+			path = ZeamFinance;
+			sourceTree = "<group>";
+		};
+		EF89A9A528EC262100598521 /* ZeamFinanceTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF89A9A628EC262100598521 /* ZeamFinanceTests.swift */,
+			);
+			path = ZeamFinanceTests;
+			sourceTree = "<group>";
+		};
+		EF89A9AF28EC262100598521 /* ZeamFinanceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF89A9B028EC262100598521 /* ZeamFinanceUITests.swift */,
+				EF89A9B228EC262100598521 /* ZeamFinanceUITestsLaunchTests.swift */,
+			);
+			path = ZeamFinanceUITests;
+			sourceTree = "<group>";
+		};
+		EF89A9C128EC27A500598521 /* ZeamUI */ = {
+			isa = PBXGroup;
+			children = (
+				EF89A9C628EC284000598521 /* Assets */,
+				EF89AA6728ED482C00598521 /* MiscComponents */,
+				EF89AA2F28EC53C500598521 /* Components */,
+				EF89A9C228EC27B700598521 /* Extensions */,
+			);
+			path = ZeamUI;
+			sourceTree = "<group>";
+		};
+		EF89A9C228EC27B700598521 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA3E28EC82AE00598521 /* CollectionViewDataSource */,
+				EF89AA8928EDBAB900598521 /* Shapes */,
+				EF89AA0828EC401F00598521 /* TableViewDataSource */,
+				EF89AA0F28EC401F00598521 /* Animation */,
+				EF89AA0328EC3F5800598521 /* Network */,
+				EF89A9ED28EC3F3300598521 /* Dimensions */,
+				EF89A9F628EC3F4100598521 /* View */,
+				EF89A9C328EC27C000598521 /* String */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EF89A9C328EC27C000598521 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				EF89A9C428EC27D100598521 /* RenderableText.swift */,
+				EF89A9CE28EC28C800598521 /* String.swift */,
+				EF89A9D028EC28E200598521 /* CustomFonts.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		EF89A9C628EC284000598521 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA1828EC459E00598521 /* Colors */,
+				EF89A9E828EC3DF600598521 /* Images */,
+				EF89A9C728EC284600598521 /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		EF89A9C728EC284600598521 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EF89A9DC28EC29BA00598521 /* Satoshi-Black.otf */,
+				EF89A9D428EC29BA00598521 /* Satoshi-BlackItalic.otf */,
+				EF89A9D328EC29BA00598521 /* Satoshi-Bold.otf */,
+				EF89A9DB28EC29BA00598521 /* Satoshi-BoldItalic.otf */,
+				EF89A9D528EC29BA00598521 /* Satoshi-Italic.otf */,
+				EF89A9D628EC29BA00598521 /* Satoshi-Light.otf */,
+				EF89A9D828EC29BA00598521 /* Satoshi-LightItalic.otf */,
+				EF89A9D928EC29BA00598521 /* Satoshi-Medium.otf */,
+				EF89A9D228EC29BA00598521 /* Satoshi-MediumItalic.otf */,
+				EF89A9D728EC29BA00598521 /* Satoshi-Regular.otf */,
+				EF89A9DA28EC29BA00598521 /* Satoshi-Variable.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EF89A9E828EC3DF600598521 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EF89A9E928EC3E0200598521 /* SystemCatalogue.swift */,
+				EF89A9EB28EC3ED700598521 /* Helpers.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		EF89A9ED28EC3F3300598521 /* Dimensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF89A9EE28EC3F3300598521 /* CGSize.swift */,
+				EF89A9EF28EC3F3300598521 /* Int.swift */,
+				EF89A9F028EC3F3300598521 /* CGFloat.swift */,
+				EF89A9F128EC3F3300598521 /* UIEdgeInsets.swift */,
+			);
+			path = Dimensions;
+			sourceTree = "<group>";
+		};
+		EF89A9F628EC3F4100598521 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF89A9F728EC3F4100598521 /* UIStackView.swift */,
+				EF89A9F828EC3F4100598521 /* ViewHeirachy.swift */,
+				EF89A9F928EC3F4100598521 /* ViewStyling.swift */,
+				EF89A9FA28EC3F4100598521 /* UIViewController.swift */,
+				EF89A9FB28EC3F4100598521 /* Views.swift */,
+				EF89A9FC28EC3F4100598521 /* UILabel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EF89AA0328EC3F5800598521 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA0528EC3F6900598521 /* NetworkReqeust.swift */,
+				EF89AA0428EC3F6900598521 /* Response.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EF89AA0828EC401F00598521 /* TableViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA8728ED7F8500598521 /* TableDataSource.swift */,
+				EF89AA0928EC401F00598521 /* TableViewFunction.swift */,
+				EF89AA0A28EC401F00598521 /* TableRow.swift */,
+				EF89AA0B28EC401F00598521 /* Configurable.swift */,
+				EF89AA0C28EC401F00598521 /* TableSection.swift */,
+				EF89AA0D28EC401F00598521 /* CommonTableRowView */,
+			);
+			path = TableViewDataSource;
+			sourceTree = "<group>";
+		};
+		EF89AA0D28EC401F00598521 /* CommonTableRowView */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA0E28EC401F00598521 /* CustomTableCell.swift */,
+				EF89AA4328ECC11700598521 /* CustomCollectionTableCell.swift */,
+			);
+			path = CommonTableRowView;
+			sourceTree = "<group>";
+		};
+		EF89AA0F28EC401F00598521 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA1028EC401F00598521 /* Animation.swift */,
+				EF89AA1128EC401F00598521 /* TableViewDataSource */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		EF89AA1128EC401F00598521 /* TableViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewDataSource;
+			sourceTree = "<group>";
+		};
+		EF89AA1828EC459E00598521 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA1928EC45CC00598521 /* ColorBuilder.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		EF89AA2F28EC53C500598521 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EF639A6628EF089900787C58 /* Profile */,
+				EF639A5F28EEC6AD00787C58 /* Cards */,
+				EF639A5A28EEA34200787C58 /* TextBasedComponents */,
+				EF639A5628EEA14500787C58 /* Transaction */,
+				EF89AA3828EC78C500598521 /* Offers */,
+				EF89AA3528EC5DA100598521 /* CustomButton */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EF89AA3228EC581B00598521 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EF89A99328EC262100598521 /* ViewController.swift */,
+				EF89AA3328EC582E00598521 /* ButtonViewController.swift */,
+				EF89AA3C28EC7E4B00598521 /* OffersViewController.swift */,
+				EF89AA8D28EDBC6000598521 /* ShapesViewController.swift */,
+				EF639A5D28EEA5C000787C58 /* TransactionViewController.swift */,
+				EF639A6928EF0AA200787C58 /* ProfileViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EF89AA3528EC5DA100598521 /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA3028EC53DA00598521 /* CustomButton.swift */,
+				EF89AA3628EC5DAE00598521 /* CustomButtonConfigs.swift */,
+			);
+			path = CustomButton;
+			sourceTree = "<group>";
+		};
+		EF89AA3828EC78C500598521 /* Offers */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA8028ED5AB600598521 /* ExclusiveOffer */,
+				EF89AA7B28ED4CAE00598521 /* TrendingOffers */,
+				EF89AA5028ECEF9400598521 /* OfferCategories */,
+				EF89AA4928ECCF2C00598521 /* HighlightOffer */,
+				EF89AA3928EC78CE00598521 /* SpotLightOffer */,
+			);
+			path = Offers;
+			sourceTree = "<group>";
+		};
+		EF89AA3928EC78CE00598521 /* SpotLightOffer */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA3A28EC795000598521 /* SpotlightOfferCard.swift */,
+			);
+			path = SpotLightOffer;
+			sourceTree = "<group>";
+		};
+		EF89AA3E28EC82AE00598521 /* CollectionViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA3F28EC82BF00598521 /* CollectionColumn.swift */,
+				EF89AA4128ECBE2700598521 /* CollectionViewFunctions.swift */,
+				EF89AA4528ECC17700598521 /* CollectionSection.swift */,
+				EF89AA4728ECC20100598521 /* CollectionDataSource.swift */,
+			);
+			path = CollectionViewDataSource;
+			sourceTree = "<group>";
+		};
+		EF89AA4928ECCF2C00598521 /* HighlightOffer */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA4A28ECCF4300598521 /* HighlightOfferView.swift */,
+				EF89AA4C28ECD2FA00598521 /* HighlightOfferCollectionCell.swift */,
+			);
+			path = HighlightOffer;
+			sourceTree = "<group>";
+		};
+		EF89AA5028ECEF9400598521 /* OfferCategories */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA4E28ECEF9100598521 /* CategoriesView.swift */,
+				EF89AA5128ECF24800598521 /* CategoryCollectionCell.swift */,
+			);
+			path = OfferCategories;
+			sourceTree = "<group>";
+		};
+		EF89AA6728ED482C00598521 /* MiscComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EF639A5928EEA31B00787C58 /* Bars */,
+				EF89AA6928ED482C00598521 /* CustomSearchBarController */,
+				EF89AA6C28ED482C00598521 /* TextComponents */,
+				EF89AA6E28ED482C00598521 /* GenericButtonWrapper.swift */,
+				EF89AA6F28ED482C00598521 /* ImageComponents */,
+			);
+			name = MiscComponents;
+			path = ZeamFinance/ZeamUI/MiscComponents;
+			sourceTree = SOURCE_ROOT;
+		};
+		EF89AA6928ED482C00598521 /* CustomSearchBarController */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA6A28ED482C00598521 /* SearchViewController.swift */,
+				EF89AA6B28ED482C00598521 /* SearchBar.swift */,
+			);
+			path = CustomSearchBarController;
+			sourceTree = "<group>";
+		};
+		EF89AA6C28ED482C00598521 /* TextComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA6D28ED482C00598521 /* SentimentTextLabel.swift */,
+			);
+			path = TextComponents;
+			sourceTree = "<group>";
+		};
+		EF89AA6F28ED482C00598521 /* ImageComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA7028ED482C00598521 /* SymbolImage.swift */,
+				EF89AA7128ED482C00598521 /* ImageHeaderSubHeaderView.swift */,
+			);
+			path = ImageComponents;
+			sourceTree = "<group>";
+		};
+		EF89AA7B28ED4CAE00598521 /* TrendingOffers */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA7C28ED4CD700598521 /* TrendingOffersView.swift */,
+				EF89AA7E28ED50B500598521 /* TrendingOfferTableCell.swift */,
+			);
+			path = TrendingOffers;
+			sourceTree = "<group>";
+		};
+		EF89AA8028ED5AB600598521 /* ExclusiveOffer */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA8128ED5AD500598521 /* ExclusiveOfferView.swift */,
+				EF89AA8328ED5E5D00598521 /* ExclusiveOfferTableCell.swift */,
+				EF89AA8528ED62A300598521 /* ExclusiveOfferCollectionCell.swift */,
+			);
+			path = ExclusiveOffer;
+			sourceTree = "<group>";
+		};
+		EF89AA8928EDBAB900598521 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				EF89AA8A28EDBADD00598521 /* CuratedBackgroundShape.swift */,
+				EF639A5428EE109800787C58 /* ActiveBoosterCard.swift */,
+				EF639A6428EED53800787C58 /* CircularProgressShape.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF89A98B28EC262100598521 /* ZeamFinance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF89A9B628EC262100598521 /* Build configuration list for PBXNativeTarget "ZeamFinance" */;
+			buildPhases = (
+				EF89A98828EC262100598521 /* Sources */,
+				EF89A98928EC262100598521 /* Frameworks */,
+				EF89A98A28EC262100598521 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZeamFinance;
+			productName = ZeamFinance;
+			productReference = EF89A98C28EC262100598521 /* ZeamFinance.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF89A9A128EC262100598521 /* ZeamFinanceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF89A9B928EC262100598521 /* Build configuration list for PBXNativeTarget "ZeamFinanceTests" */;
+			buildPhases = (
+				EF89A99E28EC262100598521 /* Sources */,
+				EF89A99F28EC262100598521 /* Frameworks */,
+				EF89A9A028EC262100598521 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF89A9A428EC262100598521 /* PBXTargetDependency */,
+			);
+			name = ZeamFinanceTests;
+			productName = ZeamFinanceTests;
+			productReference = EF89A9A228EC262100598521 /* ZeamFinanceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF89A9AB28EC262100598521 /* ZeamFinanceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF89A9BC28EC262100598521 /* Build configuration list for PBXNativeTarget "ZeamFinanceUITests" */;
+			buildPhases = (
+				EF89A9A828EC262100598521 /* Sources */,
+				EF89A9A928EC262100598521 /* Frameworks */,
+				EF89A9AA28EC262100598521 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF89A9AE28EC262100598521 /* PBXTargetDependency */,
+			);
+			name = ZeamFinanceUITests;
+			productName = ZeamFinanceUITests;
+			productReference = EF89A9AC28EC262100598521 /* ZeamFinanceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF89A98428EC262100598521 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					EF89A98B28EC262100598521 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					EF89A9A128EC262100598521 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = EF89A98B28EC262100598521;
+					};
+					EF89A9AB28EC262100598521 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = EF89A98B28EC262100598521;
+					};
+				};
+			};
+			buildConfigurationList = EF89A98728EC262100598521 /* Build configuration list for PBXProject "ZeamFinance" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF89A98328EC262100598521;
+			productRefGroup = EF89A98D28EC262100598521 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF89A98B28EC262100598521 /* ZeamFinance */,
+				EF89A9A128EC262100598521 /* ZeamFinanceTests */,
+				EF89A9AB28EC262100598521 /* ZeamFinanceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF89A98A28EC262100598521 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF89A9E128EC29BA00598521 /* Satoshi-Light.otf in Resources */,
+				EF89A99C28EC262100598521 /* LaunchScreen.storyboard in Resources */,
+				EF89A9E528EC29BA00598521 /* Satoshi-Variable.ttf in Resources */,
+				EF89A9E728EC29BA00598521 /* Satoshi-Black.otf in Resources */,
+				EF89A9DF28EC29BA00598521 /* Satoshi-BlackItalic.otf in Resources */,
+				EF89A9E428EC29BA00598521 /* Satoshi-Medium.otf in Resources */,
+				EF89A99928EC262100598521 /* Assets.xcassets in Resources */,
+				EF89A9E328EC29BA00598521 /* Satoshi-LightItalic.otf in Resources */,
+				EF89A9E028EC29BA00598521 /* Satoshi-Italic.otf in Resources */,
+				EF89A9DD28EC29BA00598521 /* Satoshi-MediumItalic.otf in Resources */,
+				EF89A9DE28EC29BA00598521 /* Satoshi-Bold.otf in Resources */,
+				EF89A9E228EC29BA00598521 /* Satoshi-Regular.otf in Resources */,
+				EF89A9E628EC29BA00598521 /* Satoshi-BoldItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF89A9A028EC262100598521 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF89A9AA28EC262100598521 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF89A98828EC262100598521 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF89AA4B28ECCF4300598521 /* HighlightOfferView.swift in Sources */,
+				EF89A9EA28EC3E0200598521 /* SystemCatalogue.swift in Sources */,
+				EF639A6C28EF137D00787C58 /* CreditScore.swift in Sources */,
+				EF639A5E28EEA5C000787C58 /* TransactionViewController.swift in Sources */,
+				EF89A9FF28EC3F4100598521 /* ViewStyling.swift in Sources */,
+				EF89AA1528EC401F00598521 /* TableSection.swift in Sources */,
+				EF89AA8228ED5AD500598521 /* ExclusiveOfferView.swift in Sources */,
+				EF89AA4228ECBE2700598521 /* CollectionViewFunctions.swift in Sources */,
+				EF639A6828EF08A700787C58 /* ProfileView.swift in Sources */,
+				EF89AA7F28ED50B500598521 /* TrendingOfferTableCell.swift in Sources */,
+				EF89AA0728EC3F6900598521 /* NetworkReqeust.swift in Sources */,
+				EF89AA5228ECF24800598521 /* CategoryCollectionCell.swift in Sources */,
+				EF89A9C528EC27D100598521 /* RenderableText.swift in Sources */,
+				EF89AA7A28ED482C00598521 /* ProgressBars.swift in Sources */,
+				EF89A9F528EC3F3300598521 /* UIEdgeInsets.swift in Sources */,
+				EF89AA7528ED482C00598521 /* SearchBar.swift in Sources */,
+				EF89AA4F28ECEF9100598521 /* CategoriesView.swift in Sources */,
+				EF89AA0228EC3F4100598521 /* UILabel.swift in Sources */,
+				EF89AA7328ED482C00598521 /* CircularProgressBar.swift in Sources */,
+				EF639A5828EEA15200787C58 /* TransactionCell.swift in Sources */,
+				EF89AA3D28EC7E4B00598521 /* OffersViewController.swift in Sources */,
+				EF89AA1A28EC45CC00598521 /* ColorBuilder.swift in Sources */,
+				EF89AA7728ED482C00598521 /* GenericButtonWrapper.swift in Sources */,
+				EF89AA3B28EC795000598521 /* SpotlightOfferCard.swift in Sources */,
+				EF89AA8E28EDBC6000598521 /* ShapesViewController.swift in Sources */,
+				EF89AA7428ED482C00598521 /* SearchViewController.swift in Sources */,
+				EF89AA1228EC401F00598521 /* TableViewFunction.swift in Sources */,
+				EF89AA7928ED482C00598521 /* ImageHeaderSubHeaderView.swift in Sources */,
+				EF89AA0628EC3F6900598521 /* Response.swift in Sources */,
+				EF89AA4028EC82BF00598521 /* CollectionColumn.swift in Sources */,
+				EF89A9F428EC3F3300598521 /* CGFloat.swift in Sources */,
+				EF89A99428EC262100598521 /* ViewController.swift in Sources */,
+				EF639A5528EE109800787C58 /* ActiveBoosterCard.swift in Sources */,
+				EF89AA8628ED62A300598521 /* ExclusiveOfferCollectionCell.swift in Sources */,
+				EF89A9FE28EC3F4100598521 /* ViewHeirachy.swift in Sources */,
+				EF89AA1728EC401F00598521 /* Animation.swift in Sources */,
+				EF89A9EC28EC3ED700598521 /* Helpers.swift in Sources */,
+				EF89A9D128EC28E200598521 /* CustomFonts.swift in Sources */,
+				EF89AA3128EC53DA00598521 /* CustomButton.swift in Sources */,
+				EF89A9CF28EC28C800598521 /* String.swift in Sources */,
+				EF89A99028EC262100598521 /* AppDelegate.swift in Sources */,
+				EF639A6328EED4A100787C58 /* SphericalProgressBars.swift in Sources */,
+				EF89AA7628ED482C00598521 /* SentimentTextLabel.swift in Sources */,
+				EF639A6128EEC6B900787C58 /* CardView.swift in Sources */,
+				EF89AA4428ECC11700598521 /* CustomCollectionTableCell.swift in Sources */,
+				EF89AA4828ECC20100598521 /* CollectionDataSource.swift in Sources */,
+				EF89A9F328EC3F3300598521 /* Int.swift in Sources */,
+				EF89AA8428ED5E5D00598521 /* ExclusiveOfferTableCell.swift in Sources */,
+				EF89AA8B28EDBADD00598521 /* CuratedBackgroundShape.swift in Sources */,
+				EF639A5C28EEA35400787C58 /* DualLabel.swift in Sources */,
+				EF89AA0128EC3F4100598521 /* Views.swift in Sources */,
+				EF639A6528EED53800787C58 /* CircularProgressShape.swift in Sources */,
+				EF89A9F228EC3F3300598521 /* CGSize.swift in Sources */,
+				EF89AA8828ED7F8500598521 /* TableDataSource.swift in Sources */,
+				EF89AA7D28ED4CD700598521 /* TrendingOffersView.swift in Sources */,
+				EF89AA3428EC582E00598521 /* ButtonViewController.swift in Sources */,
+				EF89AA3728EC5DAE00598521 /* CustomButtonConfigs.swift in Sources */,
+				EF89AA4D28ECD2FA00598521 /* HighlightOfferCollectionCell.swift in Sources */,
+				EF89A9FD28EC3F4100598521 /* UIStackView.swift in Sources */,
+				EF89AA1328EC401F00598521 /* TableRow.swift in Sources */,
+				EF89AA7828ED482C00598521 /* SymbolImage.swift in Sources */,
+				EF89AA1628EC401F00598521 /* CustomTableCell.swift in Sources */,
+				EF89AA0028EC3F4100598521 /* UIViewController.swift in Sources */,
+				EF89AA1428EC401F00598521 /* Configurable.swift in Sources */,
+				EF639A6A28EF0AA200787C58 /* ProfileViewController.swift in Sources */,
+				EF89A99228EC262100598521 /* SceneDelegate.swift in Sources */,
+				EF89AA4628ECC17700598521 /* CollectionSection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF89A99E28EC262100598521 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF89A9A728EC262100598521 /* ZeamFinanceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF89A9A828EC262100598521 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF89A9B328EC262100598521 /* ZeamFinanceUITestsLaunchTests.swift in Sources */,
+				EF89A9B128EC262100598521 /* ZeamFinanceUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF89A9A428EC262100598521 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF89A98B28EC262100598521 /* ZeamFinance */;
+			targetProxy = EF89A9A328EC262100598521 /* PBXContainerItemProxy */;
+		};
+		EF89A9AE28EC262100598521 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF89A98B28EC262100598521 /* ZeamFinance */;
+			targetProxy = EF89A9AD28EC262100598521 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF89A99A28EC262100598521 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF89A99B28EC262100598521 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF89A9B428EC262100598521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF89A9B528EC262100598521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF89A9B728EC262100598521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8T963ZW2EJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ZeamFinance/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Krish.ZeamFinance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		EF89A9B828EC262100598521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8T963ZW2EJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ZeamFinance/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Krish.ZeamFinance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		EF89A9BA28EC262100598521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8T963ZW2EJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Krish.ZeamFinanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZeamFinance.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ZeamFinance";
+			};
+			name = Debug;
+		};
+		EF89A9BB28EC262100598521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8T963ZW2EJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Krish.ZeamFinanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZeamFinance.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ZeamFinance";
+			};
+			name = Release;
+		};
+		EF89A9BD28EC262100598521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8T963ZW2EJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Krish.ZeamFinanceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZeamFinance;
+			};
+			name = Debug;
+		};
+		EF89A9BE28EC262100598521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8T963ZW2EJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Krish.ZeamFinanceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZeamFinance;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF89A98728EC262100598521 /* Build configuration list for PBXProject "ZeamFinance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF89A9B428EC262100598521 /* Debug */,
+				EF89A9B528EC262100598521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF89A9B628EC262100598521 /* Build configuration list for PBXNativeTarget "ZeamFinance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF89A9B728EC262100598521 /* Debug */,
+				EF89A9B828EC262100598521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF89A9B928EC262100598521 /* Build configuration list for PBXNativeTarget "ZeamFinanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF89A9BA28EC262100598521 /* Debug */,
+				EF89A9BB28EC262100598521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF89A9BC28EC262100598521 /* Build configuration list for PBXNativeTarget "ZeamFinanceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF89A9BD28EC262100598521 /* Debug */,
+				EF89A9BE28EC262100598521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF89A98428EC262100598521 /* Project object */;
+}
