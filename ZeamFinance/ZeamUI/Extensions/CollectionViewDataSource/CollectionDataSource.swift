@@ -28,9 +28,10 @@ extension CollectionDataSource: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		sections[indexPath.section].cell[indexPath.row].collectionView(collectionView, cellForItemAt: indexPath)
 	}
-	
+}
+
+extension CollectionDataSource: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		sections[indexPath.section].cell[indexPath.row].collectionView(collectionView, didSelectItemAt: indexPath)
 	}
 }
-

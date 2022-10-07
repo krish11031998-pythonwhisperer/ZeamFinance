@@ -29,6 +29,7 @@ extension UICollectionView {
 	func reloadData(_ dataSource: CollectionDataSource) {
 		self.source = dataSource
 		self.dataSource = dataSource
+		self.delegate = dataSource
 		self.reloadData()
 	}
 }

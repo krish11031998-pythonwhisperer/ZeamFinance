@@ -53,7 +53,7 @@ class TransactionCell: ConfigurableCell {
 		imgView.contentMode = .scaleAspectFit
 		let stack = UIStackView.HStack(subViews: [cellLogo, infoView, amountLabel, imgView], spacing: 16)
 		contentView.addSubview(stack)
-		contentView.setFittingConstraints(childView: stack, insets: .init(vertical: 5, horizontal: 8))
+		contentView.setFittingConstraints(childView: stack, insets: .init(vertical: 5, horizontal: 10))
 	}
 	
 	

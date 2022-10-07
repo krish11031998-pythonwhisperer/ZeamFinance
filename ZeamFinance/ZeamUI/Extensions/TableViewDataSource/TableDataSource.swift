@@ -29,7 +29,7 @@ public class TableViewDataSource: NSObject {
 }
 
 
-extension TableViewDataSource: UITableViewDelegate, UITableViewDataSource {
+extension TableViewDataSource: UITableViewDataSource {
 	
 	public func numberOfSections(in tableView: UITableView) -> Int { sections.count }
 	
@@ -43,10 +43,6 @@ extension TableViewDataSource: UITableViewDelegate, UITableViewDataSource {
 		sections[indexPath.section].rows[indexPath.row].tableView(tableView, updateRowAt: indexPath)
 	}
 	
-	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let row = sections[indexPath.section].rows[indexPath.row]
-		row.didSelect(tableView, indexPath: indexPath)
-	}
 	
 	public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		sections[section].customHeader ?? sections[section].title?.bold(size: 20).generateLabel.embedInView(insets: .init(by: 10))
@@ -57,3 +53,11 @@ extension TableViewDataSource: UITableViewDelegate, UITableViewDataSource {
 	}
 }
 
+
+extension TableViewDataSource: UITableViewDelegate {
+	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let row = sections[indexPath.section].rows[indexPath.row]
+		row.didSelect(tableView, indexPath: indexPath)
+	}
+	
+}

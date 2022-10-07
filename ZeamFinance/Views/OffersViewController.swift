@@ -37,7 +37,7 @@ class OffersViewController: UIViewController {
 	}
 	
 	private var highlightOffersSection: TableSection {
-		let cells = Array(repeating:CollectionItem<HighlightOfferCollectionCell>(.test), count: 5)
+		let cells = OfferViewModel.testCases.compactMap { CollectionItem<HighlightOfferCollectionCell>($0) }
 		return .init(rows: [TableRow<CollectionTableCell>(.init(cells: cells,
 																size: .init(width: .totalWidth, height: 485),
 																cellSize: .init(width: 288, height: 485)))],
@@ -51,19 +51,19 @@ class OffersViewController: UIViewController {
 	}
 	
 	private var trendingOffersSection: TableSection {
-		let cells = Array(repeating:TableRow<TrendingOfferTableCell>(.zeeTest), count: 5)
+		let cells = OfferViewModel.testCases.compactMap { TableRow<TrendingOfferTableCell>($0) }
 		return .init(rows: cells,
 					 title: "Trending Offers Section")
 	}
 	
 	private var exclusiveOffersSection: TableSection {
-		let cells = Array(repeating:TableRow<ExclusiveOfferTableCell>(.zeeTest), count: 5)
+		let cells =  OfferViewModel.testCases.compactMap { TableRow<ExclusiveOfferTableCell>($0) }
 		return .init(rows: cells,
 					 title: "Exclusive Offers Section")
 	}
 	
 	private var exclusiveLargeOffersSection: TableSection {
-		let cells = Array(repeating:CollectionItem<ExclusiveOfferCollectionCell>(.zeeTest), count: 5)
+		let cells = OfferViewModel.testCases.compactMap { CollectionItem<ExclusiveOfferCollectionCell>($0) }
 		return .init(rows: [TableRow<ExclusiveOfferCollection>(.init(cells: cells,
 																size: .init(width: .totalWidth, height: 250),
 																cellSize: .init(width: 168, height: 217)))],

@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2286ED15-6871-42AB-BA44-A469FA9F3195"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZeamFinance/ZeamUI/Components/CustomButton/CustomButton.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "configureButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "CF31165D-A13E-494D-B94A-D056B1E95498"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -81,22 +65,6 @@
             startingLineNumber = "17"
             endingLineNumber = "17"
             landmarkName = "addboosterShape(color:curvePoint:borderColor:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "76326B12-916C-4BAF-AD4C-8C172D42EED6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZeamFinance/ZeamUI/Extensions/Shapes/CircularProgressShape.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "addCircularProgress(startAngle:endAngle:radiusOffset:lineWidth:strokeColor:clockwise:animateStrokeEnd:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

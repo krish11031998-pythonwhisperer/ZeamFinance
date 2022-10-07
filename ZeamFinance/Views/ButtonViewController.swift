@@ -78,7 +78,7 @@ class ButtonViewController: UIViewController {
 		
 		let button = CustomButton()
 		button.configureButton(.init(title: "button".bold(color: type.textColor, size: 13),
-									 trailingImg: .init(img: .SystemCatalogue.buttonRightArrow.image.withTintColor(!isEnabled ? .popWhite500 : type.textColor, renderingMode: .alwaysOriginal)),
+									 trailingImg: .init(img: .buttonRightArrow.withTintColor(!isEnabled ? .popWhite500 : type.textColor, renderingMode: .alwaysOriginal)),
 									 backgroundColor: type.backgroundColor,
 									 buttonType: type,
 									 buttonStyling: .init(cornerRadius: 0)) {

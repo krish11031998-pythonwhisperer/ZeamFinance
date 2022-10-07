@@ -13,7 +13,7 @@ class TrendingOffersView: UIView {
 	private lazy var offerImage: UIImageView = {
 		let view = UIImageView()
 		view.clipsToBounds = true
-		view.contentMode = .scaleToFill
+		view.contentMode = .scaleAspectFill
 		view.backgroundColor = .popWhite100
 		return view
 	}()
@@ -21,7 +21,7 @@ class TrendingOffersView: UIView {
 	private lazy var brandLogo: UIImageView = {
 		let view = UIImageView()
 		view.clipsToBounds = true
-		view.contentMode = .scaleToFill
+		view.contentMode = .scaleAspectFill
 		view.backgroundColor = .popBlack500
 		return view
 	}()

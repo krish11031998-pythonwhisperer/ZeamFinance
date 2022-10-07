@@ -54,6 +54,9 @@ class CollectionTableCell: ConfigurableCell {
 	}
 	
 	private func setupViews() {
+		backgroundColor = .surfaceBackground
+		selectionStyle = .none
+		collection.backgroundColor = .surfaceBackground
 		contentView.addSubview(collection)
 		contentView.setFittingConstraints(childView: collection, insets: .zero)
 	}

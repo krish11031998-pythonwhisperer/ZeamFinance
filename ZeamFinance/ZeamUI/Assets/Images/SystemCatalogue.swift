@@ -34,6 +34,26 @@ public extension UIImage {
 		case profileImage
 	}
 	
+	enum OfferCatalogue: String, CaseIterable {
+		case offerImageOne
+		case offerImageTwo
+		case offerImageThree
+		case offerImageFour
+		case offerImageFive
+		case offerImageSix
+	}
+	
+	enum BrandCatalogue: String, CaseIterable {
+		case brandLogoOne
+		case brandLogoTwo
+		case brandLogoThree
+		case brandLogoFour
+		case brandLogoFive
+		case brandLogoSix
+		case brandLogoSeven
+		case brandLogoEight
+	}
+	
 	static var buttonLeftArrow: UIImage { .SystemCatalogue.buttonLeftArrow.image.resized(size: .init(width: 20, height: 8))}
 	static var buttonRightArrow: UIImage { .SystemCatalogue.buttonRightArrow.image.resized(size: .init(width: 20, height: 8))}
 	//static var buttonLeftArrow: UIImage { .SystemCatalogue.buttonLeftArrow.resized(size: .init(width: 20, height: 8))}
@@ -50,5 +70,13 @@ public extension UIImage.SystemCatalogue {
 }
 
 public extension UIImage.ImageCatalogue {
+	var image: UIImage { .init(named: rawValue) ?? .solid(color: .black) }
+}
+
+public extension UIImage.OfferCatalogue {
+	var image: UIImage { .init(named: rawValue) ?? .solid(color: .black) }
+}
+
+public extension UIImage.BrandCatalogue {
 	var image: UIImage { .init(named: rawValue) ?? .solid(color: .black) }
 }

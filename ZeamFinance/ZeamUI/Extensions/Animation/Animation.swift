@@ -20,8 +20,9 @@ extension Animation {
 		
 		switch self {
 		case .bouncy(let duration):
-			let animation = CABasicAnimation(keyPath: "transform.scale")
-			animation.toValue = 0.95
+			let animation = CAKeyframeAnimation(keyPath: "transform.scale")
+			animation.keyTimes = [0, 0.25, 0.5, 0.75, 1]
+			animation.values = [1, 0.975 , 0.95, 0.975, 1]
 			animation.duration = duration
 			animation.isRemovedOnCompletion = true
 			return animation

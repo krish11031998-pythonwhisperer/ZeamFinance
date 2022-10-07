@@ -61,6 +61,7 @@ class CustomButton: UIButton {
 	}
 	
 	private func handleTap(_ action: UIAction) {
+		layer.animate(animation: .bouncy())
 		self.action?()
 	}
 	

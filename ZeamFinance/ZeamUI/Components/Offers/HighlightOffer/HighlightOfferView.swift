@@ -36,9 +36,34 @@ struct OfferViewModel {
 
 extension OfferViewModel{
 	
+	static var testCases: [OfferViewModel] {
+		zip(UIImage.BrandCatalogue.allCases, UIImage.OfferCatalogue.allCases).compactMap {
+			.init(brandLogo: $0.image,
+				  brand: "FlipKart",
+				  category: "entertainment",
+				  offerDescription: "get 10% instant discount on purchase of products across fashion category. minimum transaction amount of ₹1750 and lorem ipsum",
+				  background: $1.image)
+		}
+	}
+	
 	static var test: OfferViewModel {
+		.init(brandLogo: .BrandCatalogue.brandLogoOne.image,
+			  brand: "FlipKart",
+			  category: "entertainment",
+			  offerDescription: "get 10% instant discount on purchase of products across fashion category. minimum transaction amount of ₹1750 and lorem ipsum",
+			  background: .OfferCatalogue.offerImageOne.image)
+	}
+	
+	static var testTwo: OfferViewModel {
 		.init(brand: "FlipKart", category: "entertainment",
-			  offerDescription: "get 10% instant discount on purchase of products across fashion category. minimum transaction amount of ₹1750 and lorem ipsum")
+			  offerDescription: "get 10% instant discount on purchase of products across fashion category. minimum transaction amount of ₹1750 and lorem ipsum",
+			  background: .OfferCatalogue.offerImageTwo.image)
+	}
+	
+	static var testThree: OfferViewModel {
+		.init(brand: "FlipKart", category: "entertainment",
+			  offerDescription: "get 10% instant discount on purchase of products across fashion category. minimum transaction amount of ₹1750 and lorem ipsum",
+			  background: .OfferCatalogue.offerImageThree.image)
 	}
 	
 	static var zeeTest: OfferViewModel {
@@ -61,7 +86,7 @@ class HighlightOfferView: UIView {
 	
 	private lazy var brandLogo: UIImageView = {
 		let view = UIImageView()
-		view.contentMode = .scaleToFill
+		view.contentMode = .scaleAspectFill
 		view.clipsToBounds = true
 		view.setFrame(.init(squared: 56))
 		view.backgroundColor = .popBlack500
@@ -70,7 +95,7 @@ class HighlightOfferView: UIView {
 	
 	private lazy var backgroundImage: UIImageView = {
 		let view = UIImageView()
-		view.contentMode = .scaleToFill
+		view.contentMode = .scaleAspectFill
 		view.backgroundColor = .popWhite100
 		view.clipsToBounds = true
 		return view
@@ -111,6 +136,11 @@ class HighlightOfferView: UIView {
 		addSubview(backgroundImage)
 		setFittingConstraints(childView: backgroundImage, insets: .zero)
 		
+		let colorGradientView: UIView = .init()
+		colorGradientView.backgroundColor = .popBlack300.withAlphaComponent(0.5)
+		addSubview(colorGradientView)
+		setFittingConstraints(childView: colorGradientView, insets: .zero)
+		
 		addSubview(stack)
 		setFittingConstraints(childView: stack, insets: .init(vertical: 30, horizontal: 20))
 	}
@@ -118,7 +148,6 @@ class HighlightOfferView: UIView {
 	public func configureView(_ model: OfferViewModel) {
 		brandLogo.configImage(url: model.brandLogoImage, img: model.brandLogo)
 		backgroundImage.configImage(url: model.backgroundUrl, img: model.background)
-		
 		model.brand?.bold(size: 20).render(target: brandLabel)
 		model.offerDescription.medium(color: .popWhite500, size: 14).render(target: offerDetail)
 		

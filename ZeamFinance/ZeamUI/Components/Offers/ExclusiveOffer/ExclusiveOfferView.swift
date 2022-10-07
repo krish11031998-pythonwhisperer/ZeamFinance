@@ -17,6 +17,7 @@ class ExclusiveView: UIView {
 	
 	private lazy var imgView: UIImageView = {
 		let view = UIImageView()
+		view.contentMode = .scaleAspectFill
 		view.backgroundColor = .popWhite100
 		view.clipsToBounds = true
 		return view
@@ -52,7 +53,7 @@ class ExclusiveView: UIView {
 	}
 	
 	public func configureView(_ model: OfferViewModel, _ cardType: ExclusiveViewType) {
-		model.brand?.uppercased().bold(size: 12).render(target: brandLogo)
+		model.brand?.uppercased().bold(color: .popBlack100, size: 12).render(target: brandLogo)
 		model.offerDescription.medium(size: 14).render(target: descriptionLabel)
 		if cardType == .big {
 			mainStack.axis = .vertical
@@ -60,8 +61,9 @@ class ExclusiveView: UIView {
 			imgView.configureImageView(.init(img: model.brandLogo, url: model.brandLogoImage))
 			imgView.setHeight(height: 132, priority: .needed)
 		} else if cardType == .small {
-//			imgView.setFrame(.init(squared: 75))
-			imgView.configureImageView(.init(img: model.brandLogo, url: model.brandLogoImage, size: .init(squared: 75)))
+			imgView.configureImageView(.init(img: model.brandLogo,
+											 url: model.brandLogoImage,
+											 size: .init(squared: 75)))
 		}
 	}
 	
