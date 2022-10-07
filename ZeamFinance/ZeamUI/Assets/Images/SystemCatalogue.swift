@@ -28,6 +28,9 @@ public extension UIImage {
 		case zomato
 		case card
 		case cardLarge
+		case gem
+		case vouchers
+		case coins
 	}
 	
 	enum ImageCatalogue: String {
@@ -54,6 +57,19 @@ public extension UIImage {
 		case brandLogoEight
 	}
 	
+	enum TabBarImageCatalogue: String, CaseIterable {
+		case home
+		case homeSelected
+		case pay
+		case paySelected
+		case rewards
+		case rewardsSelected
+		case shop
+		case shopSelected
+		case card
+		case cardSelected
+	}
+	
 	static var buttonLeftArrow: UIImage { .SystemCatalogue.buttonLeftArrow.image.resized(size: .init(width: 20, height: 8))}
 	static var buttonRightArrow: UIImage { .SystemCatalogue.buttonRightArrow.image.resized(size: .init(width: 20, height: 8))}
 	//static var buttonLeftArrow: UIImage { .SystemCatalogue.buttonLeftArrow.resized(size: .init(width: 20, height: 8))}
@@ -78,5 +94,9 @@ public extension UIImage.OfferCatalogue {
 }
 
 public extension UIImage.BrandCatalogue {
+	var image: UIImage { .init(named: rawValue) ?? .solid(color: .black) }
+}
+
+public extension UIImage.TabBarImageCatalogue {
 	var image: UIImage { .init(named: rawValue) ?? .solid(color: .black) }
 }

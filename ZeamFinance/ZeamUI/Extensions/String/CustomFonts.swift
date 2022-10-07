@@ -14,6 +14,7 @@ enum CustomFonts:String{
 	case regular = "Satoshi-Regular"
 	case medium = "Satoshi-Medium"
 	case light = "Satoshi-Light"
+	case sectionHeader = "PPCirka-Bold"
 	
 	func fontBuilder(size: CGFloat) -> UIFont? {
 		.init(name: self.rawValue, size: size)
@@ -27,4 +28,5 @@ extension String {
 	func semiBold(color: UIColor = .textColor, size: CGFloat) -> RenderableText  { styled(font: .regular, color: color, size: size) }
 	func bold(color: UIColor = .textColor, size: CGFloat) -> RenderableText  { styled(font: .bold, color: color, size: size) }
 	func extraBold(color: UIColor = .textColor, size: CGFloat) -> RenderableText  { styled(font: .black, color: color, size: size) }
+	func sectionHeader(color: UIColor = .textColor, size: CGFloat) -> RenderableText { styled(font: .sectionHeader, color: color, size: size)}
 }

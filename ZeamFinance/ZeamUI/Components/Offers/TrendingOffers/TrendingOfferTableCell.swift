@@ -27,7 +27,7 @@ class TrendingOfferTableCell: ConfigurableCell {
 	
 	private func setupView() {
 		contentView.addSubview(trendingView)
-		contentView.setFittingConstraints(childView: trendingView, insets: .init(vertical: 5, horizontal: 8))
+		contentView.setFittingConstraints(childView: trendingView, insets: .init(vertical: 10, horizontal: 10))
 		backgroundColor = .surfaceBackground
 		selectionStyle = .none
 	}

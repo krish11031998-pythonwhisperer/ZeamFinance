@@ -19,7 +19,7 @@ class TransactionViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupView()
-		standardNavBar()
+		standardNavBar(title: "Transaction".medium(size: 20))
 	}
 	
 	private func setupView() {
@@ -46,4 +46,9 @@ class TransactionViewController: UIViewController {
 		.init(sections: [cardSection ,transactionSection])
 	}
 	
+	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+		super.traitCollectionDidChange(previousTraitCollection)
+		guard let img = navigationItem.leftBarButtonItem?.image else { return }
+		navigationItem.leftBarButtonItem?.image = img.withTintColor(.surfaceBackgroundInverse, renderingMode: .alwaysOriginal)
+	}
 }

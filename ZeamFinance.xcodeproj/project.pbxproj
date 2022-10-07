@@ -18,6 +18,15 @@
 		EF639A6A28EF0AA200787C58 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6928EF0AA200787C58 /* ProfileViewController.swift */; };
 		EF639A6C28EF137D00787C58 /* CreditScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6B28EF137D00787C58 /* CreditScore.swift */; };
 		EF639A6E28EF575600787C58 /* circlingBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6D28EF575600787C58 /* circlingBall.swift */; };
+		EF639A7128F00FD900787C58 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A7028F00FD900787C58 /* HomeViewController.swift */; };
+		EF639A7428F0116D00787C58 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A7328F0116D00787C58 /* MainTabViewController.swift */; };
+		EF639A7628F013EF00787C58 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A7528F013EF00787C58 /* MainTabView.swift */; };
+		EF639A7928F0173C00787C58 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A7828F0173C00787C58 /* HomeViewModel.swift */; };
+		EF639A7D28F0248800787C58 /* PPCirka-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF639A7A28F0248800787C58 /* PPCirka-Variable.ttf */; };
+		EF639A7E28F0248800787C58 /* PPCirka-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF639A7B28F0248800787C58 /* PPCirka-Bold.otf */; };
+		EF639A7F28F0248800787C58 /* PPCirka-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF639A7C28F0248800787C58 /* PPCirka-Light.otf */; };
+		EF639A8128F02A3300787C58 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A8028F02A3300787C58 /* HomeHeaderView.swift */; };
+		EF639A8328F02EF900787C58 /* ProfileAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A8228F02EF900787C58 /* ProfileAssets.swift */; };
 		EF89A99028EC262100598521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A98F28EC262100598521 /* AppDelegate.swift */; };
 		EF89A99228EC262100598521 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A99128EC262100598521 /* SceneDelegate.swift */; };
 		EF89A99428EC262100598521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A99328EC262100598521 /* ViewController.swift */; };
@@ -122,6 +131,15 @@
 		EF639A6928EF0AA200787C58 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EF639A6B28EF137D00787C58 /* CreditScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScore.swift; sourceTree = "<group>"; };
 		EF639A6D28EF575600787C58 /* circlingBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circlingBall.swift; sourceTree = "<group>"; };
+		EF639A7028F00FD900787C58 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EF639A7328F0116D00787C58 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		EF639A7528F013EF00787C58 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		EF639A7828F0173C00787C58 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		EF639A7A28F0248800787C58 /* PPCirka-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PPCirka-Variable.ttf"; sourceTree = "<group>"; };
+		EF639A7B28F0248800787C58 /* PPCirka-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PPCirka-Bold.otf"; sourceTree = "<group>"; };
+		EF639A7C28F0248800787C58 /* PPCirka-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PPCirka-Light.otf"; sourceTree = "<group>"; };
+		EF639A8028F02A3300787C58 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		EF639A8228F02EF900787C58 /* ProfileAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssets.swift; sourceTree = "<group>"; };
 		EF89A98C28EC262100598521 /* ZeamFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeamFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF89A98F28EC262100598521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF89A99128EC262100598521 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -265,8 +283,37 @@
 			children = (
 				EF639A6728EF08A700787C58 /* ProfileView.swift */,
 				EF639A6B28EF137D00787C58 /* CreditScore.swift */,
+				EF639A8228F02EF900787C58 /* ProfileAssets.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		EF639A6F28F00FB200787C58 /* ZeamApp */ = {
+			isa = PBXGroup;
+			children = (
+				EF639A7728F0170F00787C58 /* Home */,
+				EF639A7228F0115900787C58 /* MainTabViewController */,
+			);
+			path = ZeamApp;
+			sourceTree = "<group>";
+		};
+		EF639A7228F0115900787C58 /* MainTabViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EF639A7328F0116D00787C58 /* MainTabViewController.swift */,
+				EF639A7528F013EF00787C58 /* MainTabView.swift */,
+			);
+			path = MainTabViewController;
+			sourceTree = "<group>";
+		};
+		EF639A7728F0170F00787C58 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EF639A7028F00FD900787C58 /* HomeViewController.swift */,
+				EF639A7828F0173C00787C58 /* HomeViewModel.swift */,
+				EF639A8028F02A3300787C58 /* HomeHeaderView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		EF89A98328EC262100598521 = {
@@ -292,6 +339,7 @@
 		EF89A98E28EC262100598521 /* ZeamFinance */ = {
 			isa = PBXGroup;
 			children = (
+				EF639A6F28F00FB200787C58 /* ZeamApp */,
 				EF89AA3228EC581B00598521 /* Views */,
 				EF89A9C128EC27A500598521 /* ZeamUI */,
 				EF89A98F28EC262100598521 /* AppDelegate.swift */,
@@ -369,6 +417,9 @@
 		EF89A9C728EC284600598521 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				EF639A7B28F0248800787C58 /* PPCirka-Bold.otf */,
+				EF639A7C28F0248800787C58 /* PPCirka-Light.otf */,
+				EF639A7A28F0248800787C58 /* PPCirka-Variable.ttf */,
 				EF89A9DC28EC29BA00598521 /* Satoshi-Black.otf */,
 				EF89A9D428EC29BA00598521 /* Satoshi-BlackItalic.otf */,
 				EF89A9D328EC29BA00598521 /* Satoshi-Bold.otf */,
@@ -736,12 +787,15 @@
 				EF89A9DF28EC29BA00598521 /* Satoshi-BlackItalic.otf in Resources */,
 				EF89A9E428EC29BA00598521 /* Satoshi-Medium.otf in Resources */,
 				EF89A99928EC262100598521 /* Assets.xcassets in Resources */,
+				EF639A7F28F0248800787C58 /* PPCirka-Light.otf in Resources */,
 				EF89A9E328EC29BA00598521 /* Satoshi-LightItalic.otf in Resources */,
+				EF639A7E28F0248800787C58 /* PPCirka-Bold.otf in Resources */,
 				EF89A9E028EC29BA00598521 /* Satoshi-Italic.otf in Resources */,
 				EF89A9DD28EC29BA00598521 /* Satoshi-MediumItalic.otf in Resources */,
 				EF89A9DE28EC29BA00598521 /* Satoshi-Bold.otf in Resources */,
 				EF89A9E228EC29BA00598521 /* Satoshi-Regular.otf in Resources */,
 				EF89A9E628EC29BA00598521 /* Satoshi-BoldItalic.otf in Resources */,
+				EF639A7D28F0248800787C58 /* PPCirka-Variable.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,7 +825,10 @@
 				EF639A6C28EF137D00787C58 /* CreditScore.swift in Sources */,
 				EF639A5E28EEA5C000787C58 /* TransactionViewController.swift in Sources */,
 				EF89A9FF28EC3F4100598521 /* ViewStyling.swift in Sources */,
+				EF639A7428F0116D00787C58 /* MainTabViewController.swift in Sources */,
+				EF639A7628F013EF00787C58 /* MainTabView.swift in Sources */,
 				EF89AA1528EC401F00598521 /* TableSection.swift in Sources */,
+				EF639A8128F02A3300787C58 /* HomeHeaderView.swift in Sources */,
 				EF89AA8228ED5AD500598521 /* ExclusiveOfferView.swift in Sources */,
 				EF89AA4228ECBE2700598521 /* CollectionViewFunctions.swift in Sources */,
 				EF639A6828EF08A700787C58 /* ProfileView.swift in Sources */,
@@ -783,6 +840,7 @@
 				EF89A9F528EC3F3300598521 /* UIEdgeInsets.swift in Sources */,
 				EF89AA7528ED482C00598521 /* SearchBar.swift in Sources */,
 				EF89AA4F28ECEF9100598521 /* CategoriesView.swift in Sources */,
+				EF639A7928F0173C00787C58 /* HomeViewModel.swift in Sources */,
 				EF89AA0228EC3F4100598521 /* UILabel.swift in Sources */,
 				EF89AA7328ED482C00598521 /* CircularProgressBar.swift in Sources */,
 				EF639A5828EEA15200787C58 /* TransactionCell.swift in Sources */,
@@ -795,6 +853,7 @@
 				EF89AA1228EC401F00598521 /* TableViewFunction.swift in Sources */,
 				EF89AA7928ED482C00598521 /* ImageHeaderSubHeaderView.swift in Sources */,
 				EF89AA0628EC3F6900598521 /* Response.swift in Sources */,
+				EF639A7128F00FD900787C58 /* HomeViewController.swift in Sources */,
 				EF89AA4028EC82BF00598521 /* CollectionColumn.swift in Sources */,
 				EF89A9F428EC3F3300598521 /* CGFloat.swift in Sources */,
 				EF89A99428EC262100598521 /* ViewController.swift in Sources */,
@@ -811,6 +870,7 @@
 				EF89AA7628ED482C00598521 /* SentimentTextLabel.swift in Sources */,
 				EF639A6128EEC6B900787C58 /* CardView.swift in Sources */,
 				EF89AA4428ECC11700598521 /* CustomCollectionTableCell.swift in Sources */,
+				EF639A8328F02EF900787C58 /* ProfileAssets.swift in Sources */,
 				EF89AA4828ECC20100598521 /* CollectionDataSource.swift in Sources */,
 				EF89A9F328EC3F3300598521 /* Int.swift in Sources */,
 				EF639A6E28EF575600787C58 /* circlingBall.swift in Sources */,

@@ -17,14 +17,14 @@ fileprivate extension CustomButtonType {
 			return "Default Button Type"
 		case .slender:
 			return "Slender Button Type"
-		case .stroke(_,_,_,_):
+		case .custom(_):
 			return "Stroked Button Type"
 		}
 	}
 	
 	var backgroundColor: UIColor {
 		switch self {
-		case .stroke(_,_,_,_):
+		case .custom(_):
 			return .surfaceBackground
 		default:
 			return .surfaceBackgroundInverse
@@ -33,7 +33,7 @@ fileprivate extension CustomButtonType {
 	
 	var textColor: UIColor {
 		switch self {
-		case .stroke(_,_,_,_):
+		case .custom(_):
 			return .textColor
 		default:
 			return .textColorInverse
@@ -43,7 +43,7 @@ fileprivate extension CustomButtonType {
 	static var buttons: [Self] {
 		[CustomButtonType.default,
 		 CustomButtonType.slender,
-		 CustomButtonType.stroke(height: CustomButtonType.default.height)]
+		 CustomButtonType.custom(height: CustomButtonType.default.height)]
 	}
 }
 
@@ -60,7 +60,7 @@ class ButtonViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupViews()
-		standardNavBar()
+		standardNavBar(title: "Button".medium(size: 20))
 	}
 	
 	
@@ -81,7 +81,7 @@ class ButtonViewController: UIViewController {
 									 trailingImg: .init(img: .buttonRightArrow.withTintColor(!isEnabled ? .popWhite500 : type.textColor, renderingMode: .alwaysOriginal)),
 									 backgroundColor: type.backgroundColor,
 									 buttonType: type,
-									 buttonStyling: .init(cornerRadius: 0)) {
+									 buttonStyling: .init(borderColor: .surfaceBackgroundInverse)) {
 			print("(DEBUG) clicked on \(type.typeText)")
 		})
 		button.isEnabled = isEnabled

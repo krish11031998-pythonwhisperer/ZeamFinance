@@ -56,6 +56,7 @@ class CustomButton: UIButton {
 		mainStack = .HStack(subViews: [leadingImage, buttonText, trailingImage],spacing: 12, alignment: .center)
 		leadingImage.isHidden = true
 		trailingImage.isHidden = true
+		mainStack.isUserInteractionEnabled = false
 		addSubview(mainStack)
 		addAction(.init(handler: handleTap(_:)), for: .touchUpInside)
 	}
@@ -66,21 +67,18 @@ class CustomButton: UIButton {
 	}
 	
 	public func configureButton(_ config: CustomButtonConfig) {
+		
 		config.title.render(target: buttonText)
 		leadingImage.configureImageView(config.leadingImg)
 		trailingImage.configureImageView(config.trailingImg)
-		mainStack.isUserInteractionEnabled = false
+		
 		backgroundColor = config.backgroundColor
 		bgColor = config.backgroundColor
 		textColor = buttonText.textColor
-		border(color: config.buttonStyling.borderColor,
-			   borderWidth: config.buttonStyling.cornerRadius,
-			   cornerRadius: config.buttonStyling.cornerRadius)
-		clipsToBounds = true
 		
 		setFittingConstraints(childView: mainStack, insets: config.buttonType.inset)
 		setHeight(height: config.buttonType.height, priority: .required)
-		border(color: config.buttonType.borderColor, borderWidth: config.buttonType.borderWidth)
+		border(color: config.buttonStyling.borderColor, borderWidth: config.buttonStyling.borderWidth)
 		action = config.action
 	}
 	

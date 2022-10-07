@@ -54,10 +54,7 @@ public struct CustomButtonBorderStyling {
 public enum CustomButtonType {
 	case `default`
 	case slender
-	case stroke(height: CGFloat = 40,
-				borderColor: UIColor = .surfaceBackgroundInverse,
-				borderWidth: CGFloat = 1,
-				inset: UIEdgeInsets = .init(top: 8, left: 12, bottom: 12, right: 8))
+	case custom(height: CGFloat = 40)
 }
 
 public extension CustomButtonType {
@@ -67,37 +64,17 @@ public extension CustomButtonType {
 			return 48
 		case .slender:
 			return 40
-		case .stroke(let height,_,_,_):
+		case .custom(let height):
 			return height
 		}
 	}
 	
 	var inset: UIEdgeInsets {
 		switch self {
-		case .default:
+		case .default, .custom(_):
 			return .init(vertical: 16, horizontal: 20)
-		case .stroke(_,_,_,let edge):
-			return edge
 		case .slender:
 			return .init(vertical: 12, horizontal: 20)
-		}
-	}
-	
-	var borderColor: UIColor {
-		switch self {
-		case .default, .slender:
-			return .clear
-		case .stroke(_, let borderColor,_,_):
-			return borderColor
-		}
-	}
-	
-	var borderWidth: CGFloat {
-		switch self {
-		case .default, .slender:
-			return 0
-		case .stroke(_,_,let borderWidth,_):
-			return borderWidth
 		}
 	}
 }

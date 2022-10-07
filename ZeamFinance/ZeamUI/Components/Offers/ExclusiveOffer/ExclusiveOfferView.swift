@@ -19,7 +19,7 @@ class ExclusiveView: UIView {
 		let view = UIImageView()
 		view.contentMode = .scaleAspectFill
 		view.backgroundColor = .popWhite100
-		view.clipsToBounds = true
+		view.border(color: .clear, borderWidth: 1, cornerRadius: 8)
 		return view
 	}()
 	private lazy var mainStack: UIStackView = { .init() }()
@@ -37,7 +37,7 @@ class ExclusiveView: UIView {
 	}
 	
 	private func bodyView() -> UIView {
-		let arrowImage = UIImageView(image: UIImage.buttonRightArrow)
+		let arrowImage = UIImageView(image: UIImage.buttonRightArrow.withTintColor(.surfaceBackgroundInverse, renderingMode: .alwaysOriginal))
 		arrowImage.setFrame(.init(width: 20, height: 8))
 		descriptionLabel.numberOfLines = 0
 		let stack: UIStackView = .VStack(subViews: [brandLogo, descriptionLabel, arrowImage].compactMap { $0 } ,spacing: 8, alignment: .leading)

@@ -56,8 +56,9 @@ class CardView: UIView {
 	}
 	
 	public func configureCard(_ model: CardModel) {
-		bankDetails.configureLabel(title: model.bankName.uppercased().bold(size: 13), subTitle: model.cardNumber.semiBold(size: 10))
-		model.name.semiBold(size: 13).render(target: nameLabel)
+		bankDetails.configureLabel(title: model.bankName.uppercased().bold(color: .popWhite100, size: 13),
+								   subTitle: model.cardNumber.semiBold(color: .popWhite100, size: 10))
+		model.name.semiBold(color: .popWhite100, size: 13).render(target: nameLabel)
 	}
 }
            

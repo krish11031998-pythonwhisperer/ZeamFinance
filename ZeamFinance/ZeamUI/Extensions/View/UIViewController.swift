@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol AnyTableView {
+	func reloadTableWithDataSource(_ dataSource: TableViewDataSource)
+}
+
 extension UIViewController {
 	
 	func setupTransparentNavBar(color: UIColor = .clear, scrollColor: UIColor = .clear) {
@@ -37,7 +41,7 @@ extension UIViewController {
 	}
 	
 	static func backButton(_ target: UIViewController) -> UIBarButtonItem {
-		let buttonImg = UIImage.SystemCatalogue.buttonLeftArrow.image.resized(size: .init(width: 31.5, height: 12))
+		let buttonImg = UIImage.buttonLeftArrow.withTintColor(.surfaceBackgroundInverse, renderingMode: .alwaysOriginal).resized(size: .init(width: 31.5, height: 12))
 		let imgView = UIImageView(image: buttonImg)
 		imgView.frame = .init(origin: .zero, size: .init(squared: 32))
 		imgView.contentMode = .center
@@ -58,6 +62,10 @@ extension UIViewController {
 		navigationItem.titleView = title?.generateLabel
 		navigationItem.leftBarButtonItem = leftBarButton ?? Self.backButton(self)
 		navigationItem.rightBarButtonItem = rightBarButton
+	}
+	
+	func withNavigationController() -> UINavigationController {
+		.init(rootViewController: self)
 	}
 	
 }

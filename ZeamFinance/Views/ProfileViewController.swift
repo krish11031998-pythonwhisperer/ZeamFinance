@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupView()
-		standardNavBar()
+		standardNavBar(title: "Profile".medium(size: 20))
 	}
 	
 	private func setupView() {
@@ -53,5 +53,11 @@ class ProfileViewController: UIViewController {
 	
 	private func buildDatasource() -> TableViewDataSource {
 		.init(sections: [profileImageView, creditScoreView])
+	}
+	
+	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+		super.traitCollectionDidChange(previousTraitCollection)
+		guard let img = navigationItem.leftBarButtonItem?.image else { return }
+		navigationItem.leftBarButtonItem?.image = img.withTintColor(.surfaceBackgroundInverse, renderingMode: .alwaysOriginal)
 	}
 }

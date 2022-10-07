@@ -72,11 +72,11 @@ class CreditScoreView: UIView {
 		let stack = UIStackView.HStack(subViews: [progressBar, infoView], spacing: 40, alignment: .top)
 		stack.setFittingConstraints(childView: infoView, bottom: 0)
 		stack.distribution = .fillProportionally
-		button.configureButton(.init(title: "View Report".bold(size: 13), buttonType: .stroke(inset: .init(vertical: 8, horizontal: 14))))
+		button.configureButton(.init(title: "View Report".bold(size: 13), buttonStyling: .init(borderColor: .surfaceBackgroundInverse)))
 		addSubview(stack)
 		setFittingConstraints(childView: stack, insets: .init(by: 30))
 		backgroundColor = .surfaceBackground
-		border(color: .popBlack100, borderWidth: 1, cornerRadius: 0)
+		border(color: .popBlack100, borderWidth: 1, cornerRadius: 8)
 	}
 	
 	public func configureView(_ model: CreditScorceModel) {

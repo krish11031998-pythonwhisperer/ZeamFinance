@@ -20,7 +20,7 @@ extension UIView {
 	func border(color: UIColor, borderWidth: CGFloat, cornerRadius: CGFloat? = nil) {
 		layer.borderColor = color.cgColor
 		layer.borderWidth = borderWidth
-		
+		clipsToBounds = true
 		if let validCornerRadius = cornerRadius {
 			self.cornerRadius = validCornerRadius
 		}

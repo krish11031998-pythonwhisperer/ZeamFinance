@@ -19,7 +19,7 @@ class OffersViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupViews()
-		standardNavBar()
+		standardNavBar(title: "Offers".medium(size: 20))
 	}
 	
 	private func setupViews() {
@@ -77,5 +77,11 @@ class OffersViewController: UIViewController {
 						 trendingOffersSection,
 						 exclusiveOffersSection,
 						 exclusiveLargeOffersSection])
+	}
+	
+	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+		super.traitCollectionDidChange(previousTraitCollection)
+		guard let img = navigationItem.leftBarButtonItem?.image else { return }
+		navigationItem.leftBarButtonItem?.image = img.withTintColor(.surfaceBackgroundInverse, renderingMode: .alwaysOriginal)
 	}
 }

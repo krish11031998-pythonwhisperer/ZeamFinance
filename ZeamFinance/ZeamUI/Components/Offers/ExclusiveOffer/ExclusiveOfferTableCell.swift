@@ -16,7 +16,7 @@ class ExclusiveOfferTableCell: ConfigurableCell {
 	func configure(with model: OfferViewModel) {
 		contentView.removeChildViews()
 		contentView.addSubview(view)
-		contentView.setFittingConstraints(childView: view, insets: .init(vertical: 5, horizontal: 8))
+		contentView.setFittingConstraints(childView: view, insets: .init(vertical: 5, horizontal: 10))
 		view.configureView(model, .small)
 		backgroundColor = .surfaceBackground
 		selectionStyle = .none

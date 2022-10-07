@@ -27,7 +27,7 @@ class ShapesViewController: UIViewController {
 		view.addSubview(tableView)
 		view.setFittingConstraints(childView: tableView, insets: .zero)
 		tableView.reloadData(buildDataSource())
-		standardNavBar(title: "Shapes")
+		standardNavBar(title: "Shapes".medium(size: 20))
 	}
 	
 	
@@ -81,4 +81,9 @@ class ShapesViewController: UIViewController {
 		.init(sections: [curratedShapeLayer, boosterShapeLayer, sphericalShape])
 	}
 	
+	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+		super.traitCollectionDidChange(previousTraitCollection)
+		guard let img = navigationItem.leftBarButtonItem?.image else { return }
+		navigationItem.leftBarButtonItem?.image = img.withTintColor(.surfaceBackgroundInverse, renderingMode: .alwaysOriginal)
+	}
 }
