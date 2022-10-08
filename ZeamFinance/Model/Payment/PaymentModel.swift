@@ -40,3 +40,28 @@ struct PaymentCardModel {
 		self.type = type
 	}
 }
+
+
+extension PaymentType {
+	var color: UIColor {
+		switch self {
+		case .bill:
+			return .popWhite500
+		case .payment:
+			return .info100
+		case .installment:
+			return .manna100
+		}
+	}
+	
+	var imgCornerRadius: CGFloat {
+		switch self {
+		case .bill:
+			return 0
+		case .installment:
+			return 12
+		case .payment:
+			return 24
+		}
+	}
+}

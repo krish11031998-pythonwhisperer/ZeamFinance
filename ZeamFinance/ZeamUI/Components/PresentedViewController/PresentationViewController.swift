@@ -68,7 +68,6 @@ class PresentationViewController: UIPresentationController {
 		guard let bounds = containerView?.bounds,
 			  let screenInsets = UIWindow.key?.safeArea
 		else { return UIScreen.main.bounds }
-		print("(DEBUG) height is being computed! : ",nestedController.preferHeight)
 		let extraPadding = screenInsets.bottom + nestedController.additionalSafeAreaInsets.top + nestedController.additionalSafeAreaInsets.bottom + header
 		var frame = bounds
 		frame.size.height = min(nestedController.preferHeight + extraPadding, bounds.height - UIWindow.statusBarFrame.height + 20)
