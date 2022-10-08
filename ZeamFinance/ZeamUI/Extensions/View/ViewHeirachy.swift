@@ -30,7 +30,7 @@ extension UIView {
 		return divider
 	}
 	
-	func setFittingConstraints(childView: UIView, insets: UIEdgeInsets) {
+	func setFittingConstraints(childView: UIView, insets: UIEdgeInsets, priority: UILayoutPriority = .required) {
 		let items: [NSLayoutConstraint] = [
 			childView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: insets.left),
 			childView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -insets.right),
@@ -38,6 +38,7 @@ extension UIView {
 			childView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -insets.bottom)
 		]
 		
+		items.forEach { $0.priority = priority }
 		childView.translatesAutoresizingMaskIntoConstraints = false
 		removeSimilarConstraints(items)
 		addConstraints(items)
@@ -96,10 +97,10 @@ extension UIView {
 		}
 	}
 	
-	func embedInView(insets: UIEdgeInsets) -> UIView {
+	func embedInView(insets: UIEdgeInsets, priority: UILayoutPriority = .required) -> UIView {
 		let view = UIView()
 		view.addSubview(self)
-		view.setFittingConstraints(childView: self, insets: insets)
+		view.setFittingConstraints(childView: self, insets: insets, priority: priority)
 		return view
 	}
 	

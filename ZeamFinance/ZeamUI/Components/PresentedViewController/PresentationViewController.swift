@@ -70,7 +70,7 @@ class PresentationViewController: UIPresentationController {
 		else { return UIScreen.main.bounds }
 		let extraPadding = screenInsets.bottom + nestedController.additionalSafeAreaInsets.top + nestedController.additionalSafeAreaInsets.bottom + header
 		var frame = bounds
-		frame.size.height = min(nestedController.preferHeight + extraPadding, bounds.height - UIWindow.statusBarFrame.height + 20)
+		frame.size.height = min(nestedController.preferHeight + extraPadding, bounds.height)
 		frame.origin.y = bounds.height - frame.size.height
 		return frame
 	}

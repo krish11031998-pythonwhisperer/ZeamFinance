@@ -26,6 +26,7 @@ extension UIViewController {
 		self.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = scrollColor
 	}
 	
+	
 	func showNavbar() {
 		guard let navController = navigationController else { return }
 		if navController.isNavigationBarHidden {
@@ -60,10 +61,12 @@ extension UIViewController {
 	func standardNavBar(title: String? = nil,
 						leftBarButton: UIBarButtonItem? = nil,
 						rightBarButton: UIBarButtonItem? = nil,
-						isTransparent: Bool = false)
+						isTransparent: Bool = true)
 	{
-		if !isTransparent {
+		if isTransparent {
 			setupTransparentNavBar()
+		} else {
+			setupTransparentNavBar(color: .surfaceBackground)
 		}
 		navigationItem.titleView = title?.sectionHeader(size: 20).generateLabel
 		navigationItem.leftBarButtonItem = leftBarButton ?? Self.backButton(self)
