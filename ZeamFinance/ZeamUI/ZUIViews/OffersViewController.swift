@@ -19,7 +19,7 @@ class OffersViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupViews()
-		standardNavBar(title: "Offers".medium(size: 20))
+		standardNavBar(title: "Offers")
 	}
 	
 	private func setupViews() {

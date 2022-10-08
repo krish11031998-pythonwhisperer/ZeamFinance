@@ -19,7 +19,7 @@ class TransactionViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupView()
-		standardNavBar(title: "Transaction".medium(size: 20))
+		standardNavBar(title: "Transaction")
 	}
 	
 	private func setupView() {
@@ -33,7 +33,7 @@ class TransactionViewController: UIViewController {
 		let txns: [TransactionModel] = [.init(cellLogo: .IconCatalogue.amazon.image, detail: "amazon", amount: 250),
 										.init(cellLogo: .IconCatalogue.netflix.image, detail: "netflix", amount: 50),
 										.init(cellLogo: .IconCatalogue.zomato.image, detail: "zomato", amount: 80)]
-		return .init(rows: txns.compactMap { TableRow<TransactionCell>($0) }, title: "Transactions")
+		return .init(rows: txns.compactMap { TableRow<TransactionCell>(.init(transaction: $0)) }, title: "Transactions")
 	}
 	
 	private var cardSection: TableSection {

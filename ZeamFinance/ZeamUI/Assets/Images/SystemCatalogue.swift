@@ -66,8 +66,8 @@ public extension UIImage {
 		case rewardsSelected
 		case shop
 		case shopSelected
-		case card
-		case cardSelected
+		case cards
+		case cardsSelected
 	}
 	
 	static var buttonLeftArrow: UIImage { .SystemCatalogue.buttonLeftArrow.image.resized(size: .init(width: 20, height: 8))}

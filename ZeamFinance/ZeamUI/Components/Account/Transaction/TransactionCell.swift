@@ -8,27 +8,13 @@
 import Foundation
 import UIKit
 
-struct TransactionModel {
-	let cellLogo: UIImage
-	let detail: String
-	let date: String
-	let amount: Float
-	
-	init(cellLogo: UIImage, detail: String, date: String = Date.now.ISO8601Format(), amount: Float) {
-		self.cellLogo = cellLogo
-		self.detail = detail
-		self.date = date
-		self.amount = amount
-	}
-}
-
 class TransactionCell: ConfigurableCell {
 	
 	private var cellLogo: UIImageView = {
 		let view = UIImageView()
 		view.contentMode = .center
 		view.backgroundColor = .popWhite500
-		view.border(color: .surfaceBackgroundInverse, borderWidth: 0.4, cornerRadius: 0)
+		view.border(color: .surfaceBackgroundInverse, borderWidth: 0.4, cornerRadius: 8)
 		return view
 	}()
 	
@@ -57,7 +43,8 @@ class TransactionCell: ConfigurableCell {
 	}
 	
 	
-	func configure(with model: TransactionModel) {
+	func configure(with model: TransactionCellModel) {
+		let model = model.transaction
 		cellLogo.configureImageView(.init(img: model.cellLogo.resized(size: .init(squared: 20)), size: .init(squared: 42)))
 		infoView.configureLabel(title: model.detail.medium(size: 14), subTitle: model.date.medium(color: .popBlack100, size: 12))
 		String(format: "$ %.2f", model.amount).semiBold(size: 14).render(target: amountLabel)

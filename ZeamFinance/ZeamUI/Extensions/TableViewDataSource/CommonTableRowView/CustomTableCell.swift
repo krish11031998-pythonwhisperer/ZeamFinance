@@ -10,8 +10,22 @@ import UIKit
 
 struct CustomTableCellModel: ActionProvider {
 	let view: UIView
-	let inset: UIEdgeInsets
+	let inset: UIEdgeInsets?
+	let top: CGFloat?
+	let leading: CGFloat?
+	let bottom: CGFloat?
+	let trailing: CGFloat?
 	var action: Callback?
+	
+	init(view: UIView, inset: UIEdgeInsets? = nil, top: CGFloat? = nil, leading: CGFloat? = nil, bottom: CGFloat? = nil, trailing: CGFloat? = nil, action: Callback? = nil) {
+		self.view = view
+		self.inset = inset
+		self.top = top
+		self.leading = leading
+		self.bottom = bottom
+		self.trailing = trailing
+		self.action = action
+	}
 }
 
 
@@ -22,7 +36,16 @@ class CustomTableCell: ConfigurableCell {
 		selectionStyle = .none
 		backgroundColor = .surfaceBackground
 		contentView.addSubview(model.view)
-		contentView.setFittingConstraints(childView: model.view, insets: model.inset)
+		if let validInset = model.inset {
+			contentView.setFittingConstraints(childView: model.view, insets: validInset)
+		} else {
+			contentView.setFittingConstraints(childView: model.view,
+											  top: model.top,
+											  leading: model.leading,
+											  trailing: model.trailing,
+											  bottom: model.bottom)
+		}
+		
 	}
 	
 }

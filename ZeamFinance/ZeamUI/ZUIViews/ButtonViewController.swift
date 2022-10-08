@@ -60,7 +60,7 @@ class ButtonViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupViews()
-		standardNavBar(title: "Button".medium(size: 20))
+		standardNavBar(title: "Button")
 	}
 	
 	

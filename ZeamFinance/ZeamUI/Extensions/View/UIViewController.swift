@@ -57,9 +57,15 @@ extension UIViewController {
 		navigationController?.popViewController(animated: true)
 	}
 	
-	func standardNavBar(title: RenderableText? = nil, leftBarButton: UIBarButtonItem? = nil, rightBarButton: UIBarButtonItem? = nil) {
-		setupTransparentNavBar()
-		navigationItem.titleView = title?.generateLabel
+	func standardNavBar(title: String? = nil,
+						leftBarButton: UIBarButtonItem? = nil,
+						rightBarButton: UIBarButtonItem? = nil,
+						isTransparent: Bool = false)
+	{
+		if !isTransparent {
+			setupTransparentNavBar()
+		}
+		navigationItem.titleView = title?.sectionHeader(size: 20).generateLabel
 		navigationItem.leftBarButtonItem = leftBarButton ?? Self.backButton(self)
 		navigationItem.rightBarButtonItem = rightBarButton
 	}
@@ -68,4 +74,8 @@ extension UIViewController {
 		.init(rootViewController: self)
 	}
 	
+	@objc
+	func navigateTo(_ to: UIViewController) {
+		navigationController?.pushViewController(to, animated: true)
+	}
 }

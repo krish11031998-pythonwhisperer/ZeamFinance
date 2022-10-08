@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupView()
-		standardNavBar(title: "Profile".medium(size: 20))
+		standardNavBar(title: "Profile")
 	}
 	
 	private func setupView() {

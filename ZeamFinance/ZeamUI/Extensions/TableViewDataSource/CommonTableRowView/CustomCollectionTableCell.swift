@@ -14,11 +14,11 @@ struct CollectionTableCellModel {
 	let isPagingEnabled: Bool
 	let cellSize: CGSize
 	init(cells: [CollectionCellProvider],
-		 size: CGSize = .init(width: .totalWidth, height: 100),
+		 size: CGSize? = nil,
 		 cellSize: CGSize,
 		 isPagingEnabled: Bool = false) {
 		self.cells = cells
-		self.size = size
+		self.size = size ?? .init(width: .totalWidth, height: cellSize.height)
 		self.cellSize = cellSize
 		self.isPagingEnabled = isPagingEnabled
 	}

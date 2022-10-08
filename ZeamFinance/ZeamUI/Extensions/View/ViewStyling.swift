@@ -8,6 +8,20 @@
 import Foundation
 import UIKit
 
+enum CornerRadius {
+	case top
+	case bottom
+	case all
+	
+	var corners: CACornerMask {
+		switch self {
+		case .top: return [.layerMinXMinYCorner,.layerMaxXMinYCorner]
+		case .bottom: return [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
+		case .all: return [.layerMinXMinYCorner,.layerMaxXMinYCorner,.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
+		}
+	}
+}
+
 extension UIView {
 	
 	var userInterface: UIUserInterfaceStyle { traitCollection.userInterfaceStyle }
@@ -15,6 +29,11 @@ extension UIView {
 	var cornerRadius: CGFloat {
 		get { layer.cornerRadius }
 		set { layer.cornerRadius = newValue }
+	}
+	
+	func cornerRadius(_ val: CGFloat, corners: CornerRadius) {
+		cornerRadius = val
+		layer.maskedCorners = corners.corners
 	}
 	
 	func border(color: UIColor, borderWidth: CGFloat, cornerRadius: CGFloat? = nil) {
@@ -41,8 +60,8 @@ extension UIView {
 	
 	func addShadow(){
 		self.layer.shadowColor = UIColor.surfaceBackgroundInverse.cgColor
-		self.layer.shadowOpacity = 0.1
-		self.layer.shadowOffset = .zero
+		self.layer.shadowOpacity = 1
+		self.layer.shadowOffset = .init(width: 0, height: -1.5)
 		self.layer.shadowRadius = 2
 	}
 	

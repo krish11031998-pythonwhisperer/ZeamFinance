@@ -27,7 +27,7 @@ class ShapesViewController: UIViewController {
 		view.addSubview(tableView)
 		view.setFittingConstraints(childView: tableView, insets: .zero)
 		tableView.reloadData(buildDataSource())
-		standardNavBar(title: "Shapes".medium(size: 20))
+		standardNavBar(title: "Shapes")
 	}
 	
 	

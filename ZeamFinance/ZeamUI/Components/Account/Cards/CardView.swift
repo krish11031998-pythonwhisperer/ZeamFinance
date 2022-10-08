@@ -62,3 +62,28 @@ class CardView: UIView {
 	}
 }
            
+class CardViewTableCell: ConfigurableCell {
+	
+	private lazy var view: CardView = { .init(frame: CGSize.init(width: .totalWidth, height: .totalWidth/1.75).frame) }()
+	
+	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		setupView()
+	}
+	
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+		setupView()
+	}
+	
+	private func setupView() {
+		contentView.addSubview(view)
+		contentView.setFittingConstraints(childView: view, insets: .init(by: 10))
+		backgroundColor = .surfaceBackground
+		selectionStyle = .none
+	}
+	
+	func configure(with model: CardModel) {
+		view.configureCard(model)
+	}
+}

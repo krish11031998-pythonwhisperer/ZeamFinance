@@ -28,7 +28,8 @@ class HomeViewController: UIViewController {
 		setupView()
 		setupHeader()
 		viewModel.loadData()
-		standardNavBar(leftBarButton: .init(customView: UIView()))
+		setupTransparentNavBar()
+		addObserver()
 	}
 	
 	private func setupView() {
@@ -37,13 +38,25 @@ class HomeViewController: UIViewController {
 		tableView.backgroundColor = .surfaceBackground
 	}
 	
-	
 	private func setupHeader() {
 		let header = HomeHeaderView()
 		header.configureHeader()
 		header.setFrame(width: .totalWidth, height: header.compressedSize.height)
 		tableView.tableHeaderView = header
 		tableView.tableHeaderView?.frame = .init(origin: .zero, size: .init(width: .totalWidth, height: header.compressedSize.height))
+	}
+	
+	private func addObserver() {
+		NotificationCenter.default.addObserver(self, selector: #selector(showPaymentModal), name: .showPayment, object: nil)
+	}
+	
+	@objc
+	func showPaymentModal() {
+		let target = PaymentModal()
+		let presenter = PresentationViewController(presentedViewController: target, presenting: self)
+		target.transitioningDelegate = presenter
+		target.modalPresentationStyle = .custom
+		present(target, animated: true)
 	}
 }
 
