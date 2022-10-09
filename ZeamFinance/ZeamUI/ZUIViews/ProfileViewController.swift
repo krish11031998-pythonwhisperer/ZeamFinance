@@ -58,7 +58,7 @@ class ProfileViewController: UIViewController {
 		let view = UIView()
 		view.addSubview(imgView)
 		view.setFittingConstraints(childView: imgView, top: 0, bottom: 0, width: 100, height: 100, centerX: 0, centerY: 0, priority: .needed)
-		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .zero))])
+		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .zero))], title: "Profile QR Code")
 	}
 	
 	private func buildDatasource() -> TableViewDataSource {

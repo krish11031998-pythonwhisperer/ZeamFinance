@@ -42,8 +42,17 @@ class TransactionViewController: UIViewController {
 		return .init(rows: [TableRow<CustomTableCell>(.init(view: cardView, inset: .init(vertical: 0, horizontal: 8)))], title: "Cards")
 	}
 	
+	private var paymentQRCode: TableSection? {
+		guard let img = UIImage.generateQRCode(PaymentQRCodeModel(paymentModel: PaymentCardModel.person)) else { return nil }
+		let imgView = UIImageView(image: img)
+		let view = UIView()
+		view.addSubview(imgView)
+		view.setFittingConstraints(childView: imgView, top: 0, bottom: 0, width: 100, height: 100, centerX: 0, centerY: 0, priority: .needed)
+		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .zero))], title: "Transaction QR Code")
+	}
+	
 	private func buildDatasource() -> TableViewDataSource {
-		.init(sections: [cardSection ,transactionSection])
+		.init(sections: [cardSection ,transactionSection] + [paymentQRCode].compactMap { $0 })
 	}
 	
 	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

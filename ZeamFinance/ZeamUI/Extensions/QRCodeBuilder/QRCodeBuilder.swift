@@ -14,7 +14,7 @@ extension UIImage {
 	
 	static func generateQRCode(_ dataObj: Codable) -> UIImage? {
 		guard let data = try? JSONEncoder().encode(dataObj),
-			  let qrFilter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
+		let qrFilter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
 		// 4
 		qrFilter.setValue(data, forKey: "inputMessage")
 		// 5
