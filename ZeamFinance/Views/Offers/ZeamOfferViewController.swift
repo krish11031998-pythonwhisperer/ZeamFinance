@@ -26,7 +26,7 @@ class ZeamOfferViewController: UIViewController {
 		super.viewDidLoad()
 		setupView()
 		viewModel.loadData()
-		setupTransparentNavBar()
+		mainPageNavBar(title: "Offers")
 	}
 	
 	private func setupView() {

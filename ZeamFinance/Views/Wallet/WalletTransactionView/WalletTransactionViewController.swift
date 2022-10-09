@@ -45,11 +45,9 @@ class WalletTransactionViewController: UIViewController {
 	
 	@objc
 	private func showModal() {
-		let target = WalletTransactionModal().withNavigationController()
-		let presentedViewController = PresentationViewController(presentedViewController: target, presenting: self)
-		target.transitioningDelegate = presentedViewController
-		target.modalPresentationStyle = .custom
-		present(target, animated: true)
+		presentCard(controller: WalletTransactionModal(), withNavigation: true) {
+			print("(DEBUG) On Dismissal is called!")
+		}
 	}
 	
 }

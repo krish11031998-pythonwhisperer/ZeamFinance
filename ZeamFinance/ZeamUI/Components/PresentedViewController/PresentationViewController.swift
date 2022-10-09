@@ -53,9 +53,12 @@ class PresentationViewController: UIPresentationController {
 		return view
 	}()
 	
+	private var onDismissal: Callback?
+	
 	//MARK: - Overriden Methods
-	override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
+	init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?, onDismissal: Callback? = nil) {
 		super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
+		self.onDismissal = onDismissal
 		addGestureToDimmiingView()
 	}
 	
@@ -167,8 +170,8 @@ extension PresentationViewController: UIViewControllerAnimatedTransitioning {
 			guard isFinished else { return }
 			if !isPresented {
 				controller.view.removeFromSuperview()
+				self.onDismissal?()
 			}
-			
 			transitionContext.completeTransition(isFinished)
 		}
 	}

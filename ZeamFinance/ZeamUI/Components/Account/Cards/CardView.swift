@@ -20,6 +20,11 @@ struct CardModel {
 	}
 }
 
+struct CardCellModel: ActionProvider {
+	let card: CardModel
+	var action: Callback?
+}
+
 class CardView: UIView {
 	
 	private lazy var imgView: UIImageView = {
@@ -83,7 +88,7 @@ class CardViewTableCell: ConfigurableCell {
 		selectionStyle = .none
 	}
 	
-	func configure(with model: CardModel) {
-		view.configureCard(model)
+	func configure(with model: CardCellModel) {
+		view.configureCard(model.card)
 	}
 }

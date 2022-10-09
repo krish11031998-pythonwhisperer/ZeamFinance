@@ -8,34 +8,6 @@
 import Foundation
 import UIKit
 
-fileprivate extension PaymentCardModel {
-	
-	static var dewa: PaymentCardModel {
-		.init(billCompany: "DEWA",
-			  billDescription: "Utility Bill",
-			  amount: Float.random(in: 100..<2000),
-			  billCompanyLogo: .init(named: "DEWAImage") ?? .solid(color: .black), type: .bill)
-	}
-	
-	static var person: PaymentCardModel {
-		.init(billCompany: "John",
-			  billDescription: "Dinner",
-			  amount: Float.random(in: 50..<100),
-			  billCompanyLogo: .init(named: "person") ?? .solid(color: .black),
-			  type: .payment)
-	}
-	
-	static var installment: PaymentCardModel {
-		.init(billCompany: "Apple Inc.",
-			  billDescription: "MacBook Pro",
-			  amount: 2000,
-			  billCompanyLogo: .init(named: "appleLogo") ?? .solid(color: .clear),
-			  installmentsCount: 5,
-			  totalInstallments: 12,
-			  type: .installment)
-	}
-}
-
 class HomeViewModel {
 	
 	var view: AnyTableView?
@@ -45,7 +17,7 @@ class HomeViewModel {
 	}
 	
 	private var cardSection: TableSection {
-		let cardTableCell = TableRow<CardViewTableCell>(.init(bankName: "Emirates NBD", name: "Krishna Venkatramani"))
+		let cardTableCell = TableRow<CardViewTableCell>(.init(card: .init(bankName: "Emirates NBD", name: "Krishna Venkatramani")))
 		return .init(rows: [cardTableCell], title: "Most Used Card")
 	}
 	
@@ -56,7 +28,7 @@ class HomeViewModel {
 		let moreCell = CustomButton()
 		moreCell.configureButton(.init(title: "view more".bold(size: 13),
 									   buttonType: .slender,
-									   buttonStyling: .init(borderColor: .white)))
+									   buttonStyling: .init(borderColor: .surfaceBackgroundInverse)))
 		moreCell.setWidth(width: moreCell.compressedSize.width, priority: .required)
 
 		let stack: UIStackView = .HStack(subViews: [moreCell, .spacer()],spacing: 0, alignment: .center)
@@ -68,7 +40,7 @@ class HomeViewModel {
 		let moreCell = CustomButton()
 		moreCell.configureButton(.init(title: "view more".bold(size: 13),
 									   buttonType: .slender,
-									   buttonStyling: .init(borderColor: .white)))
+									   buttonStyling: .init(borderColor: .surfaceBackgroundInverse)))
 		moreCell.setWidth(width: moreCell.compressedSize.width, priority: .required)
 
 		let stack: UIStackView = .HStack(subViews: [moreCell, .spacer()],spacing: 0, alignment: .center)

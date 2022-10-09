@@ -73,12 +73,49 @@ extension UIViewController {
 		navigationItem.rightBarButtonItem = rightBarButton
 	}
 	
+	func mainPageNavBar(title: String? = nil,
+						rightBarButton: UIBarButtonItem? = nil,
+						isTransparent: Bool = true)
+	{
+		if let titleView = title?.sectionHeader(size: 30).generateLabel {
+			navigationItem.leftBarButtonItem = .init(customView: titleView)
+		}
+		setupTransparentNavBar(color: .surfaceBackground, scrollColor: .surfaceBackground)
+		navigationItem.rightBarButtonItem = rightBarButton
+	}
+
 	func withNavigationController() -> UINavigationController {
-		.init(rootViewController: self)
+		guard let navVC = self as? UINavigationController else { return .init(rootViewController: self) }
+		return navVC
 	}
 	
 	@objc
 	func navigateTo(_ to: UIViewController) {
 		navigationController?.pushViewController(to, animated: true)
 	}
+}
+
+
+//MARK: - Presentation Extension
+
+extension UIViewController {
+	
+	
+	func presentCard(controller vc: UIViewController, withNavigation: Bool, onDismissal: Callback?) {
+
+		if let currentCard = presentedViewController {
+			currentCard.dismiss(animated: true) {
+				DispatchQueue.main.async {
+					self.presentCard(controller: vc, withNavigation: withNavigation, onDismissal: onDismissal)
+				}
+			}
+		} else {
+			let target = vc.withNavigationController()
+			let presenter = PresentationViewController(presentedViewController: target, presenting: self, onDismissal: onDismissal)
+			target.transitioningDelegate = presenter
+			target.modalPresentationStyle = .custom
+			present(target, animated: true)
+		}
+	}
+	
 }

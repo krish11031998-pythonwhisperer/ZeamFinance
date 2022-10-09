@@ -38,7 +38,7 @@ class AccountSummaryCard: UIView {
 		let topView = model.topView
 		topView.setFrame(.init(squared: 22))
 		mainStack.insertArrangedSubview(topView, at: 0)
-		infoLabel.configureLabel(title: model.title.bold(size: 13),
+		infoLabel.configureLabel(title: model.title.bold(color: .popWhite500, size: 13),
 								 subTitle: model.subTitle.medium(color: .popBlack100, size: 11), config: .init(spacing: 4))
 	}
 }

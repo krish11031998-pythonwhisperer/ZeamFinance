@@ -26,7 +26,7 @@ class WalletViewController: UIViewController {
 		super.viewDidLoad()
 		setupView()
 		viewModel.loadData()
-		setupTransparentNavBar()
+		mainPageNavBar(title: "Wallet")
 		addObservers()
 	}
 	

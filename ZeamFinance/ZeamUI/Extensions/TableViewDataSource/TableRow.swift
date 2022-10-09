@@ -36,11 +36,12 @@ class TableRow<Cell: ConfigurableCell>: TableCellProvider {
 	}
 	
 	func didSelect(_ tableView: UITableView, indexPath: IndexPath) {
-		guard let cell = tableView.cellForRow(at: indexPath) as? Cell else { return }
+		guard let cell = tableView.cellForRow(at: indexPath) as? Cell,
+			  let actionProvider = model as? ActionProvider,
+			  let action = actionProvider.action
+		else { return }
 		cell.layer.animate(animation: .bouncy()) {
-			if let actionProvider = self.model as? ActionProvider {
-				actionProvider.action?()
-			}
+			action()
 		}
 	}
 	

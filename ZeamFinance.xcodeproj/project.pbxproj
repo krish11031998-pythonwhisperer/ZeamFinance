@@ -24,6 +24,12 @@
 		EF5940F728F1E1E3001380B8 /* PaymentModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5940F628F1E1E3001380B8 /* PaymentModal.swift */; };
 		EF5940FA28F1F01E001380B8 /* PaymentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5940F928F1F01E001380B8 /* PaymentModel.swift */; };
 		EF5940FC28F1F02D001380B8 /* PaymentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5940FB28F1F02D001380B8 /* PaymentStorage.swift */; };
+		EF5940FF28F21C3F001380B8 /* WalletTransactionModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5940FE28F21C3F001380B8 /* WalletTransactionModalViewModel.swift */; };
+		EF59410228F2F7E6001380B8 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59410128F2F7E6001380B8 /* PaymentViewController.swift */; };
+		EF59410428F2FB01001380B8 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59410328F2FB01001380B8 /* PaymentViewModel.swift */; };
+		EF59410628F2FEA1001380B8 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59410528F2FEA1001380B8 /* QRCodeViewController.swift */; };
+		EF59410828F2FEC6001380B8 /* PayNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59410728F2FEC6001380B8 /* PayNotification.swift */; };
+		EF59410B28F31139001380B8 /* QRCodeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59410A28F31139001380B8 /* QRCodeBuilder.swift */; };
 		EF639A5528EE109800787C58 /* ActiveBoosterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A5428EE109800787C58 /* ActiveBoosterCard.swift */; };
 		EF639A5828EEA15200787C58 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A5728EEA15200787C58 /* TransactionCell.swift */; };
 		EF639A5C28EEA35400787C58 /* DualLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A5B28EEA35400787C58 /* DualLabel.swift */; };
@@ -154,6 +160,12 @@
 		EF5940F628F1E1E3001380B8 /* PaymentModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModal.swift; sourceTree = "<group>"; };
 		EF5940F928F1F01E001380B8 /* PaymentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModel.swift; sourceTree = "<group>"; };
 		EF5940FB28F1F02D001380B8 /* PaymentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentStorage.swift; sourceTree = "<group>"; };
+		EF5940FE28F21C3F001380B8 /* WalletTransactionModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTransactionModalViewModel.swift; sourceTree = "<group>"; };
+		EF59410128F2F7E6001380B8 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		EF59410328F2FB01001380B8 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		EF59410528F2FEA1001380B8 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		EF59410728F2FEC6001380B8 /* PayNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayNotification.swift; sourceTree = "<group>"; };
+		EF59410A28F31139001380B8 /* QRCodeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeBuilder.swift; sourceTree = "<group>"; };
 		EF639A5428EE109800787C58 /* ActiveBoosterCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveBoosterCard.swift; sourceTree = "<group>"; };
 		EF639A5728EEA15200787C58 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		EF639A5B28EEA35400787C58 /* DualLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualLabel.swift; sourceTree = "<group>"; };
@@ -290,6 +302,7 @@
 		EF5940D028F14DCE001380B8 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				EF5940FD28F21C21001380B8 /* WalletTransactionModal */,
 				EF5940DC28F182A5001380B8 /* WalletTransactionView */,
 				EF5940D128F14DDE001380B8 /* WalletViewController.swift */,
 				EF5940D328F14E76001380B8 /* WalletViewModel.swift */,
@@ -322,7 +335,6 @@
 			children = (
 				EF5940DA28F18293001380B8 /* WalletTransactionViewController.swift */,
 				EF5940DD28F182E2001380B8 /* WalletTransactionViewModel.swift */,
-				EF5940F128F1B95F001380B8 /* WalletTransactionModal.swift */,
 			);
 			path = WalletTransactionView;
 			sourceTree = "<group>";
@@ -379,6 +391,34 @@
 			path = Payment;
 			sourceTree = "<group>";
 		};
+		EF5940FD28F21C21001380B8 /* WalletTransactionModal */ = {
+			isa = PBXGroup;
+			children = (
+				EF5940F128F1B95F001380B8 /* WalletTransactionModal.swift */,
+				EF5940FE28F21C3F001380B8 /* WalletTransactionModalViewModel.swift */,
+			);
+			path = WalletTransactionModal;
+			sourceTree = "<group>";
+		};
+		EF59410028F2F75B001380B8 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				EF59410128F2F7E6001380B8 /* PaymentViewController.swift */,
+				EF59410328F2FB01001380B8 /* PaymentViewModel.swift */,
+				EF59410528F2FEA1001380B8 /* QRCodeViewController.swift */,
+				EF59410728F2FEC6001380B8 /* PayNotification.swift */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		EF59410928F31128001380B8 /* QRCodeBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				EF59410A28F31139001380B8 /* QRCodeBuilder.swift */,
+			);
+			path = QRCodeBuilder;
+			sourceTree = "<group>";
+		};
 		EF639A5628EEA14500787C58 /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +466,7 @@
 		EF639A6F28F00FB200787C58 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EF59410028F2F75B001380B8 /* Pay */,
 				EF5940E828F19C8B001380B8 /* Offers */,
 				EF5940D028F14DCE001380B8 /* Wallet */,
 				EF639A7728F0170F00787C58 /* Home */,
@@ -520,6 +561,7 @@
 		EF89A9C228EC27B700598521 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EF59410928F31128001380B8 /* QRCodeBuilder */,
 				EF5940F328F1CEAE001380B8 /* Window */,
 				EF89AA3E28EC82AE00598521 /* CollectionViewDataSource */,
 				EF89AA8928EDBAB900598521 /* Shapes */,
@@ -1004,16 +1046,20 @@
 				EF89AA7928ED482C00598521 /* ImageHeaderSubHeaderView.swift in Sources */,
 				EF89AA0628EC3F6900598521 /* Response.swift in Sources */,
 				EF639A7128F00FD900787C58 /* HomeViewController.swift in Sources */,
+				EF59410428F2FB01001380B8 /* PaymentViewModel.swift in Sources */,
 				EF5940E728F18C1A001380B8 /* WalletNotifications.swift in Sources */,
 				EF89AA4028EC82BF00598521 /* CollectionColumn.swift in Sources */,
 				EF5940D428F14E76001380B8 /* WalletViewModel.swift in Sources */,
 				EF89A9F428EC3F3300598521 /* CGFloat.swift in Sources */,
 				EF89A99428EC262100598521 /* ViewController.swift in Sources */,
+				EF59410B28F31139001380B8 /* QRCodeBuilder.swift in Sources */,
 				EF639A5528EE109800787C58 /* ActiveBoosterCard.swift in Sources */,
 				EF89AA8628ED62A300598521 /* ExclusiveOfferCollectionCell.swift in Sources */,
 				EF89A9FE28EC3F4100598521 /* ViewHeirachy.swift in Sources */,
+				EF59410628F2FEA1001380B8 /* QRCodeViewController.swift in Sources */,
 				EF89AA1728EC401F00598521 /* Animation.swift in Sources */,
 				EF89A9EC28EC3ED700598521 /* Helpers.swift in Sources */,
+				EF59410228F2F7E6001380B8 /* PaymentViewController.swift in Sources */,
 				EF89A9D128EC28E200598521 /* CustomFonts.swift in Sources */,
 				EF89AA3128EC53DA00598521 /* CustomButton.swift in Sources */,
 				EF89A9CF28EC28C800598521 /* String.swift in Sources */,
@@ -1021,6 +1067,7 @@
 				EF639A6328EED4A100787C58 /* SphericalProgressBars.swift in Sources */,
 				EF89AA7628ED482C00598521 /* SentimentTextLabel.swift in Sources */,
 				EF639A6128EEC6B900787C58 /* CardView.swift in Sources */,
+				EF59410828F2FEC6001380B8 /* PayNotification.swift in Sources */,
 				EF89AA4428ECC11700598521 /* CustomCollectionTableCell.swift in Sources */,
 				EF639A8328F02EF900787C58 /* ProfileAssets.swift in Sources */,
 				EF89AA4828ECC20100598521 /* CollectionDataSource.swift in Sources */,
@@ -1035,6 +1082,7 @@
 				EF89A9F228EC3F3300598521 /* CGSize.swift in Sources */,
 				EF89AA8828ED7F8500598521 /* TableDataSource.swift in Sources */,
 				EF5940E528F183B5001380B8 /* TransactionStroage.swift in Sources */,
+				EF5940FF28F21C3F001380B8 /* WalletTransactionModalViewModel.swift in Sources */,
 				EF89AA7D28ED4CD700598521 /* TrendingOffersView.swift in Sources */,
 				EF89AA3428EC582E00598521 /* ButtonViewController.swift in Sources */,
 				EF89AA3728EC5DAE00598521 /* CustomButtonConfigs.swift in Sources */,

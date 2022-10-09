@@ -51,8 +51,18 @@ class ProfileViewController: UIViewController {
 															title: "Credit Card Score")
 	}
 	
+	private var paymentQRCode: TableSection? {
+		guard let img = UIImage.generateQRCode(PaymentQRCodeModel(paymentModel: PaymentCardModel.person)) else { return nil }
+		let imgView = UIImageView(image: img)
+//		imgView.setFrame(.init(squared: 100))
+		let view = UIView()
+		view.addSubview(imgView)
+		view.setFittingConstraints(childView: imgView, top: 0, bottom: 0, width: 100, height: 100, centerX: 0, centerY: 0, priority: .needed)
+		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .zero))])
+	}
+	
 	private func buildDatasource() -> TableViewDataSource {
-		.init(sections: [profileImageView, creditScoreView])
+		.init(sections: [profileImageView, creditScoreView] + [paymentQRCode].compactMap {$0})
 	}
 	
 	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

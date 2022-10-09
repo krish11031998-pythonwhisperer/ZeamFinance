@@ -78,25 +78,25 @@ public extension UIImage {
 
 
 public extension UIImage.IconCatalogue {
-	var image: UIImage { .init(named: rawValue) ?? .solid(color: .black) }
+	var image: UIImage { .init(named: rawValue)?.withRenderingMode(.alwaysOriginal) ?? .solid(color: .black) }
 }
 
 public extension UIImage.SystemCatalogue {
-	var image: UIImage { .init(named: rawValue) ?? .solid(color: .black) }
+	var image: UIImage { .init(named: rawValue)?.withRenderingMode(.alwaysOriginal)  ?? .solid(color: .black) }
 }
 
 public extension UIImage.ImageCatalogue {
-	var image: UIImage { .init(named: rawValue) ?? .solid(color: .black) }
+	var image: UIImage { .init(named: rawValue)?.withRenderingMode(.alwaysOriginal)  ?? .solid(color: .black) }
 }
 
 public extension UIImage.OfferCatalogue {
-	var image: UIImage { .init(named: rawValue) ?? .solid(color: .black) }
+	var image: UIImage { .init(named: rawValue)?.withRenderingMode(.alwaysOriginal)  ?? .solid(color: .black) }
 }
 
 public extension UIImage.BrandCatalogue {
-	var image: UIImage { .init(named: rawValue) ?? .solid(color: .black) }
+	var image: UIImage { .init(named: rawValue)?.withRenderingMode(.alwaysOriginal)  ?? .solid(color: .black) }
 }
 
 public extension UIImage.TabBarImageCatalogue {
-	var image: UIImage { .init(named: rawValue) ?? .solid(color: .black) }
+	var image: UIImage { .init(named: rawValue)?.withRenderingMode(.alwaysOriginal)  ?? .solid(color: .black) }
 }

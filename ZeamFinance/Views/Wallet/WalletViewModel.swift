@@ -45,7 +45,7 @@ class WalletViewModel {
 	
 	
 	private var cardCells: [TableCellProvider] {
-		cards?.compactMap { TableRow<CardViewTableCell>($0) } ?? []
+		cards?.compactMap { TableRow<CardViewTableCell>(.init(card: $0)) } ?? []
 	}
 	
 	private var txnCells: [TableCellProvider] {
@@ -56,7 +56,7 @@ class WalletViewModel {
 		let moreCell = CustomButton()
 		moreCell.configureButton(.init(title: "view more".bold(size: 13),
 									   buttonType: .slender,
-									   buttonStyling: .init(borderColor: .white), action: {
+									   buttonStyling: .init(borderColor: .surfaceBackgroundInverse), action: {
 			NotificationCenter.default.post(name: .showAllTransactions, object: nil)
 		}))
 		moreCell.setWidth(width: moreCell.compressedSize.width, priority: .required)
@@ -64,7 +64,7 @@ class WalletViewModel {
 		let stack: UIStackView = .HStack(subViews: [moreCell, .spacer()],spacing: 0, alignment: .center)
 		
 		return .init(rows: cardCells + txnCells + [TableRow<CustomTableCell>(.init(view: stack, inset: .init(by: 10)))],
-					 title: "Wallet")
+					 title: "Card")
 	}
 	
 	private func buildDatasource() -> TableViewDataSource {

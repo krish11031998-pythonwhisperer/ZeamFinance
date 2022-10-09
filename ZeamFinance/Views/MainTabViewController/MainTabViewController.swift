@@ -25,17 +25,20 @@ class MainTabViewController: UITabBarController {
 	
 	private func setupTabs() {
 		let home = HomeViewController().withNavigationController()
-		home.tabBarItem = .init(title: "Home", image: .TabBarImageCatalogue.home.image.withRenderingMode(.alwaysOriginal).resized(size: .init(squared: 24)),
-								selectedImage: .TabBarImageCatalogue.homeSelected.image.withRenderingMode(.alwaysOriginal).resized(size: .init(squared: 24)))
+		home.tabBarItem = .init(title: "Home", image: .TabBarImageCatalogue.home.image.resized(size: .init(squared: 24)),
+								selectedImage: .TabBarImageCatalogue.homeSelected.image.resized(size: .init(squared: 24)))
 		let wallet = WalletViewController().withNavigationController()
-		wallet.tabBarItem = .init(title: "Wallet", image: .TabBarImageCatalogue.cards.image.withRenderingMode(.alwaysOriginal).resized(size: .init(squared: 24)),
-								  selectedImage: .TabBarImageCatalogue.cardsSelected.image.withRenderingMode(.alwaysOriginal).resized(size: .init(squared: 24)))
+		wallet.tabBarItem = .init(title: "Wallet", image: .TabBarImageCatalogue.cards.image.resized(size: .init(squared: 24)),
+								  selectedImage: .TabBarImageCatalogue.cardsSelected.image.resized(size: .init(squared: 24)))
 		let offers = ZeamOfferViewController().withNavigationController()
-		offers.tabBarItem = .init(title: "Offers", image: .TabBarImageCatalogue.shop.image.withRenderingMode(.alwaysOriginal).resized(size: .init(squared: 24)),
-								  selectedImage: .TabBarImageCatalogue.shopSelected.image.withRenderingMode(.alwaysOriginal).resized(size: .init(squared: 24)))
+		offers.tabBarItem = .init(title: "Offers", image: .TabBarImageCatalogue.shop.image.resized(size: .init(squared: 24)),
+								  selectedImage: .TabBarImageCatalogue.shopSelected.image.resized(size: .init(squared: 24)))
+		let pay = PayViewController().withNavigationController()
+		pay.tabBarItem = .init(title: "Pay", image: .TabBarImageCatalogue.pay.image.resized(size: .init(squared: 24)),
+								  selectedImage: .TabBarImageCatalogue.paySelected.image.resized(size: .init(squared: 24)))
 		let components = ViewController().withNavigationController()
 		components.tabBarItem = .init(title: "ZUI", image: nil, selectedImage: nil)
-		setViewControllers([home, wallet, offers, components], animated: true)
+		setViewControllers([home, wallet, offers, pay, components], animated: true)
 	}
 	
 }
