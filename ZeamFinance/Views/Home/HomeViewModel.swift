@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewModel {
 	
-	var view: AnyTableView?
+	weak var view: AnyTableView?
 		
 	public func loadData() {
 		view?.reloadTableWithDataSource(buildDatasource())
@@ -58,10 +58,15 @@ class HomeViewModel {
 	}
 	
 	private var billSection: TableSection {
-		let img: UIImage =  .init(named: "DEWAImage") ?? .solid(color: .black)
-		let cells = [PaymentCardModel.dewa, PaymentCardModel.person, PaymentCardModel.installment].compactMap { CollectionItem<PaymentCardCollectionCell>($0)}
-		return .init(rows: [TableRow<CollectionTableCell>(.init(cells: cells,
-																cellSize: .init(width: 225, height: 300)))], title: "Upcoming Bills")
+		let moreBills = CustomButton()
+		moreBills.configureButton(.init(title: "View All Bills".bold(size: 13),
+										buttonType: .slender,
+										buttonStyling: .init(borderColor: .surfaceBackgroundInverse), action: {
+			print("(DEBUG) Clicked on view all bills")
+		}))
+		let stack = UIStackView.HStack(subViews: [moreBills, .spacer()], spacing: 0)
+		let moreBillCell = TableRow<CustomTableCell>(.init(view: stack, inset: .init(by: 10)))
+		return .init(rows: [TableRow<PaymentCardTableCell>(.person),moreBillCell], title: "Upcoming Bill")
 	}
 
 	

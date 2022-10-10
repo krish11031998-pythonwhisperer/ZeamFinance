@@ -52,11 +52,9 @@ class HomeViewController: UIViewController {
 	
 	@objc
 	func showPaymentModal() {
-		let target = PaymentModal()
-		let presenter = PresentationViewController(presentedViewController: target, presenting: self)
-		target.transitioningDelegate = presenter
-		target.modalPresentationStyle = .custom
-		present(target, animated: true)
+		presentCard(controller: PaymentModal(), withNavigation: false) {
+			PaymentStorage.selectedPayment = nil
+		}
 	}
 }
 

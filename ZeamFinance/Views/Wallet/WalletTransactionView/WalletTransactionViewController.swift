@@ -29,6 +29,10 @@ class WalletTransactionViewController: UIViewController {
 		setupViews()
 		viewModel.loadTxns()
 		standardNavBar()
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
 		addObservers()
 	}
 	
@@ -45,11 +49,15 @@ class WalletTransactionViewController: UIViewController {
 	
 	@objc
 	private func showModal() {
-		presentCard(controller: WalletTransactionModal(), withNavigation: true) {
+		topMost?.presentCard(controller: WalletTransactionModal(), withNavigation: true) {
 			print("(DEBUG) On Dismissal is called!")
+			TransactionStorage.selectedTransaction = nil
 		}
 	}
 	
+	deinit {
+		print("(DEBUG) WalletTransactionViewController is popped!")
+	}
 }
 
 

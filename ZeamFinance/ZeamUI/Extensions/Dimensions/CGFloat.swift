@@ -43,6 +43,15 @@ extension ClosedRange where Bound == CGFloat {
 	}
 }
 
+extension Array where Element == CGFloat {
+	
+	func normalize() -> [CGFloat] {
+		guard let min = self.min(), let max = self.max() else { return self }
+		return min == max ? map{ _ in 1 } : map { ($0 - min)/(max - min)}
+	}
+	
+}
+
 extension CGRect {
 	
 	var center: CGPoint {

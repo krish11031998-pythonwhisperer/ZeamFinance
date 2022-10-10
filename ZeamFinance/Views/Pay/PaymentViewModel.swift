@@ -10,7 +10,7 @@ import Foundation
 class PaymentViewModel {
 	
 	//MARK: - Properties
-	public var view:AnyTableView?
+	public weak var view:AnyTableView?
 	private var bills: [PaymentCardModel]?
 	
 	//MARK: - Exposed

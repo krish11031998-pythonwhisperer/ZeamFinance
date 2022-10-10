@@ -10,7 +10,7 @@ import UIKit
 
 class ZeamOfferViewModel {
 	
-	public var view: AnyTableView?
+	public weak var view: AnyTableView?
 	private var offers: [OfferViewModel]?
 	
 	public func loadData() {

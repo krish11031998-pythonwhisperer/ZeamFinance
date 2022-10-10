@@ -8,8 +8,13 @@
 import Foundation
 import UIKit
 
-protocol AnyTableView {
+protocol AnyTableView: AnyObject {
+	func setupHeaderView(view: UIView)
 	func reloadTableWithDataSource(_ dataSource: TableViewDataSource)
+}
+
+extension AnyTableView {
+	func setupHeaderView(view: UIView) { }
 }
 
 extension UIViewController {
@@ -92,6 +97,19 @@ extension UIViewController {
 	@objc
 	func navigateTo(_ to: UIViewController) {
 		navigationController?.pushViewController(to, animated: true)
+	}
+	
+	var topMost: UIViewController? {
+		switch self {
+		case let navigation as UINavigationController:
+			return navigation.visibleViewController?.topMost
+		case let presented where presentedViewController != nil:
+			return presented.presentedViewController?.topMost
+		case let tabbar as UITabBarController:
+			return tabbar.selectedViewController?.topMost
+		default:
+			return self
+		}
 	}
 }
 

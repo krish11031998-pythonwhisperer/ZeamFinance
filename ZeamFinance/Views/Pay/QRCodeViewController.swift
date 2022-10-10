@@ -33,7 +33,7 @@ class QRCodeReaderViewController: UIViewController {
 		super.viewWillAppear(animated)
 
 		if (captureSession?.isRunning == false) {
-			DispatchQueue.main.async {
+			DispatchQueue.global(qos: .background).async {
 				self.captureSession?.startRunning()
 			}
 		}
@@ -43,7 +43,7 @@ class QRCodeReaderViewController: UIViewController {
 		super.viewWillDisappear(animated)
 
 		if (captureSession?.isRunning == true) {
-			DispatchQueue.main.async {
+			DispatchQueue.global(qos: .background).async {
 				self.captureSession?.stopRunning()
 			}
 		}

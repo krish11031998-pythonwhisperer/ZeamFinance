@@ -92,6 +92,8 @@ class PaymentCard: UIView {
 	
 }
 
+//MARK: - PaymentCardCollectionCell
+
 class PaymentCardCollectionCell: ConfigurableCollectionCell {
 	
 	private lazy var view: PaymentCard = { .init() }()
@@ -110,7 +112,36 @@ class PaymentCardCollectionCell: ConfigurableCollectionCell {
 	private func setupView() {
 		contentView.addSubview(view)
 		contentView.setFittingConstraints(childView: view, insets: .zero)
-		contentView.backgroundColor = .red
+	}
+	
+	func configure(with model: PaymentCardModel) {
+		view.configureCard(model: model)
+	}
+	
+}
+
+//MARK: - PaymentCardTableCell
+class PaymentCardTableCell: ConfigurableCell {
+	
+	private lazy var view: PaymentCard = { .init() }()
+	
+	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		setupView()
+	}
+	
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+		setupView()
+	}
+	
+	private func setupView() {
+		contentView.addSubview(view)
+		contentView.setFittingConstraints(childView: view, insets: .init(by: 10))
+		view.setHeight(height: 200, priority: .required)
+		selectionStyle = .none
+		backgroundColor = .surfaceBackground
+		view.border(cornerRadius: 12)
 	}
 	
 	func configure(with model: PaymentCardModel) {

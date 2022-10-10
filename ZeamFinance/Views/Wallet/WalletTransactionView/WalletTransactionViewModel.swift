@@ -15,7 +15,7 @@ extension Notification.Name {
 class WalletTransactionViewModel {
 	
 	private var allTransactions: [TransactionModel]?
-	public var view: AnyTableView?
+	public weak var view: AnyTableView?
 	
 	func loadTxns() {
 		self.allTransactions = [.init(cellLogo: .IconCatalogue.amazon.image, detail: "amazon", amount: 250),

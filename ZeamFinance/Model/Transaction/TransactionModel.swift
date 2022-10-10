@@ -31,3 +31,29 @@ struct TransactionModel {
 		self.amount = amount
 	}
 }
+
+struct TransactionDailyModel {
+	let txns: [TransactionModel]
+}
+
+struct TransactionWeeklyModel {
+	let daily: [TransactionDailyModel]
+}
+
+extension TransactionDailyModel {
+	var total: Float {
+		txns.compactMap { $0.amount }.reduce(0, +)
+	}
+}
+
+
+extension TransactionWeeklyModel {
+	var weeklyTransaction: [String : Float] {
+		var txns: [String : Float] = [:]
+		daily.forEach {
+			guard let date = $0.txns.first?.date else { return }
+			txns[date] = $0.total
+		}
+		return txns
+	}
+}

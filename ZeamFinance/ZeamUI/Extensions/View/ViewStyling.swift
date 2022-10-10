@@ -36,7 +36,7 @@ extension UIView {
 		layer.maskedCorners = corners.corners
 	}
 	
-	func border(color: UIColor, borderWidth: CGFloat, cornerRadius: CGFloat? = nil) {
+	func border(color: UIColor = .clear, borderWidth: CGFloat = 1, cornerRadius: CGFloat? = nil) {
 		layer.borderColor = color.cgColor
 		layer.borderWidth = borderWidth
 		clipsToBounds = true

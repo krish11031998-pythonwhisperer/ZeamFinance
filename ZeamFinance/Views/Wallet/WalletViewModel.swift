@@ -12,7 +12,7 @@ class WalletViewModel {
 	
 	private var cards: [CardModel]?
 	private var transactions: [TransactionModel]?
-	public var view: AnyTableView?
+	public weak var view: AnyTableView?
 	
 	public func loadData() {
 		cards = [.init(bankName: "Emirates NBD", name: "Krishna Venkatramani")]
@@ -43,6 +43,15 @@ class WalletViewModel {
 					 title: "Spending Summary")
 	}
 	
+	private var creditScoreView: TableSection {
+		let creditScoreView = CreditScoreView()
+		creditScoreView.configureView(.init(score: 750))
+		let view = UIView()
+		view.addSubview(creditScoreView)
+		view.setFittingConstraints(childView: creditScoreView, top: 0, leading: 10, trailing: 10, bottom: 0, centerX: 0, priority: .needed)
+		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .zero))],
+															title: "Credit Card Score")
+	}
 	
 	private var cardCells: [TableCellProvider] {
 		cards?.compactMap { TableRow<CardViewTableCell>(.init(card: $0)) } ?? []
@@ -67,8 +76,17 @@ class WalletViewModel {
 					 title: "Card")
 	}
 	
+	func setupHeaderView() {
+		let headerView = WalletHeaderView()
+		let txns = Array(repeating: transactions?.randomElement(), count: Int.random(in: 2..<10)).compactMap {$0}
+		let dailyModel: TransactionDailyModel = .init(txns: txns)
+		let weekly: TransactionWeeklyModel = .init(daily: Array(repeating: dailyModel, count: 7))
+		headerView.configureHeaderView(weekly)
+		view?.setupHeaderView(view: headerView)
+	}
+	
 	private func buildDatasource() -> TableViewDataSource {
-		.init(sections: [cardTransactionSection, summarySection])
+		.init(sections: [cardTransactionSection, creditScoreView, summarySection])
 	}
 	
 }

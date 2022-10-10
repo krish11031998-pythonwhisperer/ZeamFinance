@@ -78,8 +78,13 @@ class CustomButton: UIButton {
 		
 		setFittingConstraints(childView: mainStack, insets: config.buttonType.inset)
 		setHeight(height: config.buttonType.height, priority: .required)
-		border(color: config.buttonStyling.borderColor, borderWidth: config.buttonStyling.borderWidth)
+		border(color: config.buttonStyling.borderColor, borderWidth: config.buttonStyling.borderWidth, cornerRadius: 12)
 		action = config.action
+	}
+	
+	internal override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+		super.traitCollectionDidChange(previousTraitCollection)
+		layer.borderColor = UIColor.surfaceBackgroundInverse.cgColor
 	}
 	
 }

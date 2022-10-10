@@ -13,6 +13,7 @@ class WalletViewController: UIViewController {
 	private lazy var tableView: UITableView = {
 		let table = UITableView(frame: .zero, style: .grouped)
 		table.separatorStyle = .none
+		table.showsVerticalScrollIndicator = false
 		return table
 	}()
 	
@@ -24,18 +25,23 @@ class WalletViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		setupView()
 		viewModel.loadData()
-		mainPageNavBar(title: "Wallet")
+		setupView()
 		addObservers()
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		mainPageNavBar(title: "Wallet")
 	}
 	
 	private func setupView() {
 		view.addSubview(tableView)
 		view.setFittingConstraints(childView: tableView, insets: .zero)
 		tableView.backgroundColor = .surfaceBackground
+		viewModel.setupHeaderView()
 	}
-	
+
 	private func addObservers() {
 		NotificationCenter.default.addObserver(self, selector: #selector(showTransactions), name: .showAllTransactions, object: nil)
 	}
@@ -50,5 +56,10 @@ extension WalletViewController: AnyTableView {
 	
 	func reloadTableWithDataSource(_ dataSource: TableViewDataSource) {
 		tableView.reloadData(dataSource)
+	}
+	
+	func setupHeaderView(view: UIView) {
+		tableView.tableHeaderView = view
+		tableView.tableHeaderView?.frame = view.compressedSize.frame
 	}
 }

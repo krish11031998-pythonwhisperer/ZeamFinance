@@ -12,7 +12,7 @@ class WalletTransactionModalViewModel {
 	
 	private var transaction: TransactionModel? { TransactionStorage.selectedTransaction }
 	
-	public var view: AnyTableView?
+	public weak var view: AnyTableView?
 	
 	public var tableHeader: UIView? {
 		guard let validTransaction = transaction else { return nil }
