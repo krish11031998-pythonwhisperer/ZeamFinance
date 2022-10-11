@@ -76,7 +76,7 @@ class CustomButton: UIButton {
 		bgColor = config.backgroundColor
 		textColor = buttonText.textColor
 		
-		setFittingConstraints(childView: mainStack, insets: config.buttonType.inset)
+		setFittingConstraints(childView: mainStack, insets: config.buttonType.inset, priority: .needed)
 		setHeight(height: config.buttonType.height, priority: .required)
 		border(color: config.buttonStyling.borderColor, borderWidth: config.buttonStyling.borderWidth, cornerRadius: 12)
 		action = config.action

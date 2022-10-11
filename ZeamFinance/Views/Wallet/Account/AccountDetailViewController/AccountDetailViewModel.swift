@@ -35,14 +35,42 @@ class AccountDetailViewModel {
 		let stack: UIStackView = .HStack(subViews: [moreCell, .spacer()],spacing: 0, alignment: .center)
 		return TableRow<CustomTableCell>(.init(view: stack, inset: .init(by: 10)))
 	}
+	
+	private var payButton: CustomButton {
+		let button = CustomButton()
+		let img = UIImage(systemName: "plus.circle")?.resized(size: .init(squared: 12))
+		button.configureButton(.init(title: "Pay".regular(color: .textColorInverse,size: 12),
+									 trailingImg: .init(img: img, size: .init(squared: 12)),
+									 backgroundColor: .surfaceBackgroundInverse,
+									 buttonType: .slender,
+									 action: nil))
+		return button
+	}
+	
+	private var depositButton: CustomButton {
+		let button = CustomButton()
+		let img = UIImage(systemName: "plus")?.resized(size: .init(squared: 12))
+		button.configureButton(.init(title: "Deposit".regular(color: .textColorInverse,size: 12),
+									 trailingImg: .init(img: img, size: .init(squared: 12)),
+									 backgroundColor: .surfaceBackgroundInverse,
+									 buttonType: .slender,
+									 action: nil))
+		return button
+	}
 
 	private func accountHeader(){
 		guard let account = model else { return }
+		let stack: UIStackView = .VStack(spacing: 12, alignment: .center)
 		let balanceLabel = DualLabel()
 		balanceLabel.configureLabel(title: account.currency.bold(size: 30),
 									subTitle: String(format: "\(account.isCrypto ? "$ " : "")%.2f", account.balance).bold(size: 40),
 									config: .init(alignment: .center, spacing: 10))
-		view?.setupHeaderView(view: balanceLabel.embedInView(insets: .init(vertical: 10, horizontal: 0)))
+		let buttonStack: UIStackView = .HStack(subViews:[payButton, depositButton], spacing: 10)
+		buttonStack.distribution = .fillEqually
+
+		[balanceLabel, .spacer(), buttonStack].forEach(stack.addArrangedSubview(_:))
+		stack.setFrame(width: .totalWidth, height: 150)
+		view?.setupHeaderView(view: stack)
 	}
 	
 	//MARK: - CellProviders
