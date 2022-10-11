@@ -28,7 +28,6 @@
 		EF59410228F2F7E6001380B8 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59410128F2F7E6001380B8 /* PaymentViewController.swift */; };
 		EF59410428F2FB01001380B8 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59410328F2FB01001380B8 /* PaymentViewModel.swift */; };
 		EF59410628F2FEA1001380B8 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59410528F2FEA1001380B8 /* QRCodeViewController.swift */; };
-		EF59410828F2FEC6001380B8 /* PayNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59410728F2FEC6001380B8 /* PayNotification.swift */; };
 		EF59410B28F31139001380B8 /* QRCodeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59410A28F31139001380B8 /* QRCodeBuilder.swift */; };
 		EF59410D28F3F9EC001380B8 /* WalletHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59410C28F3F9EC001380B8 /* WalletHeaderView.swift */; };
 		EF59411028F4219E001380B8 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59410F28F4219E001380B8 /* ChartView.swift */; };
@@ -41,6 +40,13 @@
 		EF59412328F53A1B001380B8 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59412228F53A1B001380B8 /* AccountView.swift */; };
 		EF59412628F54313001380B8 /* Gilroy-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF59412428F54313001380B8 /* Gilroy-ExtraBold.otf */; };
 		EF59412728F54313001380B8 /* Gilroy-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF59412528F54313001380B8 /* Gilroy-Light.otf */; };
+		EF59412A28F5709D001380B8 /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59412928F5709D001380B8 /* OfferModel.swift */; };
+		EF59412D28F58CC6001380B8 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59412C28F58CC6001380B8 /* CardDetailViewController.swift */; };
+		EF59412F28F58D34001380B8 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59412E28F58D34001380B8 /* UITableView.swift */; };
+		EF59413128F58DC2001380B8 /* CardDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59413028F58DC2001380B8 /* CardDetailViewModel.swift */; };
+		EF59413428F590EA001380B8 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59413328F590EA001380B8 /* CardModel.swift */; };
+		EF59413628F5911E001380B8 /* CardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59413528F5911E001380B8 /* CardStorage.swift */; };
+		EF59413928F59171001380B8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59413828F59171001380B8 /* Notification.swift */; };
 		EF639A5528EE109800787C58 /* ActiveBoosterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A5428EE109800787C58 /* ActiveBoosterCard.swift */; };
 		EF639A5828EEA15200787C58 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A5728EEA15200787C58 /* TransactionCell.swift */; };
 		EF639A5C28EEA35400787C58 /* DualLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A5B28EEA35400787C58 /* DualLabel.swift */; };
@@ -175,7 +181,6 @@
 		EF59410128F2F7E6001380B8 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		EF59410328F2FB01001380B8 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		EF59410528F2FEA1001380B8 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
-		EF59410728F2FEC6001380B8 /* PayNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayNotification.swift; sourceTree = "<group>"; };
 		EF59410A28F31139001380B8 /* QRCodeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeBuilder.swift; sourceTree = "<group>"; };
 		EF59410C28F3F9EC001380B8 /* WalletHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHeaderView.swift; sourceTree = "<group>"; };
 		EF59410F28F4219E001380B8 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
@@ -188,6 +193,13 @@
 		EF59412228F53A1B001380B8 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		EF59412428F54313001380B8 /* Gilroy-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.otf"; sourceTree = "<group>"; };
 		EF59412528F54313001380B8 /* Gilroy-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.otf"; sourceTree = "<group>"; };
+		EF59412928F5709D001380B8 /* OfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
+		EF59412C28F58CC6001380B8 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		EF59412E28F58D34001380B8 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		EF59413028F58DC2001380B8 /* CardDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewModel.swift; sourceTree = "<group>"; };
+		EF59413328F590EA001380B8 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		EF59413528F5911E001380B8 /* CardStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStorage.swift; sourceTree = "<group>"; };
+		EF59413828F59171001380B8 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		EF639A5428EE109800787C58 /* ActiveBoosterCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveBoosterCard.swift; sourceTree = "<group>"; };
 		EF639A5728EEA15200787C58 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		EF639A5B28EEA35400787C58 /* DualLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualLabel.swift; sourceTree = "<group>"; };
@@ -324,6 +336,7 @@
 		EF5940D028F14DCE001380B8 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				EF59412B28F58CBA001380B8 /* Card */,
 				EF59412128F53A11001380B8 /* Account */,
 				EF5940FD28F21C21001380B8 /* WalletTransactionModal */,
 				EF5940DC28F182A5001380B8 /* WalletTransactionView */,
@@ -366,6 +379,8 @@
 		EF5940DF28F18370001380B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EF59413228F590E2001380B8 /* Card */,
+				EF59412828F5708C001380B8 /* Offers */,
 				EF59411E28F5396F001380B8 /* Account */,
 				EF5940F828F1F00E001380B8 /* Payment */,
 				EF5940E228F183A2001380B8 /* Transaction */,
@@ -431,7 +446,6 @@
 				EF59410128F2F7E6001380B8 /* PaymentViewController.swift */,
 				EF59410328F2FB01001380B8 /* PaymentViewModel.swift */,
 				EF59410528F2FEA1001380B8 /* QRCodeViewController.swift */,
-				EF59410728F2FEC6001380B8 /* PayNotification.swift */,
 			);
 			path = Pay;
 			sourceTree = "<group>";
@@ -482,6 +496,40 @@
 				EF59412228F53A1B001380B8 /* AccountView.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		EF59412828F5708C001380B8 /* Offers */ = {
+			isa = PBXGroup;
+			children = (
+				EF59412928F5709D001380B8 /* OfferModel.swift */,
+			);
+			path = Offers;
+			sourceTree = "<group>";
+		};
+		EF59412B28F58CBA001380B8 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				EF59412C28F58CC6001380B8 /* CardDetailViewController.swift */,
+				EF59413028F58DC2001380B8 /* CardDetailViewModel.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		EF59413228F590E2001380B8 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				EF59413328F590EA001380B8 /* CardModel.swift */,
+				EF59413528F5911E001380B8 /* CardStorage.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		EF59413728F59168001380B8 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				EF59413828F59171001380B8 /* Notification.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		EF639A5628EEA14500787C58 /* Transaction */ = {
@@ -583,6 +631,7 @@
 		EF89A98E28EC262100598521 /* ZeamFinance */ = {
 			isa = PBXGroup;
 			children = (
+				EF59413728F59168001380B8 /* Notification */,
 				EF5940DF28F18370001380B8 /* Model */,
 				EF639A6F28F00FB200787C58 /* Views */,
 				EF89A9C128EC27A500598521 /* ZeamUI */,
@@ -715,6 +764,7 @@
 				EF89A9FA28EC3F4100598521 /* UIViewController.swift */,
 				EF89A9FB28EC3F4100598521 /* Views.swift */,
 				EF89A9FC28EC3F4100598521 /* UILabel.swift */,
+				EF59412E28F58D34001380B8 /* UITableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1081,15 +1131,19 @@
 				EF59412328F53A1B001380B8 /* AccountView.swift in Sources */,
 				EF639A7628F013EF00787C58 /* MainTabView.swift in Sources */,
 				EF5940E128F18385001380B8 /* TransactionModel.swift in Sources */,
+				EF59412D28F58CC6001380B8 /* CardDetailViewController.swift in Sources */,
 				EF5940EA28F19C9B001380B8 /* ZeamOfferViewController.swift in Sources */,
 				EF89AA1528EC401F00598521 /* TableSection.swift in Sources */,
 				EF639A8128F02A3300787C58 /* HomeHeaderView.swift in Sources */,
 				EF5940DB28F18293001380B8 /* WalletTransactionViewController.swift in Sources */,
 				EF5940F528F1CEBA001380B8 /* UIWindow.swift in Sources */,
 				EF89AA8228ED5AD500598521 /* ExclusiveOfferView.swift in Sources */,
+				EF59413428F590EA001380B8 /* CardModel.swift in Sources */,
+				EF59413928F59171001380B8 /* Notification.swift in Sources */,
 				EF89AA4228ECBE2700598521 /* CollectionViewFunctions.swift in Sources */,
 				EF639A6828EF08A700787C58 /* ProfileView.swift in Sources */,
 				EF89AA7F28ED50B500598521 /* TrendingOfferTableCell.swift in Sources */,
+				EF59413128F58DC2001380B8 /* CardDetailViewModel.swift in Sources */,
 				EF89AA0728EC3F6900598521 /* NetworkReqeust.swift in Sources */,
 				EF89AA5228ECF24800598521 /* CategoryCollectionCell.swift in Sources */,
 				EF89A9C528EC27D100598521 /* RenderableText.swift in Sources */,
@@ -1107,6 +1161,7 @@
 				EF89AA1A28EC45CC00598521 /* ColorBuilder.swift in Sources */,
 				EF5940CF28F062F5001380B8 /* PaymentCard.swift in Sources */,
 				EF89AA7728ED482C00598521 /* GenericButtonWrapper.swift in Sources */,
+				EF59412F28F58D34001380B8 /* UITableView.swift in Sources */,
 				EF5940FC28F1F02D001380B8 /* PaymentStorage.swift in Sources */,
 				EF89AA3B28EC795000598521 /* SpotlightOfferCard.swift in Sources */,
 				EF89AA8E28EDBC6000598521 /* ShapesViewController.swift in Sources */,
@@ -1126,6 +1181,7 @@
 				EF89A9F428EC3F3300598521 /* CGFloat.swift in Sources */,
 				EF89A99428EC262100598521 /* ViewController.swift in Sources */,
 				EF59410B28F31139001380B8 /* QRCodeBuilder.swift in Sources */,
+				EF59412A28F5709D001380B8 /* OfferModel.swift in Sources */,
 				EF639A5528EE109800787C58 /* ActiveBoosterCard.swift in Sources */,
 				EF89AA8628ED62A300598521 /* ExclusiveOfferCollectionCell.swift in Sources */,
 				EF89A9FE28EC3F4100598521 /* ViewHeirachy.swift in Sources */,
@@ -1138,9 +1194,9 @@
 				EF89A9CF28EC28C800598521 /* String.swift in Sources */,
 				EF89A99028EC262100598521 /* AppDelegate.swift in Sources */,
 				EF639A6328EED4A100787C58 /* SphericalProgressBars.swift in Sources */,
+				EF59413628F5911E001380B8 /* CardStorage.swift in Sources */,
 				EF89AA7628ED482C00598521 /* SentimentTextLabel.swift in Sources */,
 				EF639A6128EEC6B900787C58 /* CardView.swift in Sources */,
-				EF59410828F2FEC6001380B8 /* PayNotification.swift in Sources */,
 				EF59411D28F45475001380B8 /* MultipleStrokeProgressBar.swift in Sources */,
 				EF89AA4428ECC11700598521 /* CustomCollectionTableCell.swift in Sources */,
 				EF639A8328F02EF900787C58 /* ProfileAssets.swift in Sources */,

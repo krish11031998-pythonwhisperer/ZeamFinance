@@ -14,9 +14,9 @@ enum CustomFonts:String{
 	case regular = "Satoshi-Regular"
 	case medium = "Satoshi-Medium"
 	case light = "Satoshi-Light"
-	case sectionHeader = "PPCirka-Bold"
-	//case sectionHeader = "Gilroy-Light"
-	//case sectionHeader = "Gilroy-Bold"
+//	case sectionHeader = "PPCirka-Bold"
+//	case sectionHeader = "Gilroy-Light"
+	case sectionHeader = "Gilroy-ExtraBold"
 	
 	func fontBuilder(size: CGFloat) -> UIFont? {
 		.init(name: self.rawValue, size: size)

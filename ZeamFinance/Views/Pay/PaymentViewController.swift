@@ -30,7 +30,6 @@ class PayViewController: UIViewController {
 		mainPageNavBar(title: "Pay")
 		viewModel.loadData()
 		setupView()
-		addObservers()
 	}
 	
 	//MARK: - Protected Methods
@@ -39,23 +38,6 @@ class PayViewController: UIViewController {
 		view.addSubview(tableView)
 		view.setFittingConstraints(childView: tableView, insets: .zero)
 	}
-	
-	private func addObservers() {
-		NotificationCenter.default.addObserver(self, selector: #selector(readQRCode), name: .readQRCode, object: nil)
-	}
-	
-	@objc
-	private func readQRCode() {
-		presentCard(controller: QRCodeReaderViewController(), withNavigation: true) {
-			print("(DEBUG) read QR Code!")
-			if PaymentStorage.selectedPayment != nil {
-				self.presentCard(controller: PaymentModal(), withNavigation: false) {
-					PaymentStorage.selectedPayment = nil
-				}
-			}
-		}
-	}
-	
 }
 
 

@@ -12,8 +12,8 @@ class PaymentCard: UIView {
 	
 	private lazy var imageView: UIImageView = {
 		let view = UIImageView()
-		view.contentMode = .center
-		view.setFrame(.init(squared: 48))
+		view.contentMode = .scaleAspectFit
+		view.setFrame(.init(squared: 32))
 		view.border(color: .popBlack100.withAlphaComponent(0.2), borderWidth: 1, cornerRadius: 0)
 		view.clipsToBounds = true
 		return view
@@ -74,7 +74,9 @@ class PaymentCard: UIView {
 	}
 	
 	public func configureCard(model: PaymentCardModel) {
-		imageView.image = model.billCompanyLogo.resized(size: .init(squared: 32))
+//		imageView.image = model.billCompanyLogo.resized(size: .init(squared: 32))
+		imageView.image = model.billCompanyLogo
+			//.resized(size: .init(squared: 32))
 		billInfo.configureLabel(title: model.billCompany.bold(color: .popBlack500, size: 14),
 								subTitle: model.billDescription.medium(color: .popBlack500, size: 12))
 		backgroundColor = model.type.color

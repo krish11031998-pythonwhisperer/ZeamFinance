@@ -72,7 +72,7 @@ extension PaymentType {
 	var color: UIColor {
 		switch self {
 		case .bill:
-			return .popWhite500
+			return .parkGreen500
 		case .payment:
 			return .info100
 		case .installment:
@@ -83,7 +83,7 @@ extension PaymentType {
 	var imgCornerRadius: CGFloat {
 		switch self {
 		case .bill:
-			return 0
+			return 8
 		case .installment:
 			return 12
 		case .payment:

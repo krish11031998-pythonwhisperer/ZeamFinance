@@ -21,6 +21,7 @@ class MainTabViewController: UITabBarController {
 		self.setValue(tabBar, forKey: "tabBar")
 		setupTabs()
 		tabBar.tintColor = .surfaceBackgroundInverse
+		addObservers()
 	}
 	
 	private func setupTabs() {
@@ -39,6 +40,49 @@ class MainTabViewController: UITabBarController {
 		let components = ViewController().withNavigationController()
 		components.tabBarItem = .init(title: "ZUI", image: nil, selectedImage: nil)
 		setViewControllers([home, wallet, offers, pay, components], animated: true)
+	}
+	
+	
+	private func addObservers() {
+		NotificationCenter.default.addObserver(self, selector: #selector(showPaymentCard), name: .showPayment, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(showTransaction), name: .showTxn, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(readQRCode), name: .readQRCode, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(showCardDetail), name: .showCard, object: nil)
+	}
+	
+	@objc
+	private func showPaymentCard() {
+		presentCard(controller: PaymentModal(), withNavigation: false) {
+			PaymentStorage.selectedPayment = nil
+		}
+	}
+	
+	@objc
+	private func showTransaction() {
+		presentCard(controller: WalletTransactionModal(), withNavigation: true) {
+			TransactionStorage.selectedTransaction = nil
+		}
+	}
+	
+	@objc
+	private func readQRCode() {
+		presentCard(controller: QRCodeReaderViewController(), withNavigation: true) {
+			print("(DEBUG) read QR Code!")
+			if PaymentStorage.selectedPayment != nil {
+				self.presentCard(controller: PaymentModal(), withNavigation: false) {
+					PaymentStorage.selectedPayment = nil
+				}
+			}
+		}
+	}
+	
+	@objc
+	private func showCardDetail() {
+		topMost?.presentCard(controller: CardDetailViewController(), withNavigation: true) {
+			if CardStorage.selectedCard != nil {
+				CardStorage.selectedCard = nil
+			}
+		}
 	}
 	
 }

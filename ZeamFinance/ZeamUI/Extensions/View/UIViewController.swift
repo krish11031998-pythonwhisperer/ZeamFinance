@@ -11,10 +11,12 @@ import UIKit
 protocol AnyTableView: AnyObject {
 	func setupHeaderView(view: UIView)
 	func reloadTableWithDataSource(_ dataSource: TableViewDataSource)
+	func refreshTableView()
 }
 
 extension AnyTableView {
 	func setupHeaderView(view: UIView) { }
+	func refreshTableView() { }
 }
 
 extension UIViewController {

@@ -41,4 +41,8 @@ extension ZeamOfferViewController: AnyTableView {
 	func reloadTableWithDataSource(_ dataSource: TableViewDataSource) {
 		tableView.reloadData(dataSource)
 	}
+	
+	func refreshTableView() {
+		tableView.performBatchUpdates(nil)
+	}
 }

@@ -8,32 +8,6 @@
 import Foundation
 import UIKit
 
-struct OfferViewModel {
-	let brandLogo: UIImage?
-	let brandLogoImage: String?
-	let brand: String?
-	let offerDescription: String
-	let background: UIImage?
-	let backgroundUrl: String?
-	let category: String?
-	
-	init(brandLogo: UIImage? = nil,
-		 brandLogoImage: String? = nil,
-		 brand: String? = nil,
-		 category: String? = nil,
-		 offerDescription: String,
-		 background: UIImage? = nil,
-		 backgroundUrl: String? = nil) {
-		self.brandLogo = brandLogo
-		self.brandLogoImage = brandLogoImage
-		self.brand = brand
-		self.offerDescription = offerDescription
-		self.background = background
-		self.backgroundUrl = backgroundUrl
-		self.category = category
-	}
-}
-
 extension OfferViewModel{
 	
 	static var testCases: [OfferViewModel] {

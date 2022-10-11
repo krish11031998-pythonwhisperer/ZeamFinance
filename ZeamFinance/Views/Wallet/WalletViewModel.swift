@@ -96,7 +96,10 @@ class WalletViewModel {
 	
 	private var cardCells: [TableCellProvider] {
 		guard let validCards = cards else { return [] }
-		let collectionCells = validCards.compactMap {CollectionItem<CardViewCollectionCell>(.init(card: $0))}
+		let collectionCells = validCards.compactMap { card in CollectionItem<CardViewCollectionCell>(.init(card: card, action: {
+			CardStorage.selectedCard = card
+			NotificationCenter.default.post(name: .showCard, object: nil)
+		}))}
 		let h: CGFloat = 200
 		return [TableRow<CollectionTableCell>(.init(cells: collectionCells + [addCardCell], inset: .zero, cellSize: .init(width: h * 1.755,
 																											height: h)))]

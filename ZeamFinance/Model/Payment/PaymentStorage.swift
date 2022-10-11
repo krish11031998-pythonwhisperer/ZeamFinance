@@ -6,11 +6,6 @@
 //
 
 import Foundation
-
-extension Notification.Name {
-	static let showPayment: Self = .init("showPayment")
-}
-
 class PaymentStorage {
 	static var selectedPayment: PaymentCardModel? = nil
 }

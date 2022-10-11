@@ -8,10 +8,6 @@
 import Foundation
 import UIKit
 
-extension Notification.Name {
-	static let showTxn: Self = .init("showTxn")
-}
-
 class WalletTransactionViewModel {
 	
 	private var allTransactions: [TransactionModel]?

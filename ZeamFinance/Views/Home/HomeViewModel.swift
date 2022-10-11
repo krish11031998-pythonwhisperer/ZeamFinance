@@ -18,7 +18,7 @@ class HomeViewModel {
 	
 	private var cardSection: TableSection {
 		let cardTableCell = TableRow<CardViewTableCell>(.init(card: .init(bankName: "Emirates NBD", name: "Krishna Venkatramani")))
-		return .init(rows: [cardTableCell], title: "Most Used Card")
+		return .init(rows: [cardTableCell], title: "Cards")
 	}
 	
 	private var recentTransactions: TableSection {
