@@ -12,4 +12,6 @@ extension Notification.Name {
 	static let showTxn: Self = .init("showTxn")
 	static let showPayment: Self = .init("showPayment")
 	static let showCard: Self = .init("showCard")
+	static let showAccount: Self = .init("showAccount")
+	static let showAllTransactions: Notification.Name = .init("showAllTransactions")
 }

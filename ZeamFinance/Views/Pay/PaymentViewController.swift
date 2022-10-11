@@ -20,6 +20,7 @@ class PayViewController: UIViewController {
 	private lazy var tableView: UITableView = {
 		let table = UITableView(frame: .zero, style: .grouped)
 		table.backgroundColor = .surfaceBackground
+		table.showsVerticalScrollIndicator = false
 		table.separatorStyle = .none
 		return table
 	}()

@@ -48,6 +48,7 @@ class MainTabViewController: UITabBarController {
 		NotificationCenter.default.addObserver(self, selector: #selector(showTransaction), name: .showTxn, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(readQRCode), name: .readQRCode, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(showCardDetail), name: .showCard, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(showAccountDetail), name: .showAccount, object: nil)
 	}
 	
 	@objc
@@ -85,4 +86,10 @@ class MainTabViewController: UITabBarController {
 		}
 	}
 	
+	@objc
+	private func showAccountDetail() {
+		topMost?.presentCard(controller: AccountDetailViewController(), withNavigation: true) {
+			print("(DEBUG) Close!")
+		}
+	}
 }

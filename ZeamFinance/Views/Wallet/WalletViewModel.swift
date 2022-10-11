@@ -107,9 +107,12 @@ class WalletViewModel {
 	
 	private var accountCells: [TableCellProvider]  {
 		let accounts: [AccountModel] = [.init(accountId: UUID().uuidString, name: "AED Account", currency: "AED", balance: Float.random(in: 100..<1000)),
-										.init(accountId: UUID().uuidString, name: "BTC Account", currency: "BTC", balance: Float.random(in: 100..<1000)),
-										.init(accountId: UUID().uuidString, name: "ZFI Account", currency: "ZFI", balance: Float.random(in: 100..<1000))]
-		return accounts.map { TableRow<AccountTableCell>($0) }
+										.init(accountId: UUID().uuidString, name: "BTC Account", currency: "BTC", balance: Float.random(in: 100..<1000), isCrypto: true),
+										.init(accountId: UUID().uuidString, name: "ZFI Account", currency: "ZFI", balance: Float.random(in: 100..<1000), isCrypto: true)]
+		return accounts.map { account in  TableRow<AccountCardTableCell>(.init(account: account, action: {
+			AccountStorage.selectedAccount = account
+			NotificationCenter.default.post(name: .showAccount, object: nil)
+		})) }
 	}
 	
 	private var txnCells: [TableCellProvider] {

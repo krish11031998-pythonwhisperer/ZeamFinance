@@ -1,5 +1,5 @@
 //
-//  CardDetailViewController.swift
+//  AccountDetailViewController.swift
 //  ZeamFinance
 //
 //  Created by Krishna Venkatramani on 11/10/2022.
@@ -8,27 +8,21 @@
 import Foundation
 import UIKit
 
-class CardDetailViewController: UIViewController {
+class AccountDetailViewController: UIViewController {
 	
 	private lazy var tableView: UITableView = {
-		let tableView = UITableView(frame: .zero, style: .grouped)
+		let tableView: UITableView = .init(frame: .zero, style: .grouped)
 		tableView.backgroundColor = .surfaceBackground
-		tableView.showsVerticalScrollIndicator = false
 		tableView.separatorStyle = .none
+		tableView.showsVerticalScrollIndicator = false
 		return tableView
 	}()
 	
-	private lazy var viewModel: CardDetailViewModel = {
-		let model = CardDetailViewModel()
+	private lazy var viewModel: AccountDetailViewModel = {
+		let model = AccountDetailViewModel()
 		model.view = self
 		return model
 	}()
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		setupView()
-		viewModel.loadData()
-	}
 	
 	private lazy var closeButton: UIButton = {
 		let button = UIButton(frame: .init(origin: .zero, size: .init(squared: 25)))
@@ -40,21 +34,34 @@ class CardDetailViewController: UIViewController {
 	@objc
 	private func closeModal() {
 		dismiss(animated: true) {
-			CardStorage.selectedCard = nil
+			AccountStorage.selectedAccount = nil
 		}
 	}
 	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		setupView()
+		standardNavBar(leftBarButton: .init(customView: "Account Detail".sectionHeader(size: 20).generateLabel),
+					   rightBarButton: .init(customView: closeButton), isTransparent: false)
+		preferredContentSize = .init(width: .totalWidth, height: .totalHeight)
+		viewModel.loadData()
+	}
+
 	private func setupView() {
 		view.addSubview(tableView)
 		view.setFittingConstraints(childView: tableView, insets: .zero)
-		preferredContentSize = .init(width: .totalWidth, height: .totalHeight)
-		standardNavBar(leftBarButton: .init(customView: "Card Detail".sectionHeader(size: 20).generateLabel),
-					   rightBarButton: .init(customView: closeButton), isTransparent: false)
 	}
 }
 
-extension CardDetailViewController: AnyTableView {
+
+extension AccountDetailViewController: AnyTableView {
+	
 	func reloadTableWithDataSource(_ dataSource: TableViewDataSource) {
 		tableView.reloadData(dataSource)
+	}
+	
+	func setupHeaderView(view: UIView) {
+		tableView.tableHeaderView = view
+		tableView.tableHeaderView?.frame = view.compressedSize.frame
 	}
 }

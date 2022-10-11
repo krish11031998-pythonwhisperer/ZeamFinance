@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AccountView: UIView {
+class AccountCardView: UIView {
 	
 	private lazy var currencyName: DualLabel = { .init() }()
 	private lazy var currencyAmount: UILabel = { .init() }()
@@ -39,9 +39,9 @@ class AccountView: UIView {
 }
 
 
-class AccountTableCell: ConfigurableCell {
+class AccountCardTableCell: ConfigurableCell {
 	
-	private lazy var view: AccountView = { .init() }()
+	private lazy var view: AccountCardView = { .init() }()
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -60,8 +60,8 @@ class AccountTableCell: ConfigurableCell {
 		backgroundColor = .surfaceBackground
 	}
 	
-	func configure(with model: AccountModel) {
-		view.configureView(account: model)
+	func configure(with model: AccountCellModel) {
+		view.configureView(account: model.account)
 	}
 	
 }

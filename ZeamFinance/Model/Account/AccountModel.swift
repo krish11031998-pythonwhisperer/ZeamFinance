@@ -12,6 +12,15 @@ struct AccountModel {
 	let name: String
 	let currency: String
 	let balance: Float
+	let isCrypto: Bool
+	
+	init(accountId: String, name: String, currency: String, balance: Float, isCrypto: Bool = false) {
+		self.accountId = accountId
+		self.name = name
+		self.currency = currency
+		self.balance = balance
+		self.isCrypto = isCrypto
+	}
 }
 
 struct AccountCellModel: ActionProvider {

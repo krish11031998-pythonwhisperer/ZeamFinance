@@ -52,6 +52,7 @@ class ButtonViewController: UIViewController {
 	private lazy var tableView: UITableView = {
 		let tableView = UITableView(frame: .zero, style: .grouped)
 		tableView.separatorStyle = .none
+		tableView.showsVerticalScrollIndicator = false
 		tableView.backgroundColor = .surfaceBackground
 		return tableView
 	}()

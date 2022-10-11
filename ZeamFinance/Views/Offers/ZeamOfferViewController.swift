@@ -12,6 +12,7 @@ class ZeamOfferViewController: UIViewController {
 	
 	private lazy var tableView: UITableView = {
 		let table = UITableView(frame: .zero, style: .grouped)
+		table.showsVerticalScrollIndicator = false
 		table.separatorStyle = .none
 		return table
 	}()

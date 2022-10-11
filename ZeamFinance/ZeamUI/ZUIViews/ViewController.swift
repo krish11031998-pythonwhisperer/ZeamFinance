@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 		let tableView: UITableView = .init(frame: .zero, style: .grouped)
 		tableView.separatorStyle = .none
 		tableView.backgroundColor = .surfaceBackground
+		tableView.showsVerticalScrollIndicator = false
 		return tableView
 	}()
 	
