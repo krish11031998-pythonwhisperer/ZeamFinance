@@ -31,6 +31,13 @@ extension UIView {
 		set { layer.cornerRadius = newValue }
 	}
 	
+	var clippedCornerRadius: CGFloat {
+		get { layer.cornerRadius }
+		set {
+			layer.cornerRadius = newValue
+			clipsToBounds = true
+		}
+	}
 	func cornerRadius(_ val: CGFloat, corners: CornerRadius) {
 		cornerRadius = val
 		layer.maskedCorners = corners.corners
@@ -93,7 +100,7 @@ extension UIView {
 	}
 	//MARK: - Circular
 	
-	var cornerFrame: CGRect {
+	var circleFrame: CGRect {
 		get { bounds }
 		set {
 			frame = newValue
@@ -104,7 +111,7 @@ extension UIView {
 	
 	convenience init(circular: CGRect, background: UIColor) {
 		self.init()
-		cornerFrame = circular
+		circleFrame = circular
 		backgroundColor = background
 		clipsToBounds = true
 	}

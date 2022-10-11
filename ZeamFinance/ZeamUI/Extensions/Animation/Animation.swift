@@ -12,6 +12,7 @@ enum Animation {
 	case bouncy(duration: CFTimeInterval = 0.3)
 	case slideInFromTop(from: CGFloat, to:CGFloat = 0, duration: CFTimeInterval)
 	case circularProgress(from: CGFloat = 0, to: CGFloat, duration: CFTimeInterval)
+	case progress(cornerRadius: CGFloat = 0, to: CGFloat, duration: CFTimeInterval = 0.5)
 }
 
 extension Animation {
@@ -51,6 +52,15 @@ extension Animation {
 			animation.isRemovedOnCompletion = false
 			animation.fillMode = .forwards
 			
+			return animation
+		case .progress(let cornerRadius, let to, let duration):
+			let animation = CABasicAnimation(keyPath: "path")
+			let newpath = UIBezierPath(roundedRect: .init(origin: .zero, size: .init(width: to, height: layer.superlayer?.bounds.height ?? layer.bounds.height)),
+									   cornerRadius: cornerRadius).cgPath
+			animation.toValue = newpath
+			animation.isRemovedOnCompletion = false
+			animation.duration = duration
+			animation.fillMode = .forwards
 			return animation
 		}
 		

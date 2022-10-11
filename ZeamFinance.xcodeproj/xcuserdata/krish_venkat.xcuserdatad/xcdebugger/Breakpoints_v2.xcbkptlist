@@ -110,10 +110,74 @@
             filePath = "ZeamFinance/Views/Wallet/WalletHeaderView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "configureHeaderView(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5AF1529E-764B-45A2-91F3-FC716D4A43D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZeamFinance/ZeamUI/Extensions/Animation/Animation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
-            landmarkName = "WalletHeaderView"
-            landmarkType = "3">
+            landmarkName = "animation(at:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5AF1529E-764B-45A2-91F3-FC716D4A43D9 - 6f7c63df50d4180f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZeamFinance.Animation.animation(at: __C.CALayer) -&gt; __C.CAAnimation"
+                  moduleName = "ZeamFinance"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krish_venkat/Desktop/UIKIt/Hackathon/ZUI/ZeamFinance/ZeamUI/Extensions/Animation/Animation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "2028">
+               </Location>
+               <Location
+                  uuid = "5AF1529E-764B-45A2-91F3-FC716D4A43D9 - 6f7c63df50d4180f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZeamFinance.Animation.animation(at: __C.CALayer) -&gt; __C.CAAnimation"
+                  moduleName = "ZeamFinance"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krish_venkat/Desktop/UIKIt/Hackathon/ZUI/ZeamFinance/ZeamUI/Extensions/Animation/Animation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "2112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3ED56B5E-FDFE-4E72-ACF5-D54BD1281232"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZeamFinance/ZeamUI/MiscComponents/Bars/MultipleStrokeProgressBar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "configureProgressBar(ratios:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

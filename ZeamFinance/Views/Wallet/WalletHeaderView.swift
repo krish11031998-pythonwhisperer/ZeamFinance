@@ -35,7 +35,6 @@ class WalletHeaderView: UIView {
 	}
 	
 	private func setupView() {
-//		addBackgroundView()
 		["Weekly Spending".sectionHeader(size: 25).generateLabel, stack].forEach(mainStack.addArrangedSubview(_:))
 		addSubview(mainStack)
 		mainStack.setFittingConstraints(childView: stack, leading: 0, trailing: 0)
@@ -63,7 +62,7 @@ class WalletHeaderView: UIView {
 			let view = UIView()
 			view.backgroundColor = .surfaceBackgroundInverse
 			view.setFrame(size)
-			view.cornerFrame = size.frame
+			view.circleFrame = size.frame
 			let chartIndicator = UIView()
 			[lineView, view].forEach {
 				chartIndicator.addSubview($0)

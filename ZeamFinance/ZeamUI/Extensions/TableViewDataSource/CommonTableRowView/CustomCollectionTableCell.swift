@@ -11,14 +11,17 @@ import UIKit
 struct CollectionTableCellModel {
 	let cells: [CollectionCellProvider]
 	let size: CGSize
+	let inset: UIEdgeInsets
 	let isPagingEnabled: Bool
 	let cellSize: CGSize
 	init(cells: [CollectionCellProvider],
 		 size: CGSize? = nil,
+		 inset: UIEdgeInsets = .init(vertical: 0, horizontal: 8),
 		 cellSize: CGSize,
 		 isPagingEnabled: Bool = false) {
 		self.cells = cells
 		self.size = size ?? .init(width: .totalWidth, height: cellSize.height)
+		self.inset = inset
 		self.cellSize = cellSize
 		self.isPagingEnabled = isPagingEnabled
 	}
@@ -45,11 +48,11 @@ class CollectionTableCell: ConfigurableCell {
 		setupViews()
 	}
 	
-	private func layout(size: CGSize) -> UICollectionViewFlowLayout {
+	private func layout(size: CGSize, inset: UIEdgeInsets) -> UICollectionViewFlowLayout {
 		let layout = UICollectionViewFlowLayout()
 		layout.scrollDirection = .horizontal
 		layout.itemSize = size
-		layout.sectionInset = .init(vertical: 0, horizontal: 8)
+		layout.sectionInset = inset
 		return layout
 	}
 	
@@ -64,7 +67,7 @@ class CollectionTableCell: ConfigurableCell {
 	func configure(with model: CollectionTableCellModel) {
 		collection.reloadData(.init(sections: [.init(cell: model.cells)]))
 		collection.setFrame(model.size)
-		collection.collectionViewLayout = layout(size: model.cellSize)
+		collection.collectionViewLayout = layout(size: model.cellSize, inset: model.inset)
 	}
 
 	static var cellName: String? {

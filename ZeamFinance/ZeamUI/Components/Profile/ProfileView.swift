@@ -28,7 +28,7 @@ class ProfileView: UIView {
 		let imgView = UIImageView()
 		imgView.cornerRadius = 45
 		imgView.setFrame(.init(squared: 90))
-		imgView.cornerFrame = .init(origin: .zero, size: .init(squared: 90))
+		imgView.circleFrame = .init(origin: .zero, size: .init(squared: 90))
 		imgView.layer.addCircularProgress(startAngle: 0,
 										  endAngle: 2 * .pi,
 										  lineWidth: 5,

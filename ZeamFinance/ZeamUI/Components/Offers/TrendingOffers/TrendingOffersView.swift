@@ -53,6 +53,7 @@ class TrendingOffersView: UIView {
 		offerImage.addSubview(brandLogo)
 		offerImage.setFittingConstraints(childView: brandLogo, leading: 10, bottom: 10, width: 30, height: 30)
 		offerImage.setFrame(.init(squared: 95))
+		offerImage.clippedCornerRadius = 8
 		return offerImage
 	}
 	

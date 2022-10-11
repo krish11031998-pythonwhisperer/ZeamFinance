@@ -21,7 +21,7 @@ struct SpotlightOfferModel {
 class SpotlightOffer: ConfigurableCollectionCell {
 	private lazy var imgView: UIImageView = {
 		let imgView = UIImageView()
-		imgView.cornerFrame = .init(origin: .zero, size: .init(squared: 48))
+		imgView.circleFrame = .init(origin: .zero, size: .init(squared: 48))
 		imgView.clipsToBounds = true
 		imgView.contentMode = .scaleAspectFill
 		imgView.backgroundColor = .popBlack100

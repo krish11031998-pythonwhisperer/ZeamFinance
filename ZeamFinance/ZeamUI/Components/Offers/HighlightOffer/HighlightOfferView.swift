@@ -143,6 +143,8 @@ class HighlightOfferView: UIView {
 		
 		addSubview(stack)
 		setFittingConstraints(childView: stack, insets: .init(vertical: 30, horizontal: 20))
+		
+		clippedCornerRadius = 12
 	}
 	
 	public func configureView(_ model: OfferViewModel) {

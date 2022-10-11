@@ -49,7 +49,7 @@ class ShapesViewController: UIViewController {
 				let view = UIImageView()
 				view.setFrame(.init(squared: 115))
 				view.backgroundColor = .surfaceBackgroundInverse
-				view.cornerFrame = .init(origin: .zero, size: .init(squared: 115))
+				view.circleFrame = .init(origin: .zero, size: .init(squared: 115))
 				return view
 			}()
 			let titleLabel = "Sleepy Owl Coffee".semiBold(size: 14).generateLabel

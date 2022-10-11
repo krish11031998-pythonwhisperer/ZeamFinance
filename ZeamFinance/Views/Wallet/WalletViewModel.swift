@@ -29,7 +29,92 @@ class WalletViewModel {
 								   strokeEnd: CGFloat(to),
 								   animateStrokeEnd: false)
 	}
-
+	
+	//MARK: - Views
+	private func moreButton(title: RenderableText? = nil, titleString: String? = nil, action: Callback? = nil) -> TableCellProvider  {
+		let moreCell = CustomButton()
+		moreCell.configureButton(.init(title: titleString?.bold(size: 13) ?? title ?? "",
+									   buttonType: .slender,
+									   buttonStyling: .init(borderColor: .surfaceBackgroundInverse), action: {
+			NotificationCenter.default.post(name: .showAllTransactions, object: nil)
+		}))
+		moreCell.setWidth(width: moreCell.compressedSize.width, priority: .required)
+		
+		let stack: UIStackView = .HStack(subViews: [moreCell, .spacer()],spacing: 0, alignment: .center)
+		return TableRow<CustomTableCell>(.init(view: stack, inset: .init(by: 10)))
+	}
+	
+	private var creditScoreView: TableSection {
+		let creditScoreView = CreditScoreView()
+		creditScoreView.configureView(.init(score: 750))
+		let view = UIView()
+		view.addSubview(creditScoreView)
+		view.setFittingConstraints(childView: creditScoreView, top: 0, leading: 10, trailing: 10, bottom: 0, centerX: 0, priority: .needed)
+		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .zero))],
+					 title: "Credit Card Score")
+	}
+	
+	public func setupHeaderView() {
+		let header = "Balance".sectionHeader(size: 25).generateLabel
+		let balance = String(format: "$ %.2f", Float.random(in: 100..<1000)).sectionHeader(size: 35).generateLabel
+		let legends = UIStackView.HStack(spacing: 12)
+		let accountRatios:[MultipleStrokeModel] = [.init(color: .info500, nameText: "Fiat", val: 0.3),
+							 .init(color: .orangeSunshine500, nameText: "BTC", val: 0.2),
+							 .init(color: .manna500, nameText: "ZFI", val: 0.5)]
+		
+		accountRatios.forEach { model in
+			let circle = UIView()
+			circle.setFrame(.init(squared: 8))
+			circle.circleFrame = .init(origin: .zero, size: .init(squared: 8))
+			circle.backgroundColor = model.color
+			let label = model.name.generateLabel
+			let stack = UIStackView.HStack(subViews: [circle, label], spacing: 4, alignment: .center)
+			legends.addArrangedSubview(stack)
+		}
+		
+		let progressView = MultipleStrokeProgressBar(frame: .init(origin: .zero, size: .init(width: .totalWidth - 20, height: 24)))
+		progressView.setFrame(height: 24)
+		
+		let stack = UIView.VStack(subViews: [header, balance, legends, progressView], spacing: 5, alignment: .leading)
+		stack.setCustomSpacing(12, after: header)
+		stack.setCustomSpacing(15, after: balance)
+		stack.setFittingConstraints(childView: progressView, leading: 0, trailing: 0)
+		progressView.configureProgressBar(ratios: accountRatios)
+		view?.setupHeaderView(view: stack.embedInView(insets: .init(by: 10), priority: .needed))
+	}
+	
+	//MARK: - CellProviders
+	private var addCardCell: CollectionCellProvider {
+		let view = UIView()
+		let button = LabelButton()
+		button.configure(model: .init(title: "Add Card", img: .init(systemName: "plus") ?? .solid(color: .clear), action: addCardTarget))
+		view.addSubview(button)
+		view.setFittingConstraints(childView: button, centerX: 0,centerY: 0)
+		view.border(color: .surfaceBackgroundInverse, borderWidth: 0.25, cornerRadius: 12)
+		return CollectionItem<CustomCollectionCell>(.init(view: view, inset: .init(by: 10)))
+	}
+	
+	private var cardCells: [TableCellProvider] {
+		guard let validCards = cards else { return [] }
+		let collectionCells = validCards.compactMap {CollectionItem<CardViewCollectionCell>(.init(card: $0))}
+		let h: CGFloat = 200
+		return [TableRow<CollectionTableCell>(.init(cells: collectionCells + [addCardCell], inset: .zero, cellSize: .init(width: h * 1.755,
+																											height: h)))]
+	}
+	
+	private var accountCells: [TableCellProvider]  {
+		let accounts: [AccountModel] = [.init(accountId: UUID().uuidString, name: "AED Account", currency: "AED", balance: Float.random(in: 100..<1000)),
+										.init(accountId: UUID().uuidString, name: "BTC Account", currency: "BTC", balance: Float.random(in: 100..<1000)),
+										.init(accountId: UUID().uuidString, name: "ZFI Account", currency: "ZFI", balance: Float.random(in: 100..<1000))]
+		return accounts.map { TableRow<AccountTableCell>($0) }
+	}
+	
+	private var txnCells: [TableCellProvider] {
+		transactions?.compactMap { TableRow<TransactionCell>(.init(transaction: $0)) } ?? []
+	}
+	
+	//MARK: - Sections
+	
 	private var summarySection: TableSection {
 		let percent = Float.random(in: 10..<40)
 		let imgView = UIImageView(image: .IconCatalogue.coins.image)
@@ -43,50 +128,26 @@ class WalletViewModel {
 					 title: "Spending Summary")
 	}
 	
-	private var creditScoreView: TableSection {
-		let creditScoreView = CreditScoreView()
-		creditScoreView.configureView(.init(score: 750))
-		let view = UIView()
-		view.addSubview(creditScoreView)
-		view.setFittingConstraints(childView: creditScoreView, top: 0, leading: 10, trailing: 10, bottom: 0, centerX: 0, priority: .needed)
-		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .zero))],
-															title: "Credit Card Score")
+	private var accountSection: TableSection {
+		.init(rows: accountCells, title: "Accounts")
 	}
 	
-	private var cardCells: [TableCellProvider] {
-		cards?.compactMap { TableRow<CardViewTableCell>(.init(card: $0)) } ?? []
+	private var cardSection: TableSection {
+		return .init(rows: cardCells, title: "Card")
 	}
 	
-	private var txnCells: [TableCellProvider] {
-		transactions?.compactMap { TableRow<TransactionCell>(.init(transaction: $0)) } ?? []
+	private var transactionSection: TableSection {
+		.init(rows: txnCells + [moreButton(titleString: "view more")], title: "Transactions")
 	}
 	
-	private var cardTransactionSection: TableSection {
-		let moreCell = CustomButton()
-		moreCell.configureButton(.init(title: "view more".bold(size: 13),
-									   buttonType: .slender,
-									   buttonStyling: .init(borderColor: .surfaceBackgroundInverse), action: {
-			NotificationCenter.default.post(name: .showAllTransactions, object: nil)
-		}))
-		moreCell.setWidth(width: moreCell.compressedSize.width, priority: .required)
-		
-		let stack: UIStackView = .HStack(subViews: [moreCell, .spacer()],spacing: 0, alignment: .center)
-		
-		return .init(rows: cardCells + txnCells + [TableRow<CustomTableCell>(.init(view: stack, inset: .init(by: 10)))],
-					 title: "Card")
-	}
-	
-	func setupHeaderView() {
-		let headerView = WalletHeaderView()
-		let txns = Array(repeating: transactions?.randomElement(), count: Int.random(in: 2..<10)).compactMap {$0}
-		let dailyModel: TransactionDailyModel = .init(txns: txns)
-		let weekly: TransactionWeeklyModel = .init(daily: Array(repeating: dailyModel, count: 7))
-		headerView.configureHeaderView(weekly)
-		view?.setupHeaderView(view: headerView)
-	}
-	
+	//MARK: - TableViewDataSource
 	private func buildDatasource() -> TableViewDataSource {
-		.init(sections: [cardTransactionSection, creditScoreView, summarySection])
+		.init(sections: [cardSection, accountSection, transactionSection, creditScoreView, summarySection])
 	}
 	
+	//MARK: - MISC
+	@objc
+	func addCardTarget() {
+		print("(DEBUG) add Target!")
+	}
 }

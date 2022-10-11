@@ -56,6 +56,7 @@ class PaymentCard: UIView {
 		addSubview(mainStack)
 		setFittingConstraints(childView: mainStack, insets: .init(by: 10))
 		backgroundColor = .surfaceBackgroundInverse
+		clippedCornerRadius = 12
 	}
 	
 	private func setupInstallmentCounter(_ count: Int, total: Int) {

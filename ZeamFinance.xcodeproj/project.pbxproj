@@ -34,6 +34,13 @@
 		EF59411028F4219E001380B8 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59410F28F4219E001380B8 /* ChartView.swift */; };
 		EF59411328F421E9001380B8 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59411228F421E9001380B8 /* CGPoint.swift */; };
 		EF59411528F4225C001380B8 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59411428F4225C001380B8 /* Numeric.swift */; };
+		EF59411828F42DB6001380B8 /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59411728F42DB6001380B8 /* CustomCollectionCell.swift */; };
+		EF59411B28F42E73001380B8 /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59411A28F42E73001380B8 /* LabelButton.swift */; };
+		EF59411D28F45475001380B8 /* MultipleStrokeProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59411C28F45475001380B8 /* MultipleStrokeProgressBar.swift */; };
+		EF59412028F53977001380B8 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59411F28F53977001380B8 /* AccountModel.swift */; };
+		EF59412328F53A1B001380B8 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF59412228F53A1B001380B8 /* AccountView.swift */; };
+		EF59412628F54313001380B8 /* Gilroy-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF59412428F54313001380B8 /* Gilroy-ExtraBold.otf */; };
+		EF59412728F54313001380B8 /* Gilroy-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF59412528F54313001380B8 /* Gilroy-Light.otf */; };
 		EF639A5528EE109800787C58 /* ActiveBoosterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A5428EE109800787C58 /* ActiveBoosterCard.swift */; };
 		EF639A5828EEA15200787C58 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A5728EEA15200787C58 /* TransactionCell.swift */; };
 		EF639A5C28EEA35400787C58 /* DualLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A5B28EEA35400787C58 /* DualLabel.swift */; };
@@ -174,6 +181,13 @@
 		EF59410F28F4219E001380B8 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		EF59411228F421E9001380B8 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		EF59411428F4225C001380B8 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
+		EF59411728F42DB6001380B8 /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
+		EF59411A28F42E73001380B8 /* LabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButton.swift; sourceTree = "<group>"; };
+		EF59411C28F45475001380B8 /* MultipleStrokeProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleStrokeProgressBar.swift; sourceTree = "<group>"; };
+		EF59411F28F53977001380B8 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		EF59412228F53A1B001380B8 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		EF59412428F54313001380B8 /* Gilroy-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.otf"; sourceTree = "<group>"; };
+		EF59412528F54313001380B8 /* Gilroy-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.otf"; sourceTree = "<group>"; };
 		EF639A5428EE109800787C58 /* ActiveBoosterCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveBoosterCard.swift; sourceTree = "<group>"; };
 		EF639A5728EEA15200787C58 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		EF639A5B28EEA35400787C58 /* DualLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualLabel.swift; sourceTree = "<group>"; };
@@ -310,6 +324,7 @@
 		EF5940D028F14DCE001380B8 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				EF59412128F53A11001380B8 /* Account */,
 				EF5940FD28F21C21001380B8 /* WalletTransactionModal */,
 				EF5940DC28F182A5001380B8 /* WalletTransactionView */,
 				EF5940D128F14DDE001380B8 /* WalletViewController.swift */,
@@ -351,6 +366,7 @@
 		EF5940DF28F18370001380B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EF59411E28F5396F001380B8 /* Account */,
 				EF5940F828F1F00E001380B8 /* Payment */,
 				EF5940E228F183A2001380B8 /* Transaction */,
 			);
@@ -436,6 +452,38 @@
 			path = Charts;
 			sourceTree = "<group>";
 		};
+		EF59411628F42D99001380B8 /* CommonCollectionItemView */ = {
+			isa = PBXGroup;
+			children = (
+				EF59411728F42DB6001380B8 /* CustomCollectionCell.swift */,
+			);
+			path = CommonCollectionItemView;
+			sourceTree = "<group>";
+		};
+		EF59411928F42E65001380B8 /* LabelButton */ = {
+			isa = PBXGroup;
+			children = (
+				EF59411A28F42E73001380B8 /* LabelButton.swift */,
+			);
+			path = LabelButton;
+			sourceTree = "<group>";
+		};
+		EF59411E28F5396F001380B8 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				EF59411F28F53977001380B8 /* AccountModel.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		EF59412128F53A11001380B8 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				EF59412228F53A1B001380B8 /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		EF639A5628EEA14500787C58 /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +498,7 @@
 				EF89AA6828ED482C00598521 /* CircularProgressBar.swift */,
 				EF89AA7228ED482C00598521 /* ProgressBars.swift */,
 				EF639A6228EED4A100787C58 /* SphericalProgressBars.swift */,
+				EF59411C28F45475001380B8 /* MultipleStrokeProgressBar.swift */,
 			);
 			path = Bars;
 			sourceTree = "<group>";
@@ -615,6 +664,8 @@
 		EF89A9C728EC284600598521 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				EF59412428F54313001380B8 /* Gilroy-ExtraBold.otf */,
+				EF59412528F54313001380B8 /* Gilroy-Light.otf */,
 				EF639A7B28F0248800787C58 /* PPCirka-Bold.otf */,
 				EF639A7C28F0248800787C58 /* PPCirka-Light.otf */,
 				EF639A7A28F0248800787C58 /* PPCirka-Variable.ttf */,
@@ -718,6 +769,7 @@
 		EF89AA2F28EC53C500598521 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EF59411928F42E65001380B8 /* LabelButton */,
 				EF59410E28F4218A001380B8 /* Charts */,
 				EF5940EE28F1AEBC001380B8 /* PresentedViewController */,
 				EF5940D528F15452001380B8 /* Account */,
@@ -774,6 +826,7 @@
 		EF89AA3E28EC82AE00598521 /* CollectionViewDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				EF59411628F42D99001380B8 /* CommonCollectionItemView */,
 				EF89AA3F28EC82BF00598521 /* CollectionColumn.swift */,
 				EF89AA4128ECBE2700598521 /* CollectionViewFunctions.swift */,
 				EF89AA4528ECC17700598521 /* CollectionSection.swift */,
@@ -974,9 +1027,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF89A9E128EC29BA00598521 /* Satoshi-Light.otf in Resources */,
+				EF59412728F54313001380B8 /* Gilroy-Light.otf in Resources */,
 				EF89A99C28EC262100598521 /* LaunchScreen.storyboard in Resources */,
 				EF89A9E528EC29BA00598521 /* Satoshi-Variable.ttf in Resources */,
 				EF89A9E728EC29BA00598521 /* Satoshi-Black.otf in Resources */,
+				EF59412628F54313001380B8 /* Gilroy-ExtraBold.otf in Resources */,
 				EF89A9DF28EC29BA00598521 /* Satoshi-BlackItalic.otf in Resources */,
 				EF89A9E428EC29BA00598521 /* Satoshi-Medium.otf in Resources */,
 				EF89A99928EC262100598521 /* Assets.xcassets in Resources */,
@@ -1023,6 +1078,7 @@
 				EF89A9FF28EC3F4100598521 /* ViewStyling.swift in Sources */,
 				EF59410D28F3F9EC001380B8 /* WalletHeaderView.swift in Sources */,
 				EF639A7428F0116D00787C58 /* MainTabViewController.swift in Sources */,
+				EF59412328F53A1B001380B8 /* AccountView.swift in Sources */,
 				EF639A7628F013EF00787C58 /* MainTabView.swift in Sources */,
 				EF5940E128F18385001380B8 /* TransactionModel.swift in Sources */,
 				EF5940EA28F19C9B001380B8 /* ZeamOfferViewController.swift in Sources */,
@@ -1041,6 +1097,7 @@
 				EF89A9F528EC3F3300598521 /* UIEdgeInsets.swift in Sources */,
 				EF89AA7528ED482C00598521 /* SearchBar.swift in Sources */,
 				EF89AA4F28ECEF9100598521 /* CategoriesView.swift in Sources */,
+				EF59411B28F42E73001380B8 /* LabelButton.swift in Sources */,
 				EF639A7928F0173C00787C58 /* HomeViewModel.swift in Sources */,
 				EF89AA0228EC3F4100598521 /* UILabel.swift in Sources */,
 				EF89AA7328ED482C00598521 /* CircularProgressBar.swift in Sources */,
@@ -1057,6 +1114,7 @@
 				EF89AA7428ED482C00598521 /* SearchViewController.swift in Sources */,
 				EF89AA1228EC401F00598521 /* TableViewFunction.swift in Sources */,
 				EF89AA7928ED482C00598521 /* ImageHeaderSubHeaderView.swift in Sources */,
+				EF59411828F42DB6001380B8 /* CustomCollectionCell.swift in Sources */,
 				EF89AA0628EC3F6900598521 /* Response.swift in Sources */,
 				EF639A7128F00FD900787C58 /* HomeViewController.swift in Sources */,
 				EF59410428F2FB01001380B8 /* PaymentViewModel.swift in Sources */,
@@ -1083,6 +1141,7 @@
 				EF89AA7628ED482C00598521 /* SentimentTextLabel.swift in Sources */,
 				EF639A6128EEC6B900787C58 /* CardView.swift in Sources */,
 				EF59410828F2FEC6001380B8 /* PayNotification.swift in Sources */,
+				EF59411D28F45475001380B8 /* MultipleStrokeProgressBar.swift in Sources */,
 				EF89AA4428ECC11700598521 /* CustomCollectionTableCell.swift in Sources */,
 				EF639A8328F02EF900787C58 /* ProfileAssets.swift in Sources */,
 				EF89AA4828ECC20100598521 /* CollectionDataSource.swift in Sources */,
@@ -1110,6 +1169,7 @@
 				EF5940ED28F19D1D001380B8 /* ZeamOfferViewModel.swift in Sources */,
 				EF5940FA28F1F01E001380B8 /* PaymentModel.swift in Sources */,
 				EF89AA0028EC3F4100598521 /* UIViewController.swift in Sources */,
+				EF59412028F53977001380B8 /* AccountModel.swift in Sources */,
 				EF89AA1428EC401F00598521 /* Configurable.swift in Sources */,
 				EF639A6A28EF0AA200787C58 /* ProfileViewController.swift in Sources */,
 				EF89A99228EC262100598521 /* SceneDelegate.swift in Sources */,

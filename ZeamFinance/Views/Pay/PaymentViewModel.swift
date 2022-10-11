@@ -28,7 +28,7 @@ class PaymentViewModel {
 		guard let validBills = bills else { return nil }
 		let cells = validBills.compactMap { CollectionItem<PaymentCardCollectionCell>($0)}
 		return .init(rows: [TableRow<CollectionTableCell>(.init(cells: cells,
-																cellSize: .init(width: 225, height: 300)))], title: "Upcoming Bills")
+																cellSize: .init(squared: 225)))], title: "Upcoming Bills")
 	}
 	
 	private var paySection: TableSection? {

@@ -29,7 +29,7 @@ class CardView: UIView {
 	
 	private lazy var imgView: UIImageView = {
 		let img = UIImageView(image: .IconCatalogue.cardLarge.image)
-		img.contentMode = .scaleAspectFit
+		img.contentMode = .scaleAspectFill
 		img.clipsToBounds = true
 		return img
 	}()
@@ -49,18 +49,19 @@ class CardView: UIView {
 	private func setupStack() {
 		let stack = UIStackView.VStack(subViews: [bankDetails, .spacer(), nameLabel], spacing: 0)
 		stack.alignment = .leading
-		imgView.addSubview(stack)
-		imgView.setFittingConstraints(childView: stack, insets: .init(by: 20))
+		addSubview(imgView)
+		addSubview(stack)
+		setFittingConstraints(childView: imgView, insets: .zero)
+		setFittingConstraints(childView: stack, insets: .init(by: 20))
+		border(color: .surfaceBackgroundInverse, borderWidth: 0.25, cornerRadius: 12)
 	}
 	
 	private func setupView() {
-		imgView.image = imgView.image?.resized(size: bounds.size)
-		addSubview(imgView)
-		setFittingConstraints(childView: imgView, insets: .zero)
 		setupStack()
 	}
 	
 	public func configureCard(_ model: CardModel) {
+		imgView.image = .IconCatalogue.cardLarge.image.resized(size: frame.size)
 		bankDetails.configureLabel(title: model.bankName.uppercased().bold(color: .popWhite100, size: 13),
 								   subTitle: model.cardNumber.semiBold(color: .popWhite100, size: 10))
 		model.name.semiBold(color: .popWhite100, size: 13).render(target: nameLabel)
@@ -84,8 +85,35 @@ class CardViewTableCell: ConfigurableCell {
 	private func setupView() {
 		contentView.addSubview(view)
 		contentView.setFittingConstraints(childView: view, insets: .init(by: 10))
+		view.setHeight(height: .totalWidth/1.75, priority: .needed)
 		backgroundColor = .surfaceBackground
 		selectionStyle = .none
+	}
+	
+	func configure(with model: CardCellModel) {
+		view.configureCard(model.card)
+	}
+}
+
+
+class CardViewCollectionCell: ConfigurableCollectionCell {
+	
+	private lazy var view: CardView = { .init(frame: CGSize.init(width: .totalWidth, height: .totalWidth/1.75).frame) }()
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		setupView()
+	}
+	
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+		setupView()
+	}
+	
+	private func setupView() {
+		contentView.addSubview(view)
+		contentView.setFittingConstraints(childView: view, insets: .init(by: 10))
+		backgroundColor = .surfaceBackground
 	}
 	
 	func configure(with model: CardCellModel) {
