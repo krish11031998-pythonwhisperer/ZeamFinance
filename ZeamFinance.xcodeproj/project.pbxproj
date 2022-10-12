@@ -57,7 +57,7 @@
 		EF639A6328EED4A100787C58 /* SphericalProgressBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6228EED4A100787C58 /* SphericalProgressBars.swift */; };
 		EF639A6528EED53800787C58 /* CircularProgressShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6428EED53800787C58 /* CircularProgressShape.swift */; };
 		EF639A6828EF08A700787C58 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6728EF08A700787C58 /* ProfileView.swift */; };
-		EF639A6A28EF0AA200787C58 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6928EF0AA200787C58 /* ProfileViewController.swift */; };
+		EF639A6A28EF0AA200787C58 /* ZUIProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6928EF0AA200787C58 /* ZUIProfileViewController.swift */; };
 		EF639A6C28EF137D00787C58 /* CreditScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6B28EF137D00787C58 /* CreditScore.swift */; };
 		EF639A6E28EF575600787C58 /* circlingBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A6D28EF575600787C58 /* circlingBall.swift */; };
 		EF639A7128F00FD900787C58 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A7028F00FD900787C58 /* HomeViewController.swift */; };
@@ -142,6 +142,9 @@
 		EF89AA8828ED7F8500598521 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8728ED7F8500598521 /* TableDataSource.swift */; };
 		EF89AA8B28EDBADD00598521 /* CuratedBackgroundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8A28EDBADD00598521 /* CuratedBackgroundShape.swift */; };
 		EF89AA8E28EDBC6000598521 /* ShapesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8D28EDBC6000598521 /* ShapesViewController.swift */; };
+		EF9ADE6228F665F2008580ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6128F665F2008580ED /* ProfileViewController.swift */; };
+		EF9ADE6428F66667008580ED /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6328F66667008580ED /* ProfileViewModel.swift */; };
+		EF9ADE6728F666A0008580ED /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6628F666A0008580ED /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,7 +215,7 @@
 		EF639A6228EED4A100787C58 /* SphericalProgressBars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SphericalProgressBars.swift; sourceTree = "<group>"; };
 		EF639A6428EED53800787C58 /* CircularProgressShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressShape.swift; sourceTree = "<group>"; };
 		EF639A6728EF08A700787C58 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		EF639A6928EF0AA200787C58 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EF639A6928EF0AA200787C58 /* ZUIProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZUIProfileViewController.swift; sourceTree = "<group>"; };
 		EF639A6B28EF137D00787C58 /* CreditScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScore.swift; sourceTree = "<group>"; };
 		EF639A6D28EF575600787C58 /* circlingBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circlingBall.swift; sourceTree = "<group>"; };
 		EF639A7028F00FD900787C58 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +304,9 @@
 		EF89AA8728ED7F8500598521 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		EF89AA8A28EDBADD00598521 /* CuratedBackgroundShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuratedBackgroundShape.swift; sourceTree = "<group>"; };
 		EF89AA8D28EDBC6000598521 /* ShapesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesViewController.swift; sourceTree = "<group>"; };
+		EF9ADE6128F665F2008580ED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EF9ADE6328F66667008580ED /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		EF9ADE6628F666A0008580ED /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +388,7 @@
 		EF5940DF28F18370001380B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EF9ADE6528F66698008580ED /* User */,
 				EF59413228F590E2001380B8 /* Card */,
 				EF59412828F5708C001380B8 /* Offers */,
 				EF59411E28F5396F001380B8 /* Account */,
@@ -594,6 +601,7 @@
 		EF639A6F28F00FB200787C58 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EF9ADE6028F665E3008580ED /* Profile */,
 				EF59410028F2F75B001380B8 /* Pay */,
 				EF5940E828F19C8B001380B8 /* Offers */,
 				EF5940D028F14DCE001380B8 /* Wallet */,
@@ -853,7 +861,7 @@
 				EF89AA3C28EC7E4B00598521 /* OffersViewController.swift */,
 				EF89AA8D28EDBC6000598521 /* ShapesViewController.swift */,
 				EF639A5D28EEA5C000787C58 /* TransactionViewController.swift */,
-				EF639A6928EF0AA200787C58 /* ProfileViewController.swift */,
+				EF639A6928EF0AA200787C58 /* ZUIProfileViewController.swift */,
 			);
 			path = ZUIViews;
 			sourceTree = "<group>";
@@ -984,6 +992,23 @@
 				EF639A6D28EF575600787C58 /* circlingBall.swift */,
 			);
 			path = Shapes;
+			sourceTree = "<group>";
+		};
+		EF9ADE6028F665E3008580ED /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EF9ADE6128F665F2008580ED /* ProfileViewController.swift */,
+				EF9ADE6328F66667008580ED /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		EF9ADE6528F66698008580ED /* User */ = {
+			isa = PBXGroup;
+			children = (
+				EF9ADE6628F666A0008580ED /* UserModel.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1134,6 +1159,7 @@
 			files = (
 				EF89AA4B28ECCF4300598521 /* HighlightOfferView.swift in Sources */,
 				EF89A9EA28EC3E0200598521 /* SystemCatalogue.swift in Sources */,
+				EF9ADE6428F66667008580ED /* ProfileViewModel.swift in Sources */,
 				EF5940F028F1AECC001380B8 /* PresentationViewController.swift in Sources */,
 				EF639A6C28EF137D00787C58 /* CreditScore.swift in Sources */,
 				EF5940D228F14DDE001380B8 /* WalletViewController.swift in Sources */,
@@ -1201,6 +1227,7 @@
 				EF89AA8628ED62A300598521 /* ExclusiveOfferCollectionCell.swift in Sources */,
 				EF89A9FE28EC3F4100598521 /* ViewHeirachy.swift in Sources */,
 				EF59410628F2FEA1001380B8 /* QRCodeViewController.swift in Sources */,
+				EF9ADE6728F666A0008580ED /* UserModel.swift in Sources */,
 				EF59413E28F59B26001380B8 /* AccountDetailViewModel.swift in Sources */,
 				EF89AA1728EC401F00598521 /* Animation.swift in Sources */,
 				EF89A9EC28EC3ED700598521 /* Helpers.swift in Sources */,
@@ -1239,11 +1266,12 @@
 				EF89AA7828ED482C00598521 /* SymbolImage.swift in Sources */,
 				EF89AA1628EC401F00598521 /* CustomTableCell.swift in Sources */,
 				EF5940ED28F19D1D001380B8 /* ZeamOfferViewModel.swift in Sources */,
+				EF9ADE6228F665F2008580ED /* ProfileViewController.swift in Sources */,
 				EF5940FA28F1F01E001380B8 /* PaymentModel.swift in Sources */,
 				EF89AA0028EC3F4100598521 /* UIViewController.swift in Sources */,
 				EF59412028F53977001380B8 /* AccountModel.swift in Sources */,
 				EF89AA1428EC401F00598521 /* Configurable.swift in Sources */,
-				EF639A6A28EF0AA200787C58 /* ProfileViewController.swift in Sources */,
+				EF639A6A28EF0AA200787C58 /* ZUIProfileViewController.swift in Sources */,
 				EF89A99228EC262100598521 /* SceneDelegate.swift in Sources */,
 				EF89AA4628ECC17700598521 /* CollectionSection.swift in Sources */,
 			);

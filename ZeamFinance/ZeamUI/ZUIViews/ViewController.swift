@@ -56,7 +56,7 @@ class ViewController: UIViewController {
 		case "Transactions":
 			navigationController?.pushViewController(TransactionViewController(), animated: true)
 		case "Profile":
-			navigationController?.pushViewController(ProfileViewController(), animated: true)
+			navigationController?.pushViewController(ZUIProfileViewController(), animated: true)
 		default: break;
 		}
 	}

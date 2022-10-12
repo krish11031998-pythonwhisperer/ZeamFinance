@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ZUIProfileViewController: UIViewController {
 	
 	private lazy var tableView: UITableView = {
 		let table = UITableView(frame: .zero, style: .grouped)
