@@ -28,7 +28,7 @@ class PaymentModal: UIViewController {
 	
 	private func setupView() {
 		if let validPayment = model {
-			paymentCard.configureCard(model: validPayment)
+			paymentCard.configureCard(model: validPayment, isPaymentModal: true)
 		}
 		view.addSubview(paymentCard)
 		view.setFittingConstraints(childView: paymentCard, insets: .init(by: 15))

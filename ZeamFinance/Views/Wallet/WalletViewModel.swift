@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 
+fileprivate extension TransactionModel {
+	
+	init(detail: String) {
+		self.init(cellLogo: .solid(color: .clear), detail: detail, date: Date.now.formatted(), amount: Float.random(in: 10..<100))
+	}
+}
+
 class WalletViewModel {
 	
 	private var cards: [CardModel]?
@@ -42,16 +49,6 @@ class WalletViewModel {
 		
 		let stack: UIStackView = .HStack(subViews: [moreCell, .spacer()],spacing: 0, alignment: .center)
 		return TableRow<CustomTableCell>(.init(view: stack, inset: .init(by: 10)))
-	}
-	
-	private var creditScoreView: TableSection {
-		let creditScoreView = CreditScoreView()
-		creditScoreView.configureView(.init(score: 750))
-		let view = UIView()
-		view.addSubview(creditScoreView)
-		view.setFittingConstraints(childView: creditScoreView, top: 0, leading: 10, trailing: 10, bottom: 0, centerX: 0, priority: .needed)
-		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .zero))],
-					 title: "Credit Card Score")
 	}
 	
 	public func setupHeaderView() {
@@ -119,6 +116,13 @@ class WalletViewModel {
 		transactions?.compactMap { TableRow<TransactionCell>(.init(transaction: $0)) } ?? []
 	}
 	
+	private var weeklySpendingChart: UIView {
+		let view = WeeklyChartView()
+		view.configureChart(.init(daily: Array(repeating: TransactionDailyModel(txns: Array(repeating: TransactionModel(detail: "Sample"),
+																							count: Int.random(in: 10..<100))) , count: 7)))
+		return view
+	}
+	
 	//MARK: - Sections
 	
 	private var summarySection: TableSection {
@@ -146,9 +150,24 @@ class WalletViewModel {
 		.init(rows: txnCells + [moreButton(titleString: "view more")], title: "Transactions")
 	}
 	
+	
+	private var creditScoreView: TableSection {
+		let creditScoreView = CreditScoreView()
+		creditScoreView.configureView(.init(score: 750))
+		let view = UIView()
+		view.addSubview(creditScoreView)
+		view.setFittingConstraints(childView: creditScoreView, top: 0, leading: 10, trailing: 10, bottom: 0, centerX: 0, priority: .needed)
+		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .zero))],
+					 title: "Credit Card Score")
+	}
+	
+	private var weeklySpendingChartSection: TableSection {
+		return .init(rows: [TableRow<CustomTableCell>(.init(view: weeklySpendingChart, inset: .init(by: 10)))], title: "Weekly Chart")
+	}
+	
 	//MARK: - TableViewDataSource
 	private func buildDatasource() -> TableViewDataSource {
-		.init(sections: [cardSection, accountSection, transactionSection, creditScoreView, summarySection])
+		.init(sections: [cardSection, accountSection, transactionSection, summarySection, weeklySpendingChartSection])
 	}
 	
 	//MARK: - MISC

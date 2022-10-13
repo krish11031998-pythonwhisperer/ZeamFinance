@@ -23,6 +23,14 @@ struct AccountModel {
 	}
 }
 
+extension Array where Element == AccountModel {
+	static var testAccounts: [Self.Element] {
+		[.init(accountId: UUID().uuidString, name: "AED Account", currency: "AED", balance: Float.random(in: 100..<1000)),
+		 .init(accountId: UUID().uuidString, name: "BTC Account", currency: "BTC", balance: Float.random(in: 100..<1000), isCrypto: true),
+		 .init(accountId: UUID().uuidString, name: "ZFI Account", currency: "ZFI", balance: Float.random(in: 100..<1000), isCrypto: true)]
+	}
+}
+
 struct AccountCellModel: ActionProvider {
 	let account: AccountModel
 	var action: Callback?

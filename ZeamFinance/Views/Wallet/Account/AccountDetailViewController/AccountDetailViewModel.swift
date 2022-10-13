@@ -22,6 +22,10 @@ class AccountDetailViewModel {
 		view?.reloadTableWithDataSource(buildDatasource())
 	}
 	
+	func loadChart() {
+		chartView.updateUI(Array(repeating: Double(0), count: 10).map { _ in Double.random(in: 0..<10) })
+	}
+	
 	//MARK: - Views
 	private func moreButton(title: RenderableText? = nil, titleString: String? = nil, action: Callback? = nil) -> TableCellProvider  {
 		let moreCell = CustomButton()
@@ -60,19 +64,32 @@ class AccountDetailViewModel {
 
 	private func accountHeader(){
 		guard let account = model else { return }
-		let stack: UIStackView = .VStack(spacing: 30, alignment: .center)
+		let stack: UIStackView = .VStack(spacing: 15, alignment: .center)
 		let balanceLabel = DualLabel()
-		balanceLabel.configureLabel(title: account.isCrypto ? account.currency.bold(size: 18) : "",
+		balanceLabel.configureLabel(title: account.isCrypto ? account.currency.bold(size: 30) : "",
 									subTitle: String(format: "\(account.isCrypto ? "$ " : "\(account.currency) ")%.2f", account.balance).bold(size: 40),
 									config: .init(alignment: .center, spacing: 5))
 		let buttonStack: UIStackView = .HStack(subViews:[payButton, depositButton], spacing: 10)
 		buttonStack.distribution = .fillEqually
-
-		[balanceLabel, "Balance".medium(color: .popBlack100, size: 13).generateLabel, buttonStack].forEach(stack.addArrangedSubview(_:))
-		stack.setCustomSpacing(8, after: balanceLabel)
+		[balanceLabel, "Balance".medium(color: .popBlack100, size: 13).generateLabel, chartView, buttonStack].forEach(stack.addArrangedSubview(_:))
+//		if !model?.isCrypto {
+//			chartView.isHidden = true
+//		}
+		chartView.isHidden = true
+		if let isCrypto = model?.isCrypto, isCrypto {
+			chartView.isHidden = false
+		}
 		stack.setFrame(width: .totalWidth, height: stack.compressedSize.height)
 		view?.setupHeaderView(view: stack)
 	}
+	
+	//MARK: - ChartView
+	private lazy var chartView: ChartView = {
+		let chartView = ChartView(data: Array(repeating: Double(0), count: 10).map { _ in Double.random(in: 0..<10) }, chartColor: .success500)
+		chartView.setFrame(.init(width: .totalWidth, height: 100))
+		chartView.frame = .init(origin: .zero, size: .init(width: .totalWidth, height: 100))
+		return chartView
+	}()
 	
 	//MARK: - CellProviders
 	private var txnCells: [TableCellProvider] {

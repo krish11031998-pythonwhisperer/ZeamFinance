@@ -8,4 +8,5 @@
 import Foundation
 class PaymentStorage {
 	static var selectedPayment: PaymentCardModel? = nil
+	static var paymentToBePaid: PaymentCardModel? = nil
 }

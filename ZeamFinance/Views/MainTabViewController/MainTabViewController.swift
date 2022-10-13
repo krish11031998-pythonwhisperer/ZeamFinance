@@ -48,7 +48,7 @@ class MainTabViewController: UITabBarController {
 								   selectedImage: .rewardsSelected)
 		let components = ViewController().withNavigationController()
 		components.tabBarItem = .init(title: "ZUI", image: nil, selectedImage: nil)
-		setViewControllers([home, wallet, offers, pay, profile], animated: true)
+		setViewControllers([home, wallet, offers, pay, components], animated: true)
 	}
 	
 	
@@ -58,6 +58,7 @@ class MainTabViewController: UITabBarController {
 		NotificationCenter.default.addObserver(self, selector: #selector(readQRCode), name: .readQRCode, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(showCardDetail), name: .showCard, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(showAccountDetail), name: .showAccount, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(showAccountsForPayment), name: .showAccounts, object: nil)
 	}
 	
 	@objc
@@ -99,6 +100,13 @@ class MainTabViewController: UITabBarController {
 	private func showAccountDetail() {
 		topMost?.presentCard(controller: AccountDetailViewController(), withNavigation: true) {
 			print("(DEBUG) Close!")
+		}
+	}
+	
+	@objc
+	private func showAccountsForPayment() {
+		presentCard(controller: AccountModal(), withNavigation: true) {
+			AccountStorage.accountsForUser = nil
 		}
 	}
 }

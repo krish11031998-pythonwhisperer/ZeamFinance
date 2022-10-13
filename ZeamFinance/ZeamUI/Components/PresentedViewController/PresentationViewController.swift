@@ -27,6 +27,12 @@ fileprivate extension UIViewController {
 	var preferHeight: CGFloat {  preferredContentSize.height > 0 ? preferredContentSize.height : computeHeight() }
 	
 	func computeHeight() -> CGFloat {
+//		if !view.subviews.isEmpty {
+//			return view.subviews.forEach { subView in
+//				
+//			}
+//		}
+		
 		let insets = view.safeAreaInsets.top + view.safeAreaInsets.bottom
 		var height = view.compressedSize.height + insets
 		

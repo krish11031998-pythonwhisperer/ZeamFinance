@@ -119,65 +119,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5AF1529E-764B-45A2-91F3-FC716D4A43D9"
+            uuid = "4D6DA806-43EA-4126-B82A-BEDD405CBA00"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ZeamFinance/ZeamUI/Extensions/Animation/Animation.swift"
+            filePath = "ZeamFinance/ZeamUI/Components/Charts/ChartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "animation(at:)"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "computeDataPoints()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "5AF1529E-764B-45A2-91F3-FC716D4A43D9 - 6f7c63df50d4180f"
+                  uuid = "4D6DA806-43EA-4126-B82A-BEDD405CBA00 - 663a2bef45a3e393"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ZeamFinance.Animation.animation(at: __C.CALayer) -&gt; __C.CAAnimation"
+                  symbolName = "ZeamFinance.ChartView.computeDataPoints() -&gt; ()"
                   moduleName = "ZeamFinance"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krish_venkat/Desktop/UIKIt/Hackathon/ZUI/ZeamFinance/ZeamUI/Extensions/Animation/Animation.swift"
+                  urlString = "file:///Users/krish_venkat/Desktop/UIKIt/Hackathon/ZUI/ZeamFinance/ZeamUI/Components/Charts/ChartView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "2028">
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "1120">
                </Location>
                <Location
-                  uuid = "5AF1529E-764B-45A2-91F3-FC716D4A43D9 - 6f7c63df50d4180f"
+                  uuid = "4D6DA806-43EA-4126-B82A-BEDD405CBA00 - 663a2bef45a3e393"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ZeamFinance.Animation.animation(at: __C.CALayer) -&gt; __C.CAAnimation"
+                  symbolName = "ZeamFinance.ChartView.computeDataPoints() -&gt; ()"
                   moduleName = "ZeamFinance"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krish_venkat/Desktop/UIKIt/Hackathon/ZUI/ZeamFinance/ZeamUI/Extensions/Animation/Animation.swift"
+                  urlString = "file:///Users/krish_venkat/Desktop/UIKIt/Hackathon/ZUI/ZeamFinance/ZeamUI/Components/Charts/ChartView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "2112">
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "1352">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3ED56B5E-FDFE-4E72-ACF5-D54BD1281232"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZeamFinance/ZeamUI/MiscComponents/Bars/MultipleStrokeProgressBar.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "configureProgressBar(ratios:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

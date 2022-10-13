@@ -145,6 +145,10 @@
 		EF9ADE6228F665F2008580ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6128F665F2008580ED /* ProfileViewController.swift */; };
 		EF9ADE6428F66667008580ED /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6328F66667008580ED /* ProfileViewModel.swift */; };
 		EF9ADE6728F666A0008580ED /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6628F666A0008580ED /* UserModel.swift */; };
+		EF9ADE6928F67373008580ED /* WeeklyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6828F67373008580ED /* WeeklyChartView.swift */; };
+		EF9ADE6B28F67AF0008580ED /* AccountModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6A28F67AF0008580ED /* AccountModal.swift */; };
+		EFFB290C28F6BD71000D01BA /* PaymentConfirmationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFB290B28F6BD71000D01BA /* PaymentConfirmationPage.swift */; };
+		EFFB290F28F6BE3E000D01BA /* PaymentConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFB290E28F6BE3E000D01BA /* PaymentConfirmationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -307,6 +311,10 @@
 		EF9ADE6128F665F2008580ED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EF9ADE6328F66667008580ED /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EF9ADE6628F666A0008580ED /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		EF9ADE6828F67373008580ED /* WeeklyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChartView.swift; sourceTree = "<group>"; };
+		EF9ADE6A28F67AF0008580ED /* AccountModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModal.swift; sourceTree = "<group>"; };
+		EFFB290B28F6BD71000D01BA /* PaymentConfirmationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationPage.swift; sourceTree = "<group>"; };
+		EFFB290E28F6BE3E000D01BA /* PaymentConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,6 +379,7 @@
 		EF5940D628F15460001380B8 /* AccountSummary */ = {
 			isa = PBXGroup;
 			children = (
+				EF9ADE6A28F67AF0008580ED /* AccountModal.swift */,
 				EF5940D728F1546D001380B8 /* AccountSummaryCards.swift */,
 			);
 			path = AccountSummary;
@@ -453,6 +462,7 @@
 		EF59410028F2F75B001380B8 /* Pay */ = {
 			isa = PBXGroup;
 			children = (
+				EFFB290D28F6BE23000D01BA /* PaymentConfirmation */,
 				EF59410128F2F7E6001380B8 /* PaymentViewController.swift */,
 				EF59410328F2FB01001380B8 /* PaymentViewModel.swift */,
 				EF59410528F2FEA1001380B8 /* QRCodeViewController.swift */,
@@ -568,6 +578,7 @@
 				EF89AA7228ED482C00598521 /* ProgressBars.swift */,
 				EF639A6228EED4A100787C58 /* SphericalProgressBars.swift */,
 				EF59411C28F45475001380B8 /* MultipleStrokeProgressBar.swift */,
+				EF9ADE6828F67373008580ED /* WeeklyChartView.swift */,
 			);
 			path = Bars;
 			sourceTree = "<group>";
@@ -1011,6 +1022,15 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		EFFB290D28F6BE23000D01BA /* PaymentConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				EFFB290B28F6BD71000D01BA /* PaymentConfirmationPage.swift */,
+				EFFB290E28F6BE3E000D01BA /* PaymentConfirmationViewModel.swift */,
+			);
+			path = PaymentConfirmation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1161,7 +1181,9 @@
 				EF89A9EA28EC3E0200598521 /* SystemCatalogue.swift in Sources */,
 				EF9ADE6428F66667008580ED /* ProfileViewModel.swift in Sources */,
 				EF5940F028F1AECC001380B8 /* PresentationViewController.swift in Sources */,
+				EF9ADE6B28F67AF0008580ED /* AccountModal.swift in Sources */,
 				EF639A6C28EF137D00787C58 /* CreditScore.swift in Sources */,
+				EFFB290F28F6BE3E000D01BA /* PaymentConfirmationViewModel.swift in Sources */,
 				EF5940D228F14DDE001380B8 /* WalletViewController.swift in Sources */,
 				EF5940D828F1546D001380B8 /* AccountSummaryCards.swift in Sources */,
 				EF639A5E28EEA5C000787C58 /* TransactionViewController.swift in Sources */,
@@ -1212,6 +1234,7 @@
 				EF89AA1228EC401F00598521 /* TableViewFunction.swift in Sources */,
 				EF89AA7928ED482C00598521 /* ImageHeaderSubHeaderView.swift in Sources */,
 				EF59411828F42DB6001380B8 /* CustomCollectionCell.swift in Sources */,
+				EF9ADE6928F67373008580ED /* WeeklyChartView.swift in Sources */,
 				EF89AA0628EC3F6900598521 /* Response.swift in Sources */,
 				EF639A7128F00FD900787C58 /* HomeViewController.swift in Sources */,
 				EF59410428F2FB01001380B8 /* PaymentViewModel.swift in Sources */,
@@ -1239,6 +1262,7 @@
 				EF639A6328EED4A100787C58 /* SphericalProgressBars.swift in Sources */,
 				EF59413628F5911E001380B8 /* CardStorage.swift in Sources */,
 				EF89AA7628ED482C00598521 /* SentimentTextLabel.swift in Sources */,
+				EFFB290C28F6BD71000D01BA /* PaymentConfirmationPage.swift in Sources */,
 				EF639A6128EEC6B900787C58 /* CardView.swift in Sources */,
 				EF59411D28F45475001380B8 /* MultipleStrokeProgressBar.swift in Sources */,
 				EF89AA4428ECC11700598521 /* CustomCollectionTableCell.swift in Sources */,
@@ -1449,6 +1473,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1479,6 +1504,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -47,6 +47,11 @@ class AccountDetailViewController: UIViewController {
 		viewModel.loadData()
 	}
 
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		viewModel.loadChart()
+	}
+	
 	private func setupView() {
 		view.addSubview(tableView)
 		view.setFittingConstraints(childView: tableView, insets: .zero)

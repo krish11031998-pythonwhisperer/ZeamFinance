@@ -43,7 +43,7 @@ class ChartView:UIView{
     
     public var chartDelegate:ChartDelegate? = nil
     
-    init(data:[Double] = [],chartColor:UIColor = .success500){
+    init(data:[Double] = [], chartColor:UIColor = .success500){
         super.init(frame: .zero)
         self.data = data
         self.chartColor = chartColor

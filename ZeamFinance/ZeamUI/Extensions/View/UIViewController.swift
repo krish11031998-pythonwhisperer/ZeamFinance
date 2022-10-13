@@ -19,6 +19,18 @@ extension AnyTableView {
 	func refreshTableView() { }
 }
 
+
+fileprivate extension UIBarButtonItem {
+	
+	static func closeButton(handler: Callback?) -> UIBarButtonItem {
+		let img = UIImageView(frame: .init(origin: .zero, size: .init(squared: 25)))
+		img.image = .init(systemName: "xmark")?.withTintColor(.surfaceBackgroundInverse, renderingMode: .alwaysOriginal)
+		img.contentMode = .scaleAspectFit
+		let button = img.buttonify(handler: handler)
+		return .init(customView: button)
+	}
+}
+
 extension UIViewController {
 	
 	func setupTransparentNavBar(color: UIColor = .clear, scrollColor: UIColor = .clear) {
@@ -82,13 +94,16 @@ extension UIViewController {
 	
 	func mainPageNavBar(title: String? = nil,
 						rightBarButton: UIBarButtonItem? = nil,
-						isTransparent: Bool = true)
+						isTransparent: Bool = true, isModal: Bool = false)
 	{
 		if let titleView = title?.sectionHeader(size: 30).generateLabel {
 			navigationItem.leftBarButtonItem = .init(customView: titleView)
 		}
 		setupTransparentNavBar(color: .surfaceBackground, scrollColor: .surfaceBackground)
-		navigationItem.rightBarButtonItem = rightBarButton
+
+		navigationItem.rightBarButtonItem = rightBarButton ?? (isModal ? .closeButton {
+			self.navigationController?.popViewController(animated: true)
+		} : nil)
 	}
 
 	func withNavigationController() -> UINavigationController {
@@ -122,7 +137,6 @@ extension UIViewController {
 	
 	
 	func presentCard(controller vc: UIViewController, withNavigation: Bool, onDismissal: Callback?) {
-
 		if let currentCard = presentedViewController {
 			currentCard.dismiss(animated: true) {
 				DispatchQueue.main.async {

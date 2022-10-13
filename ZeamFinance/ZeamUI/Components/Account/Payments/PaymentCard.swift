@@ -18,13 +18,9 @@ class PaymentCard: UIView {
 		view.clipsToBounds = true
 		return view
 	}()
-	
 	private lazy var billInfo: DualLabel = { .init() }()
-	
 	private lazy var billDetailStack: UIStackView = {.HStack(subViews:[billInfo, .spacer(), imageView], spacing: 14, alignment: .top)  }()
-	
 	private lazy var amountLabel: UILabel = { .init() }()
-	
 	private lazy var payButton: CustomButton = {
 		let button = CustomButton()
 		button.configureButton(.init(title: "Pay now".bold(color: .popWhite500, size: 12),
@@ -34,9 +30,8 @@ class PaymentCard: UIView {
 	}()
 	
 	private lazy var installCounter: UIStackView = { .HStack(spacing: 5, alignment: .center) }()
-	
 	private lazy var mainStack: UIStackView = { .VStack(spacing: 12) }()
-	
+	private var isPaymentModal: Bool = false
 	private var model: PaymentCardModel?
 	
 	override init(frame: CGRect) {
@@ -73,10 +68,8 @@ class PaymentCard: UIView {
 		installCounter.isHidden = false
 	}
 	
-	public func configureCard(model: PaymentCardModel) {
-//		imageView.image = model.billCompanyLogo.resized(size: .init(squared: 32))
+	public func configureCard(model: PaymentCardModel, isPaymentModal: Bool = false) {
 		imageView.image = model.billCompanyLogo
-			//.resized(size: .init(squared: 32))
 		billInfo.configureLabel(title: model.billCompany.bold(color: .popBlack500, size: 14),
 								subTitle: model.billDescription.medium(color: .popBlack500, size: 12))
 		backgroundColor = model.type.color
@@ -86,11 +79,18 @@ class PaymentCard: UIView {
 			setupInstallmentCounter(count, total: total)
 		}
 		self.model = model
+		self.isPaymentModal = isPaymentModal
 	}
 	
 	private func showPayment() {
-		PaymentStorage.selectedPayment = model
-		NotificationCenter.default.post(name: .showPayment, object: nil)
+		if self.isPaymentModal {
+			AccountStorage.accountsForUser = .testAccounts
+			PaymentStorage.paymentToBePaid = model
+			NotificationCenter.default.post(name: .showAccounts, object: nil)
+		} else {
+			PaymentStorage.selectedPayment = model
+			NotificationCenter.default.post(name: .showPayment, object: nil)
+		}
 	}
 	
 }

@@ -52,9 +52,10 @@ class ZUIProfileViewController: UIViewController {
 	}
 	
 	private var paymentQRCode: TableSection? {
-		guard let img = UIImage.generateQRCode(PaymentQRCodeModel(paymentModel: PaymentCardModel.person)) else { return nil }
+		let maria: PaymentCardModel = .init(billCompany: "Maria", billDescription: "Coffee Run", amount: 20,
+											billCompanyLogo: .solid(color: .clear), type: .payment)
+		guard let img = UIImage.generateQRCode(PaymentQRCodeModel(paymentModel: maria)) else { return nil }
 		let imgView = UIImageView(image: img)
-//		imgView.setFrame(.init(squared: 100))
 		let view = UIView()
 		view.addSubview(imgView)
 		view.setFittingConstraints(childView: imgView, top: 0, bottom: 0, width: 100, height: 100, centerX: 0, centerY: 0, priority: .needed)
@@ -62,7 +63,7 @@ class ZUIProfileViewController: UIViewController {
 	}
 	
 	private func buildDatasource() -> TableViewDataSource {
-		.init(sections: [profileImageView, creditScoreView] + [paymentQRCode].compactMap {$0})
+		.init(sections: [profileImageView, paymentQRCode, creditScoreView].compactMap {$0})
 	}
 	
 	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

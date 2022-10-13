@@ -10,6 +10,4 @@ import UIKit
 
 class TransactionStorage {
 	static var selectedTransaction: TransactionModel? = nil
-	
-	
 }

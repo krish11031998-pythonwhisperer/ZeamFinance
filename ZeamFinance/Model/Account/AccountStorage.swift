@@ -10,4 +10,5 @@ import Foundation
 
 class AccountStorage {
 	static var selectedAccount: AccountModel? = nil
+	static var accountsForUser: [AccountModel]? = nil
 }

@@ -13,5 +13,7 @@ extension Notification.Name {
 	static let showPayment: Self = .init("showPayment")
 	static let showCard: Self = .init("showCard")
 	static let showAccount: Self = .init("showAccount")
-	static let showAllTransactions: Notification.Name = .init("showAllTransactions")
+	static let showAllTransactions: Self = .init("showAllTransactions")
+	static let selectedAccount: Self = .init("selectedAccount")
+	static let showAccounts: Self = .init("showAccounts")
 }

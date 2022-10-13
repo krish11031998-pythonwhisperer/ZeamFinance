@@ -22,7 +22,7 @@ class WalletTransactionModalViewModel {
 									subTitle: String(format: "$ %.2f", validTransaction.amount).bold(size: 35))
 		let imageView = validTransaction.cellLogo.imageView(size: .init(squared: 64))
 		imageView.setFrame(.init(squared: 64))
-		imageView.contentMode = .center
+		imageView.contentMode = .scaleAspectFit
 		imageView.backgroundColor = .popWhite500
 		imageView.border(color: .surfaceBackgroundInverse, borderWidth: 1, cornerRadius: 8)
 		[txnInfoLabel, .spacer(), imageView].forEach(stackView.addArrangedSubview(_:))
@@ -47,13 +47,31 @@ class WalletTransactionModalViewModel {
 					 title: "Zeam Coins Earned")
 	}
 	
+	private var txnDetails: TableSection? {
+		guard let validTransaction = transaction else { return nil}
+		let stack: UIStackView = .VStack(spacing: 10)
+		["Date": validTransaction.date,
+		 "Detail": validTransaction.detail,
+		 "Status": validTransaction.isCompleted ? "Completed" : "Unpaid"
+		].forEach { row in
+			let rowStack = UIStackView.HStack(spacing: 12)
+			[ row.key.regular(size: 12).generateLabel,
+			  .spacer(),
+			  row.value.capitalized.regular(size: 12).generateLabel].forEach(rowStack.addArrangedSubview(_:))
+			stack.addArrangedSubview(rowStack)
+		}
+		let stackView = stack.embedInView(insets: .init(by: 10))
+		stackView.border(color: .surfaceBackgroundInverse, borderWidth: 0.5, cornerRadius: 12)
+		return .init(rows: [TableRow<CustomTableCell>(.init(view: stackView, inset: .init(vertical: 0, horizontal: 10)))], title: "Transaction Detail")
+	}
+	
 	private var txnSection: TableSection? {
 		guard let selectedTxn = transaction else { return nil }
 		return .init(rows: Array(repeating: TableRow<TransactionCell>(.init(transaction: selectedTxn)), count: 1))
 	}
 	
 	private func buildDatasource() -> TableViewDataSource {
-		.init(sections: [txnSection, pointsScores].compactMap { $0 })
+		.init(sections: [txnDetails, pointsScores].compactMap { $0 })
 	}
 	
 	
