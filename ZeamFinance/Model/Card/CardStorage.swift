@@ -10,4 +10,11 @@ import Foundation
 class CardStorage {
 	
 	static var selectedCard: CardModel? = nil
+	
+	static func selectCard(_ card: CardModel) {
+		selectedCard = card
+		if card != nil {
+			NotificationCenter.default.post(name: .showCard, object: nil)
+		}
+	}
 }

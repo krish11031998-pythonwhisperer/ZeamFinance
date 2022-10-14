@@ -17,7 +17,8 @@ class HomeViewModel {
 	}
 	
 	private var cardSection: TableSection {
-		let cardTableCell = TableRow<CardViewTableCell>(.init(card: .init(bankName: "Emirates NBD", name: "Krishna Venkatramani")))
+		let card: CardModel = .init(bankName: "Emirates NBD", name: "Krishna Venkatramani")
+		let cardTableCell = TableRow<CardViewTableCell>(.init(card: card) { CardStorage.selectCard(card) })
 		return .init(rows: [cardTableCell], title: "Cards")
 	}
 	
@@ -71,7 +72,7 @@ class HomeViewModel {
 
 	
 	private func buildDatasource() -> TableViewDataSource {
-		.init(sections: [cardSection, recentTransactions, billSection, creditScoreView, exclusiveOffersSection])
+		.init(sections: [cardSection, recentTransactions, billSection, exclusiveOffersSection])
 	}
 	
 }

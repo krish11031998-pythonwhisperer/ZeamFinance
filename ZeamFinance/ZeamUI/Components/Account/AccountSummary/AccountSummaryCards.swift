@@ -89,6 +89,7 @@ class AccountSummaryCollectionCell: ConfigurableCollectionCell {
 		contentView.addSubview(view)
 		contentView.setFittingConstraints(childView: view, insets: .zero)
 		backgroundColor = .surfaceBackground
+		contentView.clippedCornerRadius = 8
 	}
 	
 	func configure(with model: AccountSummaryModel) {

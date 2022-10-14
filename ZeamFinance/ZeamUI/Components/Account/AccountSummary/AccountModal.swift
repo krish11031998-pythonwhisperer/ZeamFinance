@@ -11,7 +11,11 @@ import UIKit
 fileprivate extension TransactionModel {
 	
 	init(_ payment: PaymentCardModel) {
-		self.init(cellLogo: payment.billCompanyLogo, detail: payment.billDescription, amount: payment.amount, status: true)
+		self.init(cellLogo: payment.billCompanyLogo,
+				  detail: payment.billDescription,
+				  amount: payment.amount,
+				  receiptModel: payment.receiptItems,
+				  status: true)
 	}
 	
 }
@@ -44,7 +48,7 @@ class AccountModal: UIViewController {
 	}
 	
 	private func setupNavbar() {
-		mainPageNavBar(title: "Selected Account", isTransparent: false, isModal: true)
+		mainPageNavBar(title: "Select Account", isTransparent: false, isModal: true)
 		navigationController?.navigationBar.clippedCornerRadius = 16
 		navigationController?.additionalSafeAreaInsets = .init(vertical: 10, horizontal: 0)
 	}

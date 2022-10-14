@@ -46,6 +46,19 @@ public extension UIImage {
 		case offerImageSix
 	}
 	
+	enum OfferCategoriesCatalogue: String, CaseIterable {
+		case ApparelOffer
+		case ApplianceOffer
+		case AudioOffer
+		case ElectronicsOffer
+		case FashionOffer
+		case FoodOffer
+		case GamesOffer
+		case GroomingOffer
+		case HomeDecorOffer
+		case SleepOffer
+	}
+	
 	enum BrandCatalogue: String, CaseIterable {
 		case brandLogoOne
 		case brandLogoTwo
@@ -98,5 +111,9 @@ public extension UIImage.BrandCatalogue {
 }
 
 public extension UIImage.TabBarImageCatalogue {
+	var image: UIImage { .init(named: rawValue)?.withRenderingMode(.alwaysOriginal)  ?? .solid(color: .black) }
+}
+
+public extension UIImage.OfferCategoriesCatalogue {
 	var image: UIImage { .init(named: rawValue)?.withRenderingMode(.alwaysOriginal)  ?? .solid(color: .black) }
 }

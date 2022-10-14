@@ -153,3 +153,12 @@ extension UIViewController {
 	}
 	
 }
+
+//MARK: - UINavigation View Controller
+
+extension UINavigationController {
+	func tabBarItem(_ model: MainTabBarModel) -> Self {
+		tabBarItem = model.tabBarItem
+		return self
+	}
+}

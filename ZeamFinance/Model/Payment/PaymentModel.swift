@@ -21,6 +21,7 @@ struct PaymentCardModel {
 	let billCompanyLogo: UIImage
 	let installmentsCount: Int?
 	let totalInstallments: Int?
+	let receiptItems: [PaymentReceiptModel]
 	let type: PaymentType
 
 	init(billCompany: String,
@@ -29,6 +30,7 @@ struct PaymentCardModel {
 		 billCompanyLogo: UIImage,
 		 installmentsCount: Int? = nil,
 		 totalInstallments: Int? = nil,
+		 receiptItems: [PaymentReceiptModel] = [],
 		 type: PaymentType) {
 		self.billCompany = billCompany
 		self.billDescription = billDescription
@@ -36,6 +38,7 @@ struct PaymentCardModel {
 		self.billCompanyLogo = billCompanyLogo
 		self.installmentsCount = installmentsCount
 		self.totalInstallments = totalInstallments
+		self.receiptItems = receiptItems
 		self.type = type
 	}
 }
@@ -108,6 +111,9 @@ extension PaymentCardModel {
 			 billDescription: "Dinner",
 			 amount: Float.random(in: 50..<100),
 			 billCompanyLogo: .init(named: "person") ?? .solid(color: .black),
+			 receiptItems: [.init(description: "Pizza", unitPrice: 1, units: 45),
+							.init(description: "Bottled Water", unitPrice: 1, units: 15),
+							.init(description: "Tiramasu", unitPrice: 1, units: 30)],
 			 type: .payment)
    }
    

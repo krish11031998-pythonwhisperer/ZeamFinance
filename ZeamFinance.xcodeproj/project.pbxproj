@@ -149,6 +149,9 @@
 		EF9ADE6B28F67AF0008580ED /* AccountModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6A28F67AF0008580ED /* AccountModal.swift */; };
 		EFFB290C28F6BD71000D01BA /* PaymentConfirmationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFB290B28F6BD71000D01BA /* PaymentConfirmationPage.swift */; };
 		EFFB290F28F6BE3E000D01BA /* PaymentConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFB290E28F6BE3E000D01BA /* PaymentConfirmationViewModel.swift */; };
+		EFFB291128F838AD000D01BA /* MainTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFB291028F838AD000D01BA /* MainTabItem.swift */; };
+		EFFB291328F8A17B000D01BA /* PaymentReceiptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFB291228F8A17B000D01BA /* PaymentReceiptModel.swift */; };
+		EFFB291528F8ACA3000D01BA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFB291428F8ACA3000D01BA /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -315,6 +318,9 @@
 		EF9ADE6A28F67AF0008580ED /* AccountModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModal.swift; sourceTree = "<group>"; };
 		EFFB290B28F6BD71000D01BA /* PaymentConfirmationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationPage.swift; sourceTree = "<group>"; };
 		EFFB290E28F6BE3E000D01BA /* PaymentConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationViewModel.swift; sourceTree = "<group>"; };
+		EFFB291028F838AD000D01BA /* MainTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabItem.swift; sourceTree = "<group>"; };
+		EFFB291228F8A17B000D01BA /* PaymentReceiptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentReceiptModel.swift; sourceTree = "<group>"; };
+		EFFB291428F8ACA3000D01BA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,6 +452,7 @@
 			children = (
 				EF5940F928F1F01E001380B8 /* PaymentModel.swift */,
 				EF5940FB28F1F02D001380B8 /* PaymentStorage.swift */,
+				EFFB291228F8A17B000D01BA /* PaymentReceiptModel.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -627,6 +634,7 @@
 			children = (
 				EF639A7328F0116D00787C58 /* MainTabViewController.swift */,
 				EF639A7528F013EF00787C58 /* MainTabView.swift */,
+				EFFB291028F838AD000D01BA /* MainTabItem.swift */,
 			);
 			path = MainTabViewController;
 			sourceTree = "<group>";
@@ -798,6 +806,7 @@
 				EF89A9FB28EC3F4100598521 /* Views.swift */,
 				EF89A9FC28EC3F4100598521 /* UILabel.swift */,
 				EF59412E28F58D34001380B8 /* UITableView.swift */,
+				EFFB291428F8ACA3000D01BA /* UIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1194,6 +1203,7 @@
 				EF639A7628F013EF00787C58 /* MainTabView.swift in Sources */,
 				EF5940E128F18385001380B8 /* TransactionModel.swift in Sources */,
 				EF59412D28F58CC6001380B8 /* CardDetailViewController.swift in Sources */,
+				EFFB291128F838AD000D01BA /* MainTabItem.swift in Sources */,
 				EF5940EA28F19C9B001380B8 /* ZeamOfferViewController.swift in Sources */,
 				EF89AA1528EC401F00598521 /* TableSection.swift in Sources */,
 				EF639A8128F02A3300787C58 /* HomeHeaderView.swift in Sources */,
@@ -1224,6 +1234,7 @@
 				EF89AA3D28EC7E4B00598521 /* OffersViewController.swift in Sources */,
 				EF89AA1A28EC45CC00598521 /* ColorBuilder.swift in Sources */,
 				EF5940CF28F062F5001380B8 /* PaymentCard.swift in Sources */,
+				EFFB291528F8ACA3000D01BA /* UIView.swift in Sources */,
 				EF89AA7728ED482C00598521 /* GenericButtonWrapper.swift in Sources */,
 				EF59412F28F58D34001380B8 /* UITableView.swift in Sources */,
 				EF5940FC28F1F02D001380B8 /* PaymentStorage.swift in Sources */,
@@ -1275,6 +1286,7 @@
 				EF5940DE28F182E2001380B8 /* WalletTransactionViewModel.swift in Sources */,
 				EF89AA8B28EDBADD00598521 /* CuratedBackgroundShape.swift in Sources */,
 				EF639A5C28EEA35400787C58 /* DualLabel.swift in Sources */,
+				EFFB291328F8A17B000D01BA /* PaymentReceiptModel.swift in Sources */,
 				EF89AA0128EC3F4100598521 /* Views.swift in Sources */,
 				EF639A6528EED53800787C58 /* CircularProgressShape.swift in Sources */,
 				EF89A9F228EC3F3300598521 /* CGSize.swift in Sources */,

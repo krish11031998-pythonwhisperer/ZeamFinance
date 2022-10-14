@@ -31,24 +31,13 @@ class MainTabViewController: UITabBarController {
 	}
 	
 	private func setupTabs() {
-		let home = HomeViewController().withNavigationController()
-		home.tabBarItem = .init(title: "Home", image: .home,
-								selectedImage: .homeSelected)
-		let wallet = WalletViewController().withNavigationController()
-		wallet.tabBarItem = .init(title: "Wallet", image: .cards,
-								  selectedImage: .cardsSelected)
-		let offers = ZeamOfferViewController().withNavigationController()
-		offers.tabBarItem = .init(title: "Offers", image: .shop,
-								  selectedImage: .shopSelected)
-		let pay = PayViewController().withNavigationController()
-		pay.tabBarItem = .init(title: "Pay", image: .pay,
-								  selectedImage: .paySelected)
-		let profile = ProfileViewController().withNavigationController()
-		profile.tabBarItem = .init(title: "Profile", image: .rewards,
-								   selectedImage: .rewardsSelected)
-		let components = ViewController().withNavigationController()
-		components.tabBarItem = .init(title: "ZUI", image: nil, selectedImage: nil)
-		setViewControllers([home, wallet, offers, pay, components], animated: true)
+		let home = HomeViewController().withNavigationController().tabBarItem(.home)
+		let wallet = WalletViewController().withNavigationController().tabBarItem(.wallet)
+		let offers = ZeamOfferViewController().withNavigationController().tabBarItem(.offers)
+		let pay = PayViewController().withNavigationController().tabBarItem(.pay)
+		let profile = ProfileViewController().withNavigationController().tabBarItem(.profile)
+		let components = ViewController().withNavigationController().tabBarItem(.none)
+		setViewControllers([home, wallet, offers, pay, profile], animated: true)
 	}
 	
 	

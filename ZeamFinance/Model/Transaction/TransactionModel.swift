@@ -23,17 +23,20 @@ struct TransactionModel {
 	let detail: String
 	let date: String
 	let amount: Float
+	let receiptModel: [PaymentReceiptModel]
 	var isCompleted: Bool
 	
 	init(cellLogo: UIImage,
 		 detail: String,
 		 date: String = Date.now.ISO8601Format(),
 		 amount: Float,
+		 receiptModel: [PaymentReceiptModel] = [],
 		 status: Bool = false) {
 		self.cellLogo = cellLogo
 		self.detail = detail
 		self.date = date
 		self.amount = amount
+		self.receiptModel = receiptModel
 		self.isCompleted = status
 	}
 }

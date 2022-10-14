@@ -27,9 +27,8 @@ class AccountCardView: UIView {
 		let stack = UIStackView.HStack(subViews: [currencyName, .spacer(), currencyAmount], spacing: 12)
 		addSubview(stack)
 		setFittingConstraints(childView: stack, insets: .init(by: 15))
-		addBlurView()
-		cornerRadius = 12
-		clipsToBounds = true
+		clippedCornerRadius = 12
+		border(color: .surfaceBackgroundInverse, borderWidth: 0.75, cornerRadius: 12)
 	}
 	
 	public func configureView(account: AccountModel) {

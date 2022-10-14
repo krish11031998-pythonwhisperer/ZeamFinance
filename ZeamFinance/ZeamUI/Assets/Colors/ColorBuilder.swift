@@ -15,7 +15,7 @@ public protocol ColorGenerator {
 public extension UIColor {
 	
 	//MARK: - appColors
-	enum AppColors: String {
+	enum AppColors: String, CaseIterable {
 		
 		//Manna
 		case manna100

@@ -8,6 +8,57 @@
 import Foundation
 import UIKit
 
+extension PaymentReceiptModel {
+	
+	var receiptView: UIView {
+		let description = description.medium(size: 15).generateLabel
+		let amount = String(format: "%.2f", units * unitPrice).regular(size: 13).generateLabel
+		let plusImage = UIImageView(image: .init(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(pointSize: 12))?.resized(size: .init(squared: 12)))
+		plusImage.contentMode = .center
+		plusImage.backgroundColor = .surfaceBackgroundInverse
+		plusImage.circleFrame = .init(origin: .zero, size: .init(squared: 24))
+		plusImage.clippedCornerRadius = 12
+		plusImage.setFrame(.init(squared: 24))
+		let stack: UIStackView = .HStack(spacing: 12)
+		[description, .spacer(), amount, plusImage].forEach(stack.addArrangedSubview)
+		return stack
+	}
+	
+	var cell: TableCellProvider {
+		return TableRow<CustomTableCell>(.init(view: receiptView, inset: .init(by: 10)))
+	}
+}
+
+extension TransactionModel {
+	
+	var txnDetails: [String: String] {
+		["Date": date,
+		 "Detail": detail,
+		 "Status": isCompleted ? "Completed" : "Unpaid"]
+	}
+	
+	var statusStyled: RenderableText {
+		let labelTxt = isCompleted ? "Completed" : "Unpaid"
+		return labelTxt.bold(color: isCompleted ? .success500 : .warning500, size: 12)
+	}
+	
+	var txnDetail: [TableCellProvider] {
+		let cell: [TableCellProvider] = txnDetails.sorted(by: { $0.key < $1.key }).map { (key,value) in
+			let rowStack = UIStackView.HStack(spacing: 12)
+			let stack: UIStackView = .VStack(spacing: 10)
+			let keyLabel = key.regular(size: 12).generateLabel
+			let valueLabel = (key == "Status" ?  statusStyled : value.capitalized.regular(size: 12)).generateLabel
+			[keyLabel,.spacer(),valueLabel].forEach(rowStack.addArrangedSubview(_:))
+			let divider = UIView()
+			divider.backgroundColor = .surfaceBackgroundInverse
+			[rowStack,divider].forEach(stack.addArrangedSubview(_:))
+			stack.setFittingConstraints(childView: divider, leading: 0, trailing: 0, height: 0.5)
+			return TableRow<CustomTableCell>(.init(view: stack, inset: .init(vertical: 5, horizontal: 10)))
+		}
+		return cell
+	}
+}
+
 class WalletTransactionModalViewModel {
 	
 	private var transaction: TransactionModel? { TransactionStorage.selectedTransaction }
@@ -41,28 +92,34 @@ class WalletTransactionModalViewModel {
 		let stack = UIStackView.HStack(spacing: 8)
 		let imgView = UIImageView(image: .IconCatalogue.coins.image)
 		imgView.setFrame(.init(squared: 48))
-		let label = String(format: "%.2f", selectedPointScored).bold(size: 30).generateLabel
+		let label = String(format: "%.2f", selectedPointScored).bold(color: .textColorInverse, size: 30).generateLabel
 		[imgView, label, .spacer()].forEach(stack.addArrangedSubview(_:))
-		return .init(rows: [TableRow<CustomTableCell>(.init(view: stack, inset: .init(vertical: 5, horizontal: 10)))],
+		let header = "ZFI earned from this transaction".medium(color: .textColorInverse, size: 13).generateLabel
+		let mainStack = UIStackView.VStack(subViews: [header.embedInView(insets: .init(by: 5)), stack], spacing: 5, alignment: .leading)
+		let view = mainStack.background()
+		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .init(vertical: 5, horizontal: 10))), generateMoreCoin].compactMap { $0 },
 					 title: "Zeam Coins Earned")
 	}
 	
 	private var txnDetails: TableSection? {
 		guard let validTransaction = transaction else { return nil}
-		let stack: UIStackView = .VStack(spacing: 10)
-		["Date": validTransaction.date,
-		 "Detail": validTransaction.detail,
-		 "Status": validTransaction.isCompleted ? "Completed" : "Unpaid"
-		].forEach { row in
-			let rowStack = UIStackView.HStack(spacing: 12)
-			[ row.key.regular(size: 12).generateLabel,
-			  .spacer(),
-			  row.value.capitalized.regular(size: 12).generateLabel].forEach(rowStack.addArrangedSubview(_:))
-			stack.addArrangedSubview(rowStack)
-		}
-		let stackView = stack.embedInView(insets: .init(by: 10))
-		stackView.border(color: .surfaceBackgroundInverse, borderWidth: 0.5, cornerRadius: 12)
-		return .init(rows: [TableRow<CustomTableCell>(.init(view: stackView, inset: .init(vertical: 0, horizontal: 10)))], title: "Transaction Detail")
+		return .init(rows: validTransaction.txnDetail, title: "Transaction Detail")
+	}
+	
+	private var productReceipt: TableSection? {
+		guard let validTransaction = transaction, !validTransaction.receiptModel.isEmpty else { return nil }
+		let cells = validTransaction.receiptModel.map(\.cell)
+		return .init(rows: cells, title: "Receipt")
+	}
+	
+	private var generateMoreCoin: TableCellProvider? {
+		guard let validTransaction = transaction, !validTransaction.receiptModel.isEmpty else { return nil }
+		let header = "ZFI you can earn from selling your data".medium(color: .textColor, size: 13).generateLabel
+		let stack: UIStackView = .VStack(subViews: [header] + validTransaction.receiptModel.compactMap { $0.receiptView }, spacing: 10)
+		let stackView = stack.embedInView(insets: .init(by: 8))
+		stackView.backgroundColor = .success500
+		stackView.clippedCornerRadius = 8
+		return TableRow<CustomTableCell>(.init(view: stackView, inset: .init(by: 10)))
 	}
 	
 	private var txnSection: TableSection? {
@@ -71,7 +128,7 @@ class WalletTransactionModalViewModel {
 	}
 	
 	private func buildDatasource() -> TableViewDataSource {
-		.init(sections: [txnDetails, pointsScores].compactMap { $0 })
+		.init(sections: [txnDetails, productReceipt, pointsScores].compactMap { $0 })
 	}
 	
 	
