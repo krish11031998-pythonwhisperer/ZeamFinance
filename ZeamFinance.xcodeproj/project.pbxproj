@@ -142,6 +142,7 @@
 		EF89AA8828ED7F8500598521 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8728ED7F8500598521 /* TableDataSource.swift */; };
 		EF89AA8B28EDBADD00598521 /* CuratedBackgroundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8A28EDBADD00598521 /* CuratedBackgroundShape.swift */; };
 		EF89AA8E28EDBC6000598521 /* ShapesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8D28EDBC6000598521 /* ShapesViewController.swift */; };
+		EF99961B28FB20E100DE9D2E /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99961A28FB20E100DE9D2E /* UIImageView.swift */; };
 		EF9ADE6228F665F2008580ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6128F665F2008580ED /* ProfileViewController.swift */; };
 		EF9ADE6428F66667008580ED /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6328F66667008580ED /* ProfileViewModel.swift */; };
 		EF9ADE6728F666A0008580ED /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6628F666A0008580ED /* UserModel.swift */; };
@@ -311,6 +312,7 @@
 		EF89AA8728ED7F8500598521 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		EF89AA8A28EDBADD00598521 /* CuratedBackgroundShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuratedBackgroundShape.swift; sourceTree = "<group>"; };
 		EF89AA8D28EDBC6000598521 /* ShapesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesViewController.swift; sourceTree = "<group>"; };
+		EF99961A28FB20E100DE9D2E /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		EF9ADE6128F665F2008580ED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EF9ADE6328F66667008580ED /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EF9ADE6628F666A0008580ED /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -807,6 +809,7 @@
 				EF89A9FC28EC3F4100598521 /* UILabel.swift */,
 				EF59412E28F58D34001380B8 /* UITableView.swift */,
 				EFFB291428F8ACA3000D01BA /* UIView.swift */,
+				EF99961A28FB20E100DE9D2E /* UIImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1267,6 +1270,7 @@
 				EF89A9EC28EC3ED700598521 /* Helpers.swift in Sources */,
 				EF59410228F2F7E6001380B8 /* PaymentViewController.swift in Sources */,
 				EF89A9D128EC28E200598521 /* CustomFonts.swift in Sources */,
+				EF99961B28FB20E100DE9D2E /* UIImageView.swift in Sources */,
 				EF89AA3128EC53DA00598521 /* CustomButton.swift in Sources */,
 				EF89A9CF28EC28C800598521 /* String.swift in Sources */,
 				EF89A99028EC262100598521 /* AppDelegate.swift in Sources */,

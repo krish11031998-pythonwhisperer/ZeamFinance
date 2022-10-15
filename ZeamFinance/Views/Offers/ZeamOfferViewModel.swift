@@ -8,6 +8,31 @@
 import Foundation
 import UIKit
 
+fileprivate extension OfferType {
+	
+	func offerTypeButton(_ action: Callback?) ->  CollectionCellProvider {
+		let categoryCellView = UIView(frame: .init(origin: .zero, size: .init(width: 95, height: 85)))
+		categoryCellView.layer.addCuratedCornerShape(color: .AppColors.allCases.randomElement()?.color ?? .warning500)
+		
+		let imgView = UIImageView()
+		imgView.image = (UIImage.OfferCategoriesCatalogue.allCases.randomElement()?.image ?? .solid(color: .clear))
+		imgView.contentMode = .scaleAspectFit
+		categoryCellView.addSubview(imgView)
+		imgView.setupSizeWithRatio(height: 50)
+		categoryCellView.setFittingConstraints(childView: imgView, top: 0, centerX: 0)
+		
+		let categoryLabel = rawValue.capitalized.medium(size: 8).generateLabel
+		categoryCellView.addSubview(categoryLabel)
+		categoryCellView.setFittingConstraints(childView: categoryLabel, leading: 0, trailing: 0, bottom: 10)
+		categoryLabel.textAlignment = .center
+		
+		let buttonView = categoryCellView.buttonify(handler: action)
+		buttonView.setFrame(.init(width: 95, height: 85))
+		return CollectionItem<CustomCollectionCell>(.init(view: buttonView, inset: .zero))
+	}
+	
+}
+
 class ZeamOfferViewModel {
 	
 	public weak var view: AnyTableView?
@@ -48,24 +73,10 @@ class ZeamOfferViewModel {
 	
 	private var personalizedOfferSection: [TableCellProvider] {
 		let offerType: [CollectionCellProvider] = OfferType.allCases.filter { $0 != .none }.compactMap { offer in
-			let categoryCellView = UIView(frame: .init(origin: .zero, size: .init(width: 95, height: 85)))
-			categoryCellView.layer.addCuratedCornerShape(color: .AppColors.allCases.randomElement()?.color ?? .warning500)
-			let imgView = UIImageView()
-			imgView.image = (UIImage.OfferCategoriesCatalogue.allCases.randomElement()?.image ?? .solid(color: .clear)).resized(size: .init(squared: 50))
-			imgView.contentMode = .scaleAspectFit
-			categoryCellView.addSubview(imgView)
-			categoryCellView.setFittingConstraints(childView: imgView, top: 0, width: 50, height: 50, centerX: 0)
-			let categoryLabel = offer.rawValue.capitalized.medium(size: 8).generateLabel
-			categoryCellView.addSubview(categoryLabel)
-			categoryCellView.setFittingConstraints(childView: categoryLabel, leading: 0, trailing: 0, bottom: 10)
-			categoryLabel.textAlignment = .center
-			let buttonView = categoryCellView.buttonify {
+			return offer.offerTypeButton {
 				self.selectedOffer = offer
-				print("(DEBUG) selectedOffer : ", offer)
 				self.view?.refreshTableView()
 			}
-			buttonView.setFrame(.init(width: 95, height: 85))
-			return CollectionItem<CustomCollectionCell>(.init(view: buttonView, inset: .zero))
 		}
 		return [TableRow<CollectionTableCell>(.init(cells: offerType,
 													size: .init(width: .totalWidth, height: 85),

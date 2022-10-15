@@ -132,14 +132,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "4D6DA806-43EA-4126-B82A-BEDD405CBA00 - 663a2bef45a3e393"
+                  uuid = "4D6DA806-43EA-4126-B82A-BEDD405CBA00 - 107b92eddc55d894"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "ZeamFinance.ChartView.computeDataPoints() -&gt; ()"
                   moduleName = "ZeamFinance"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krish_venkat/Desktop/UIKIt/Hackathon/ZUI/ZeamFinance/ZeamUI/Components/Charts/ChartView.swift"
+                  urlString = "file:///Users/krish_venkat/Desktop/ZeamFi/ZUI/ZeamFinance/ZeamUI/Components/Charts/ChartView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "100"
@@ -147,14 +147,14 @@
                   offsetFromSymbolStart = "1120">
                </Location>
                <Location
-                  uuid = "4D6DA806-43EA-4126-B82A-BEDD405CBA00 - 663a2bef45a3e393"
+                  uuid = "4D6DA806-43EA-4126-B82A-BEDD405CBA00 - 107b92eddc55d894"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "ZeamFinance.ChartView.computeDataPoints() -&gt; ()"
                   moduleName = "ZeamFinance"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krish_venkat/Desktop/UIKIt/Hackathon/ZUI/ZeamFinance/ZeamUI/Components/Charts/ChartView.swift"
+                  urlString = "file:///Users/krish_venkat/Desktop/ZeamFi/ZUI/ZeamFinance/ZeamUI/Components/Charts/ChartView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "100"
@@ -177,6 +177,54 @@
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "computeHeight()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ECD3D61A-8E2B-464A-A761-30A764208A81 - 7abc47013307a4ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIViewController.computeHeight() -&gt; CoreGraphics.CGFloat"
+                  moduleName = "ZeamFinance"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krish_venkat/Desktop/ZeamFi/ZUI/ZeamFinance/ZeamUI/Components/PresentedViewController/PresentationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "700">
+               </Location>
+               <Location
+                  uuid = "ECD3D61A-8E2B-464A-A761-30A764208A81 - 7abc47013307a4ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIViewController.computeHeight() -&gt; CoreGraphics.CGFloat"
+                  moduleName = "ZeamFinance"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krish_venkat/Desktop/ZeamFi/ZUI/ZeamFinance/ZeamUI/Components/PresentedViewController/PresentationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "868">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5CBD46D-347E-4BDD-9DDF-A1D16784ED84"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZeamFinance/Views/Offers/ZeamOfferViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "offerTypeButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
