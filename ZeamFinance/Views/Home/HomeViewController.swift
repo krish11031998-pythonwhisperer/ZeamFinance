@@ -29,7 +29,7 @@ class HomeViewController: UIViewController {
 		setupHeader()
 		viewModel.loadData()
 		setupTransparentNavBar()
-		//addObserver()
+		addObserver()
 	}
 	
 	private func setupView() {
@@ -46,16 +46,14 @@ class HomeViewController: UIViewController {
 		tableView.tableHeaderView?.frame = .init(origin: .zero, size: .init(width: .totalWidth, height: header.compressedSize.height))
 	}
 	
-//	private func addObserver() {
-//		NotificationCenter.default.addObserver(self, selector: #selector(showPaymentModal), name: .showPayment, object: nil)
-//	}
-//
-//	@objc
-//	func showPaymentModal() {
-//		presentCard(controller: PaymentModal(), withNavigation: false) {
-//			PaymentStorage.selectedPayment = nil
-//		}
-//	}
+	private func addObserver() {
+		NotificationCenter.default.addObserver(self, selector: #selector(showAllTransactions), name: .showAllTransactions, object: nil)
+	}
+
+	@objc
+	func showAllTransactions() {
+		navigationController?.pushViewController(WalletTransactionViewController(), animated: true)
+	}
 }
 
 

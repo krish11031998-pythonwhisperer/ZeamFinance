@@ -16,4 +16,6 @@ extension Notification.Name {
 	static let showAllTransactions: Self = .init("showAllTransactions")
 	static let selectedAccount: Self = .init("selectedAccount")
 	static let showAccounts: Self = .init("showAccounts")
+	
+	static let showAllTrendingOffersTab: Self = .init("showAllTrendingOffersTab")
 }

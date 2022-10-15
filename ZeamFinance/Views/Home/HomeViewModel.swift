@@ -29,7 +29,7 @@ class HomeViewModel {
 		let moreCell = CustomButton()
 		moreCell.configureButton(.init(title: "view more".bold(size: 13),
 									   buttonType: .slender,
-									   buttonStyling: .init(borderColor: .surfaceBackgroundInverse)))
+									   buttonStyling: .init(borderColor: .surfaceBackgroundInverse), action: showTransations))
 		moreCell.setWidth(width: moreCell.compressedSize.width, priority: .required)
 
 		let stack: UIStackView = .HStack(subViews: [moreCell, .spacer()],spacing: 0, alignment: .center)
@@ -41,7 +41,7 @@ class HomeViewModel {
 		let moreCell = CustomButton()
 		moreCell.configureButton(.init(title: "view more".bold(size: 13),
 									   buttonType: .slender,
-									   buttonStyling: .init(borderColor: .surfaceBackgroundInverse)))
+									   buttonStyling: .init(borderColor: .surfaceBackgroundInverse), action: showOffers))
 		moreCell.setWidth(width: moreCell.compressedSize.width, priority: .required)
 
 		let stack: UIStackView = .HStack(subViews: [moreCell, .spacer()],spacing: 0, alignment: .center)
@@ -75,4 +75,14 @@ class HomeViewModel {
 		.init(sections: [cardSection, recentTransactions, billSection, exclusiveOffersSection])
 	}
 	
+	//MARK: - Functional Handler
+	
+	private func showTransations() {
+		NotificationCenter.default.post(name: .showAllTransactions, object: nil)
+	}
+	
+	
+	private func showOffers() {
+		NotificationCenter.default.post(name: .showAllTrendingOffersTab, object: nil)
+	}
 }

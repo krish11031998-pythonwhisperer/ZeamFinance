@@ -48,6 +48,7 @@ class MainTabViewController: UITabBarController {
 		NotificationCenter.default.addObserver(self, selector: #selector(showCardDetail), name: .showCard, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(showAccountDetail), name: .showAccount, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(showAccountsForPayment), name: .showAccounts, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(showAllOffersTab), name: .showAllTrendingOffersTab, object: nil)
 	}
 	
 	@objc
@@ -97,5 +98,9 @@ class MainTabViewController: UITabBarController {
 		presentCard(controller: AccountModal(), withNavigation: true) {
 			AccountStorage.accountsForUser = nil
 		}
+	}
+	
+	@objc func showAllOffersTab() {
+		selectedIndex = 2
 	}
 }
