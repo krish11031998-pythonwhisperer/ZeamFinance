@@ -19,3 +19,18 @@ extension UIView {
 		return bgView
 	}
 }
+
+
+//MARK: - Array of views
+
+extension Array where Element : UIView {
+	
+	func addToView(_ main: UIView) {
+		if let stack = main as? UIStackView {
+			forEach(stack.addArrangedSubview(_:))
+		} else {
+			forEach(main.addSubview(_:))
+		}
+	}
+	
+}

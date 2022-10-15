@@ -43,6 +43,13 @@ struct PaymentCardModel {
 	}
 }
 
+extension PaymentCardModel : Hashable {
+	
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(type.rawValue)
+	}
+}
+
 struct PaymentQRCodeModel: Codable {
 	let billCompany: String
 	let billDescription: String

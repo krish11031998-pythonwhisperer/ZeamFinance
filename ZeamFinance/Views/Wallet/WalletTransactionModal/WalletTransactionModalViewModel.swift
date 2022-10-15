@@ -125,7 +125,7 @@ class WalletTransactionModalViewModel {
 									 buttonType: .slender,
 									 action: sellData))
 		let stack: UIStackView = .VStack(subViews: [header] + validReceipt.compactMap { $0.receiptView(includeButton: false) } + [button],
-										 spacing: 10)
+										 spacing: 15)
 		let view = stack.embedInView(insets: .init(by: 12), priority: .needed)
 		view.backgroundColor = .info400
 		view.clippedCornerRadius = 12
