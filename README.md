@@ -4,7 +4,7 @@ Zeam Finance is a app I built for the [FutureHack Hackathon at Global DevSlam](h
 where we were building an platform that offered payments solutions that can be easily adopted by SMEs which offers a seamless payment experience 
 while providing cashback reward that rewards users with our custom made cryptocurrency.
 
-We won the Most Creative Concept
+We won the [Most Creative Concept Prize](https://www.linkedin.com/feed/update/urn:li:activity:6986773305231872000?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A6986773305231872000%29)
 
 ## Features of the App
 
