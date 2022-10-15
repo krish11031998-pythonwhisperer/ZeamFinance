@@ -12,3 +12,10 @@ struct PaymentReceiptModel {
 	let unitPrice: Float
 	let units: Float
 }
+
+extension PaymentReceiptModel: Hashable {
+	
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(description)
+	}
+}

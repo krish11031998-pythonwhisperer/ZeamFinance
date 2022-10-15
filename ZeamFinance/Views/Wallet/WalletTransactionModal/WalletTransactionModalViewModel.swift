@@ -10,22 +10,26 @@ import UIKit
 
 extension PaymentReceiptModel {
 	
-	var receiptView: UIView {
+	func receiptView(includeButton: Bool = true ) -> UIView {
 		let description = description.medium(size: 15).generateLabel
 		let amount = String(format: "%.2f", units * unitPrice).regular(size: 13).generateLabel
-		let plusImage = UIImageView(image: .init(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(pointSize: 12))?.resized(size: .init(squared: 12)))
-		plusImage.contentMode = .center
-		plusImage.backgroundColor = .surfaceBackgroundInverse
-		plusImage.circleFrame = .init(origin: .zero, size: .init(squared: 24))
-		plusImage.clippedCornerRadius = 12
-		plusImage.setFrame(.init(squared: 24))
 		let stack: UIStackView = .HStack(spacing: 12)
-		[description, .spacer(), amount, plusImage].forEach(stack.addArrangedSubview)
+		[description, .spacer(), amount].forEach(stack.addArrangedSubview)
+		if includeButton {
+			let plusImage = UIImageView(image: .init(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(pointSize: 12))?.resized(size: .init(squared: 12)))
+			plusImage.contentMode = .center
+			plusImage.backgroundColor = .surfaceBackgroundInverse
+			plusImage.clipsToBounds = true
+			plusImage.circleFrame = .init(origin: .zero, size: .init(squared: 24))
+			stack.addArrangedSubview(plusImage)
+			stack.setFittingConstraints(childView: plusImage, width:24, height:24, priority: .needed)
+		}
+//		plusImage.isHidden = !includeButton
 		return stack
 	}
 	
-	var cell: TableCellProvider {
-		return TableRow<CustomTableCell>(.init(view: receiptView, inset: .init(by: 10)))
+	func cell(_ action: Callback? = nil) -> TableCellProvider {
+		return TableRow<CustomTableCell>(.init(view: receiptView(), inset: .init(by: 10), action: action))
 	}
 }
 
@@ -62,7 +66,7 @@ extension TransactionModel {
 class WalletTransactionModalViewModel {
 	
 	private var transaction: TransactionModel? { TransactionStorage.selectedTransaction }
-	
+	private var receiptItems: Set<PaymentReceiptModel>?
 	public weak var view: AnyTableView?
 	
 	public var tableHeader: UIView? {
@@ -91,9 +95,9 @@ class WalletTransactionModalViewModel {
 		guard let selectedPointScored = transaction?.amount else { return nil }
 		let stack = UIStackView.HStack(spacing: 8)
 		let imgView = UIImageView(image: .IconCatalogue.coins.image)
-		imgView.setFrame(.init(squared: 48))
 		let label = String(format: "%.2f", selectedPointScored).bold(color: .textColorInverse, size: 30).generateLabel
 		[imgView, label, .spacer()].forEach(stack.addArrangedSubview(_:))
+		stack.setFittingConstraints(childView: imgView, width: 48, height: 48, priority: .needed)
 		let header = "ZFI earned from this transaction".medium(color: .textColorInverse, size: 13).generateLabel
 		let mainStack = UIStackView.VStack(subViews: [header.embedInView(insets: .init(by: 5)), stack], spacing: 5, alignment: .leading)
 		let view = mainStack.background()
@@ -108,18 +112,24 @@ class WalletTransactionModalViewModel {
 	
 	private var productReceipt: TableSection? {
 		guard let validTransaction = transaction, !validTransaction.receiptModel.isEmpty else { return nil }
-		let cells = validTransaction.receiptModel.map(\.cell)
+		let cells = validTransaction.receiptModel.map {item in item.cell { self.addValue(item) }}
 		return .init(rows: cells, title: "Receipt")
 	}
 	
 	private var generateMoreCoin: TableCellProvider? {
-		guard let validTransaction = transaction, !validTransaction.receiptModel.isEmpty else { return nil }
+		guard let validReceipt = receiptItems, !validReceipt.isEmpty else { return nil }
 		let header = "ZFI you can earn from selling your data".medium(color: .textColor, size: 13).generateLabel
-		let stack: UIStackView = .VStack(subViews: [header] + validTransaction.receiptModel.compactMap { $0.receiptView }, spacing: 10)
-		let stackView = stack.embedInView(insets: .init(by: 8))
-		stackView.backgroundColor = .success500
-		stackView.clippedCornerRadius = 8
-		return TableRow<CustomTableCell>(.init(view: stackView, inset: .init(by: 10)))
+		let button = CustomButton()
+		button.configureButton(.init(title: "Sell Your Data".regular(size: 12),
+									 backgroundColor: .surfaceBackground,
+									 buttonType: .slender,
+									 action: sellData))
+		let stack: UIStackView = .VStack(subViews: [header] + validReceipt.compactMap { $0.receiptView(includeButton: false) } + [button],
+										 spacing: 10)
+		let view = stack.embedInView(insets: .init(by: 12), priority: .needed)
+		view.backgroundColor = .info400
+		view.clippedCornerRadius = 12
+		return TableRow<CustomTableCell>(.init(view: view, inset: .init(by: 12)))
 	}
 	
 	private var txnSection: TableSection? {
@@ -131,5 +141,17 @@ class WalletTransactionModalViewModel {
 		.init(sections: [txnDetails, productReceipt, pointsScores].compactMap { $0 })
 	}
 	
+	private func addValue(_ receiptItem: PaymentReceiptModel) {
+		if receiptItems == nil {
+			receiptItems = [receiptItem]
+		} else {
+			receiptItems?.insert(receiptItem)
+		}
+		view?.reloadTableWithDataSource(buildDatasource())
+	}
 	
+	
+	private func sellData() {
+		print("(DEBUG) sell Button was clicked!")
+	}
 }

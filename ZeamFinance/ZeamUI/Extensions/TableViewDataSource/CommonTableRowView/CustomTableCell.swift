@@ -15,15 +15,24 @@ struct CustomTableCellModel: ActionProvider {
 	let leading: CGFloat?
 	let bottom: CGFloat?
 	let trailing: CGFloat?
+	let name: String
 	var action: Callback?
 	
-	init(view: UIView, inset: UIEdgeInsets? = nil, top: CGFloat? = nil, leading: CGFloat? = nil, bottom: CGFloat? = nil, trailing: CGFloat? = nil, action: Callback? = nil) {
+	init(view: UIView,
+		 inset: UIEdgeInsets? = nil,
+		 top: CGFloat? = nil,
+		 leading: CGFloat? = nil,
+		 bottom: CGFloat? = nil,
+		 trailing: CGFloat? = nil,
+		 name:String = "",
+		 action: Callback? = nil) {
 		self.view = view
 		self.inset = inset
 		self.top = top
 		self.leading = leading
 		self.bottom = bottom
 		self.trailing = trailing
+		self.name = name
 		self.action = action
 	}
 }
