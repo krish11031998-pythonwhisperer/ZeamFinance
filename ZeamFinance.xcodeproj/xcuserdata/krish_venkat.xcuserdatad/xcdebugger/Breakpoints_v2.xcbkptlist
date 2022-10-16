@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CF31165D-A13E-494D-B94A-D056B1E95498"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZeamFinance/ZeamUI/CollectionViewDataSource/CollectionViewFunctions.swift"
@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B63CDE47-C567-47EC-B509-A4D592A4F51F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZeamFinance/ZeamUI/CollectionViewDataSource/CollectionViewFunctions.swift"
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "70A311FC-3781-4F54-A78B-787C2256D0AB"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZeamFinance/ZeamUI/CollectionViewDataSource/CollectionViewFunctions.swift"
@@ -56,7 +56,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "07B717CD-6F39-46AC-8E2D-FCC92683F6EE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZeamFinance/ZeamUI/Shapes/ActiveBoosterCard.swift"
@@ -72,7 +72,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "576039C4-A843-4F5F-98E7-86891E5BD048"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZeamFinance/ZeamUI/Components/Payments/PaymentCard.swift"
@@ -88,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "01F96337-731C-4089-9409-F045E3A274D9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZeamFinance/ZeamUI/Extensions/Shapes/CircularProgressShape.swift"
@@ -104,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "24F7FCA8-BCE2-4656-A210-F221E883B873"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZeamFinance/Views/Wallet/WalletHeaderView.swift"
@@ -120,7 +120,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4D6DA806-43EA-4126-B82A-BEDD405CBA00"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZeamFinance/ZeamUI/Components/Charts/ChartView.swift"
@@ -160,54 +160,6 @@
                   startingLineNumber = "100"
                   endingLineNumber = "100"
                   offsetFromSymbolStart = "1352">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ECD3D61A-8E2B-464A-A761-30A764208A81"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZeamFinance/ZeamUI/Components/PresentedViewController/PresentationViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "computeHeight()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "ECD3D61A-8E2B-464A-A761-30A764208A81 - 7abc47013307a4ea"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__C.UIViewController.computeHeight() -&gt; CoreGraphics.CGFloat"
-                  moduleName = "ZeamFinance"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krish_venkat/Desktop/ZeamFi/ZUI/ZeamFinance/ZeamUI/Components/PresentedViewController/PresentationViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "700">
-               </Location>
-               <Location
-                  uuid = "ECD3D61A-8E2B-464A-A761-30A764208A81 - 7abc47013307a4ea"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__C.UIViewController.computeHeight() -&gt; CoreGraphics.CGFloat"
-                  moduleName = "ZeamFinance"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krish_venkat/Desktop/ZeamFi/ZUI/ZeamFinance/ZeamUI/Components/PresentedViewController/PresentationViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "868">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -54,7 +54,10 @@ class CustomTableCell: ConfigurableCell {
 											  trailing: model.trailing,
 											  bottom: model.bottom)
 		}
-		
+	}
+	
+	static var cellName: String? {
+		return "CustomCell.\(UUID().uuidString)"
 	}
 	
 }

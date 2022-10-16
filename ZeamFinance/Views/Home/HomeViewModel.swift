@@ -22,6 +22,10 @@ class HomeViewModel {
 		return .init(rows: [cardTableCell], title: "Cards")
 	}
 	
+	private var userSummaryView: TableSection {
+		return .init(rows: [TableRow<CustomTableCell>(.init(view: UserInfoView(), inset: .init(vertical: 0, horizontal: 10)))])
+	}
+	
 	private var recentTransactions: TableSection {
 		let txns: [TransactionModel] = [.init(cellLogo: .IconCatalogue.amazon.image, detail: "amazon", amount: 250),
 										.init(cellLogo: .IconCatalogue.netflix.image, detail: "netflix", amount: 50),
@@ -72,7 +76,7 @@ class HomeViewModel {
 
 	
 	private func buildDatasource() -> TableViewDataSource {
-		.init(sections: [cardSection, recentTransactions, billSection, exclusiveOffersSection])
+		.init(sections: [userSummaryView, recentTransactions, billSection, exclusiveOffersSection])
 	}
 	
 	//MARK: - Functional Handler

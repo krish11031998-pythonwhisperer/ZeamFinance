@@ -147,6 +147,7 @@
 		EF99962028FB4C1700DE9D2E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99961F28FB4C1700DE9D2E /* Cache.swift */; };
 		EF99962328FC397400DE9D2E /* SpendingAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99962228FC397400DE9D2E /* SpendingAnalyticsViewController.swift */; };
 		EF99962528FC3A7700DE9D2E /* SpendingAnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99962428FC3A7700DE9D2E /* SpendingAnalyticsViewModel.swift */; };
+		EF99962828FC650600DE9D2E /* UserSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99962728FC650600DE9D2E /* UserSummaryView.swift */; };
 		EF9ADE6228F665F2008580ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6128F665F2008580ED /* ProfileViewController.swift */; };
 		EF9ADE6428F66667008580ED /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6328F66667008580ED /* ProfileViewModel.swift */; };
 		EF9ADE6728F666A0008580ED /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6628F666A0008580ED /* UserModel.swift */; };
@@ -321,6 +322,7 @@
 		EF99961F28FB4C1700DE9D2E /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		EF99962228FC397400DE9D2E /* SpendingAnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingAnalyticsViewController.swift; sourceTree = "<group>"; };
 		EF99962428FC3A7700DE9D2E /* SpendingAnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingAnalyticsViewModel.swift; sourceTree = "<group>"; };
+		EF99962728FC650600DE9D2E /* UserSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSummaryView.swift; sourceTree = "<group>"; };
 		EF9ADE6128F665F2008580ED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EF9ADE6328F66667008580ED /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EF9ADE6628F666A0008580ED /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -653,6 +655,7 @@
 		EF639A7728F0170F00787C58 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EF99962628FC64F900DE9D2E /* UserSummary */,
 				EF639A7028F00FD900787C58 /* HomeViewController.swift */,
 				EF639A7828F0173C00787C58 /* HomeViewModel.swift */,
 				EF639A8028F02A3300787C58 /* HomeHeaderView.swift */,
@@ -1045,6 +1048,14 @@
 			path = Analytics;
 			sourceTree = "<group>";
 		};
+		EF99962628FC64F900DE9D2E /* UserSummary */ = {
+			isa = PBXGroup;
+			children = (
+				EF99962728FC650600DE9D2E /* UserSummaryView.swift */,
+			);
+			path = UserSummary;
+			sourceTree = "<group>";
+		};
 		EF9ADE6028F665E3008580ED /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1261,6 +1272,7 @@
 				EF89AA0228EC3F4100598521 /* UILabel.swift in Sources */,
 				EF89AA7328ED482C00598521 /* CircularProgressBar.swift in Sources */,
 				EF639A5828EEA15200787C58 /* TransactionCell.swift in Sources */,
+				EF99962828FC650600DE9D2E /* UserSummaryView.swift in Sources */,
 				EF59414028F59E93001380B8 /* AccountStorage.swift in Sources */,
 				EF5940F728F1E1E3001380B8 /* PaymentModal.swift in Sources */,
 				EF89AA3D28EC7E4B00598521 /* OffersViewController.swift in Sources */,

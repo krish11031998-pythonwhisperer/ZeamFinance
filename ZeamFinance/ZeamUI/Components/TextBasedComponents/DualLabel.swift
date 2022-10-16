@@ -40,11 +40,11 @@ class DualLabel: UIView {
 	
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
-		setupView()
+//		setupView()
 	}
 	
 	private func setupView() {
-		[titleLabel, subTitleLabel].forEach(mainStack.addArrangedSubview(_:))
+		[titleLabel, subTitleLabel].addToView(mainStack)
 		addSubview(mainStack)
 		setFittingConstraints(childView: mainStack, insets: .zero)
 	}

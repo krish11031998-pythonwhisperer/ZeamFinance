@@ -51,6 +51,10 @@ extension TableViewDataSource: UITableViewDataSource {
 	public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 		return nil
 	}
+	
+	public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		UITableView.automaticDimension
+	}
 }
 
 

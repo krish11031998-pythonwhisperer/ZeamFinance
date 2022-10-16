@@ -10,9 +10,9 @@ import UIKit
 
 enum Animation {
 	case bouncy(duration: CFTimeInterval = 0.3)
-	case slideInFromTop(from: CGFloat, to:CGFloat = 0, duration: CFTimeInterval)
-	case circularProgress(from: CGFloat = 0, to: CGFloat, duration: CFTimeInterval)
-	case progress(cornerRadius: CGFloat = 0, to: CGFloat, duration: CFTimeInterval = 0.5)
+	case slideIn(from: CGFloat, to:CGFloat = 0, show: Bool = true, duration: CFTimeInterval = 0.33)
+	case circularProgress(from: CGFloat = 0, to: CGFloat, duration: CFTimeInterval = 0.33)
+	case progress(cornerRadius: CGFloat = 0, to: CGFloat, duration: CFTimeInterval = 0.33)
 }
 
 extension Animation {
@@ -27,16 +27,15 @@ extension Animation {
 			animation.duration = duration
 			animation.isRemovedOnCompletion = true
 			return animation
-		case .slideInFromTop(let from, let to, let duration):
+		case .slideIn(let from, let to, let show, let duration):
 			let animation = CABasicAnimation(keyPath: "position.y")
 			animation.fromValue = from
 			animation.toValue = to
 
 			let opacity = CABasicAnimation(keyPath: "opacity")
-			opacity.fromValue = 0
-			opacity.toValue = 1
+			opacity.fromValue = show ? 0 : 1
+			opacity.toValue = show ? 1 : 0
 
-			
 			let group = CAAnimationGroup()
 			group.animations = [animation, opacity]
 			group.fillMode = .forwards

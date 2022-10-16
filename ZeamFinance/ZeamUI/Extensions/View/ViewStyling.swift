@@ -56,6 +56,17 @@ extension UIView {
 		userInterface == .light ? .systemThinMaterialLight : .systemUltraThinMaterialDark
 	}
 	
+	func addGradientView(colors: [UIColor], frame: CGRect? = nil) {
+		let gradientLayer = CAGradientLayer()
+		gradientLayer.colors = colors.map(\.cgColor)
+
+		let view = UIView(frame: bounds)
+		gradientLayer.frame = bounds
+		view.layer.insertSublayer(gradientLayer, at: 0)
+		insertSubview(view, at: 0)
+		setFittingConstraints(childView: view, insets: .zero)
+	}
+	
 	func addBlurView(_ _style: UIBlurEffect.Style? = nil) {
 		let style = _style ?? defaultBlurStyle
 		let blur = UIBlurEffect(style: style)
