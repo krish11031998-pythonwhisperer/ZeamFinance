@@ -20,7 +20,7 @@ class WalletViewModel {
 	private var cards: [CardModel]?
 	private var transactions: [TransactionModel]?
 	public weak var view: AnyTableView?
-	
+	private var bindings: [Events:Callback?] = [:]
 	public func loadData() {
 		cards = [.init(bankName: "Emirates NBD", name: "Krishna Venkatramani")]
 		transactions = [.init(cellLogo: .IconCatalogue.amazon.image, detail: "amazon", amount: 250),
@@ -42,8 +42,8 @@ class WalletViewModel {
 		let moreCell = CustomButton()
 		moreCell.configureButton(.init(title: titleString?.bold(size: 13) ?? title ?? "",
 									   buttonType: .slender,
-									   buttonStyling: .init(borderColor: .surfaceBackgroundInverse), action: {
-			NotificationCenter.default.post(name: .showAllTransactions, object: nil)
+									   buttonStyling: .init(borderColor: .surfaceBackgroundInverse), action: { [weak self] in
+			self?.callUpdate(.showWallet)
 		}))
 		moreCell.setWidth(width: moreCell.compressedSize.width, priority: .required)
 		
@@ -133,7 +133,7 @@ class WalletViewModel {
 												  title: String(format: "%.2f", (percent/40.0) * 100) + " %",
 												  subTitle: "Budget Spent"),
 											.init(topView: imgView, title: "\(Int.random(in: 10..<100))", subTitle: "Z Coins")]
-		let collectionCells = cells.compactMap { CollectionItem<AccountSummaryCollectionCell>($0) }
+		let collectionCells = cells.compactMap { CollectionItem<AccountSummaryCollectionCell>(.init(model: $0, action: showAnalytics)) }
 		return .init(rows: [TableRow<CollectionTableCell>(.init(cells: collectionCells, cellSize: .init(width: 125, height: 100)))],
 					 title: "Spending Summary")
 	}
@@ -167,12 +167,31 @@ class WalletViewModel {
 	
 	//MARK: - TableViewDataSource
 	private func buildDatasource() -> TableViewDataSource {
-		.init(sections: [cardSection, accountSection, transactionSection, summarySection, weeklySpendingChartSection])
+		.init(sections: [cardSection, accountSection, transactionSection, summarySection])
 	}
 	
 	//MARK: - MISC
 	@objc
 	func addCardTarget() {
 		print("(DEBUG) add Target!")
+	}
+	
+	private func showAnalytics() {
+		callUpdate(.showAnalytics)
+	}
+}
+
+extension WalletViewModel {
+	enum Events {
+		case showAnalytics
+		case showWallet
+	}
+	
+	private func callUpdate(_ event: Events) {
+		bindings[event]??()
+	}
+	
+	public func addBindings(_ event: WalletViewModel.Events, action: Callback?) {
+		bindings[event] = action
 	}
 }

@@ -82,7 +82,7 @@ class CardDetailViewModel {
 												  title: String(format: "%.2f", (percent/40.0) * 100) + " %",
 												  subTitle: "Budget Spent"),
 											.init(topView: imgView, title: "\(Int.random(in: 10..<100))", subTitle: "Z Coins")]
-		let collectionCells = cells.compactMap { CollectionItem<AccountSummaryCollectionCell>($0) }
+		let collectionCells = cells.compactMap { CollectionItem<AccountSummaryCollectionCell>(.init(model: $0)) }
 		return .init(rows: [TableRow<CollectionTableCell>(.init(cells: collectionCells, cellSize: .init(width: 125, height: 100)))],
 					 title: "Spending Summary")
 	}

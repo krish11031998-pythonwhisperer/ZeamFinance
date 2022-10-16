@@ -14,6 +14,16 @@ struct AccountSummaryModel {
 	let subTitle: String
 }
 
+struct AccountSummmaryCellModel: ActionProvider {
+	let model: AccountSummaryModel
+	var action: Callback?
+	
+	init(model: AccountSummaryModel, action: Callback? = nil) {
+		self.model = model
+		self.action = action
+	}
+}
+
 class AccountSummaryCard: UIView {
 
 	private lazy var infoLabel: DualLabel = { .init() }()
@@ -92,7 +102,7 @@ class AccountSummaryCollectionCell: ConfigurableCollectionCell {
 		contentView.clippedCornerRadius = 8
 	}
 	
-	func configure(with model: AccountSummaryModel) {
-		view.configureView(model: model)
+	func configure(with model: AccountSummmaryCellModel) {
+		view.configureView(model: model.model)
 	}
 }

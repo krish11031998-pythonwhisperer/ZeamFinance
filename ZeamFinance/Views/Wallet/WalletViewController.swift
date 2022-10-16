@@ -27,7 +27,7 @@ class WalletViewController: UIViewController {
 		super.viewDidLoad()
 		viewModel.loadData()
 		setupView()
-		addObservers()
+		addBindings()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -41,14 +41,14 @@ class WalletViewController: UIViewController {
 		tableView.backgroundColor = .surfaceBackground
 		viewModel.setupHeaderView()
 	}
-
-	private func addObservers() {
-		NotificationCenter.default.addObserver(self, selector: #selector(showTransactions), name: .showAllTransactions, object: nil)
-	}
 	
-	@objc
-	private func showTransactions() {
-		navigationController?.pushViewController(WalletTransactionViewController(), animated: true)
+	func addBindings() {
+		viewModel.addBindings(.showAnalytics) {
+			self.navigationController?.pushViewController(SpendingAnalyticsViewController(), animated: true)
+		}
+		viewModel.addBindings(.showWallet) { [weak self] in
+			self?.navigationController?.pushViewController(WalletTransactionViewController(), animated: true)
+		}
 	}
 }
 

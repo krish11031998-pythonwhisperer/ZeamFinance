@@ -143,6 +143,10 @@
 		EF89AA8B28EDBADD00598521 /* CuratedBackgroundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8A28EDBADD00598521 /* CuratedBackgroundShape.swift */; };
 		EF89AA8E28EDBC6000598521 /* ShapesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8D28EDBC6000598521 /* ShapesViewController.swift */; };
 		EF99961B28FB20E100DE9D2E /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99961A28FB20E100DE9D2E /* UIImageView.swift */; };
+		EF99961E28FB483B00DE9D2E /* DataBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99961D28FB483B00DE9D2E /* DataBindable.swift */; };
+		EF99962028FB4C1700DE9D2E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99961F28FB4C1700DE9D2E /* Cache.swift */; };
+		EF99962328FC397400DE9D2E /* SpendingAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99962228FC397400DE9D2E /* SpendingAnalyticsViewController.swift */; };
+		EF99962528FC3A7700DE9D2E /* SpendingAnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99962428FC3A7700DE9D2E /* SpendingAnalyticsViewModel.swift */; };
 		EF9ADE6228F665F2008580ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6128F665F2008580ED /* ProfileViewController.swift */; };
 		EF9ADE6428F66667008580ED /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6328F66667008580ED /* ProfileViewModel.swift */; };
 		EF9ADE6728F666A0008580ED /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6628F666A0008580ED /* UserModel.swift */; };
@@ -313,6 +317,10 @@
 		EF89AA8A28EDBADD00598521 /* CuratedBackgroundShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuratedBackgroundShape.swift; sourceTree = "<group>"; };
 		EF89AA8D28EDBC6000598521 /* ShapesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesViewController.swift; sourceTree = "<group>"; };
 		EF99961A28FB20E100DE9D2E /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		EF99961D28FB483B00DE9D2E /* DataBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBindable.swift; sourceTree = "<group>"; };
+		EF99961F28FB4C1700DE9D2E /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		EF99962228FC397400DE9D2E /* SpendingAnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingAnalyticsViewController.swift; sourceTree = "<group>"; };
+		EF99962428FC3A7700DE9D2E /* SpendingAnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingAnalyticsViewModel.swift; sourceTree = "<group>"; };
 		EF9ADE6128F665F2008580ED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EF9ADE6328F66667008580ED /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EF9ADE6628F666A0008580ED /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -362,6 +370,7 @@
 		EF5940D028F14DCE001380B8 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				EF99962128FC394E00DE9D2E /* Analytics */,
 				EF59412B28F58CBA001380B8 /* Card */,
 				EF59412128F53A11001380B8 /* Account */,
 				EF5940FD28F21C21001380B8 /* WalletTransactionModal */,
@@ -707,6 +716,7 @@
 		EF89A9C128EC27A500598521 /* ZeamUI */ = {
 			isa = PBXGroup;
 			children = (
+				EF99961C28FB482800DE9D2E /* DataManager */,
 				EF89AA3228EC581B00598521 /* ZUIViews */,
 				EF89A9C628EC284000598521 /* Assets */,
 				EF89AA6728ED482C00598521 /* MiscComponents */,
@@ -1017,6 +1027,24 @@
 			path = Shapes;
 			sourceTree = "<group>";
 		};
+		EF99961C28FB482800DE9D2E /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				EF99961D28FB483B00DE9D2E /* DataBindable.swift */,
+				EF99961F28FB4C1700DE9D2E /* Cache.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		EF99962128FC394E00DE9D2E /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				EF99962228FC397400DE9D2E /* SpendingAnalyticsViewController.swift */,
+				EF99962428FC3A7700DE9D2E /* SpendingAnalyticsViewModel.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		EF9ADE6028F665E3008580ED /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1209,6 +1237,7 @@
 				EFFB291128F838AD000D01BA /* MainTabItem.swift in Sources */,
 				EF5940EA28F19C9B001380B8 /* ZeamOfferViewController.swift in Sources */,
 				EF89AA1528EC401F00598521 /* TableSection.swift in Sources */,
+				EF99962028FB4C1700DE9D2E /* Cache.swift in Sources */,
 				EF639A8128F02A3300787C58 /* HomeHeaderView.swift in Sources */,
 				EF5940DB28F18293001380B8 /* WalletTransactionViewController.swift in Sources */,
 				EF5940F528F1CEBA001380B8 /* UIWindow.swift in Sources */,
@@ -1237,9 +1266,11 @@
 				EF89AA3D28EC7E4B00598521 /* OffersViewController.swift in Sources */,
 				EF89AA1A28EC45CC00598521 /* ColorBuilder.swift in Sources */,
 				EF5940CF28F062F5001380B8 /* PaymentCard.swift in Sources */,
+				EF99961E28FB483B00DE9D2E /* DataBindable.swift in Sources */,
 				EFFB291528F8ACA3000D01BA /* UIView.swift in Sources */,
 				EF89AA7728ED482C00598521 /* GenericButtonWrapper.swift in Sources */,
 				EF59412F28F58D34001380B8 /* UITableView.swift in Sources */,
+				EF99962528FC3A7700DE9D2E /* SpendingAnalyticsViewModel.swift in Sources */,
 				EF5940FC28F1F02D001380B8 /* PaymentStorage.swift in Sources */,
 				EF89AA3B28EC795000598521 /* SpotlightOfferCard.swift in Sources */,
 				EF89AA8E28EDBC6000598521 /* ShapesViewController.swift in Sources */,
@@ -1314,6 +1345,7 @@
 				EF639A6A28EF0AA200787C58 /* ZUIProfileViewController.swift in Sources */,
 				EF89A99228EC262100598521 /* SceneDelegate.swift in Sources */,
 				EF89AA4628ECC17700598521 /* CollectionSection.swift in Sources */,
+				EF99962328FC397400DE9D2E /* SpendingAnalyticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
