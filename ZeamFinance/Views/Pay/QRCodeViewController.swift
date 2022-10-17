@@ -127,7 +127,7 @@ extension QRCodeReaderViewController: AVCaptureMetadataOutputObjectsDelegate {
 			PaymentStorage.selectedPayment = .init(billCompany: decodedData.billCompany,
 												   billDescription: decodedData.billDescription,
 												   amount: decodedData.amount,
-												   billCompanyLogo: .init(), type: decodedData.type)
+												   billCompanyLogo: .init(), receiptItems: decodedData.receiptItems, type: decodedData.type)
 		}
 
 		dismiss(animated: true)

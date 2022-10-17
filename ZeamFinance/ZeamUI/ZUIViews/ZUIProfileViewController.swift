@@ -53,7 +53,7 @@ class ZUIProfileViewController: UIViewController {
 	
 	private var paymentQRCode: TableSection? {
 		let maria: PaymentCardModel = .init(billCompany: "Maria", billDescription: "Coffee Run", amount: 20,
-											billCompanyLogo: .solid(color: .clear), type: .payment)
+											billCompanyLogo: .solid(color: .clear), receiptItems: [.init(description: "Coffee", unitPrice: 20, units: 1), .init(description: "Tea", unitPrice: 15, units: 1)], type: .payment)
 		guard let img = UIImage.generateQRCode(PaymentQRCodeModel(paymentModel: maria)) else { return nil }
 		let imgView = UIImageView(image: img)
 		let view = UIView()

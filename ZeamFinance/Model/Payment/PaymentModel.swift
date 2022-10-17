@@ -56,14 +56,16 @@ struct PaymentQRCodeModel: Codable {
 	let amount: Float
 	let installmentsCount: Int?
 	let totalInstallments: Int?
+	let receiptItems: [PaymentReceiptModel]
 	let type: PaymentType
 	
-	init(billCompany: String, billDescription: String, amount: Float, installmentsCount: Int?, totalInstallments: Int?, type: PaymentType) {
+	init(billCompany: String, billDescription: String, amount: Float, installmentsCount: Int?, totalInstallments: Int?, receiptItems: [PaymentReceiptModel], type: PaymentType) {
 		self.billCompany = billCompany
 		self.billDescription = billDescription
 		self.amount = amount
 		self.installmentsCount = installmentsCount
 		self.totalInstallments = totalInstallments
+		self.receiptItems = receiptItems
 		self.type = type
 	}
 	
@@ -73,6 +75,7 @@ struct PaymentQRCodeModel: Codable {
 		self.amount = paymentModel.amount
 		self.installmentsCount = paymentModel.installmentsCount
 		self.totalInstallments = paymentModel.totalInstallments
+		self.receiptItems = paymentModel.receiptItems
 		self.type = paymentModel.type
 	}
 	

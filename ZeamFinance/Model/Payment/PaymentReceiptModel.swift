@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PaymentReceiptModel {
+struct PaymentReceiptModel: Codable {
 	let description: String
 	let unitPrice: Float
 	let units: Float
