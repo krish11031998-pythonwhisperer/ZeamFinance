@@ -100,7 +100,7 @@ extension UIViewController {
 			navigationItem.leftBarButtonItem = .init(customView: titleView)
 		}
 		setupTransparentNavBar(color: .surfaceBackground, scrollColor: .surfaceBackground)
-
+		navigationController?.navigationBar.clipsToBounds = true
 		navigationItem.rightBarButtonItem = rightBarButton ?? (isModal ? .closeButton {
 			self.navigationController?.popViewController(animated: true)
 		} : nil)

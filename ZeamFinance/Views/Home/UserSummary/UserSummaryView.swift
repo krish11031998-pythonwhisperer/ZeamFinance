@@ -91,9 +91,22 @@ class UserInfoView: UIView {
 		let label = "Quick Actions".medium(color: .textColorInverse, size: 12).generateLabel
 		let stack = UIStackView.HStack(spacing: 8)
 		stack.alignment = .center
-		["Receive", "Sell", "Pay"].map {
-			let view = $0.medium(size: 12).generateLabel
-			return view.blobify(backgroundColor: .surfaceBackground, edgeInset: .init(vertical: 7.5, horizontal: 12), borderColor: .clear, borderWidth: 0, cornerRadius: 12)
+		["Receive", "Sell", "Pay"].map { type in
+			let view = type.medium(size: 12).generateLabel
+			return view.blobify(backgroundColor: .surfaceBackground, edgeInset: .init(vertical: 7.5, horizontal: 12), borderColor: .clear, cornerRadius: 12)
+				.buttonify {
+					print("(DEBUG) clicked on : ", type)
+					switch type {
+					case "Receive":
+						NotificationCenter.default.post(name: .receiveNow, object: nil)
+					case "Sell":
+						NotificationCenter.default.post(name: .sellNow, object: nil)
+					case "Pay":
+						NotificationCenter.default.post(name: .payNow, object: nil)
+					default:
+						break
+					}
+				}
 		}.addToView(stack)
 		stack.addArrangedSubview(.spacer())
 		[label, stack].addToView(quickActions)

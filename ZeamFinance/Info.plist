@@ -19,6 +19,7 @@
 		<string>Satoshi-Black.otf</string>
 		<string>Gilroy-Light.otf</string>
 		<string>Gilroy-ExtraBold.otf</string>
+		<string>Gilroy-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

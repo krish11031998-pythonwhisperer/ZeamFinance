@@ -148,6 +148,8 @@
 		EF99962328FC397400DE9D2E /* SpendingAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99962228FC397400DE9D2E /* SpendingAnalyticsViewController.swift */; };
 		EF99962528FC3A7700DE9D2E /* SpendingAnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99962428FC3A7700DE9D2E /* SpendingAnalyticsViewModel.swift */; };
 		EF99962828FC650600DE9D2E /* UserSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99962728FC650600DE9D2E /* UserSummaryView.swift */; };
+		EF99962A28FD6C1B00DE9D2E /* UserSummaryNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99962928FD6C1B00DE9D2E /* UserSummaryNotification.swift */; };
+		EF99962C28FD6F8F00DE9D2E /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF99962B28FD6F8F00DE9D2E /* Gilroy-Bold.ttf */; };
 		EF9ADE6228F665F2008580ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6128F665F2008580ED /* ProfileViewController.swift */; };
 		EF9ADE6428F66667008580ED /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6328F66667008580ED /* ProfileViewModel.swift */; };
 		EF9ADE6728F666A0008580ED /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9ADE6628F666A0008580ED /* UserModel.swift */; };
@@ -323,6 +325,8 @@
 		EF99962228FC397400DE9D2E /* SpendingAnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingAnalyticsViewController.swift; sourceTree = "<group>"; };
 		EF99962428FC3A7700DE9D2E /* SpendingAnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingAnalyticsViewModel.swift; sourceTree = "<group>"; };
 		EF99962728FC650600DE9D2E /* UserSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSummaryView.swift; sourceTree = "<group>"; };
+		EF99962928FD6C1B00DE9D2E /* UserSummaryNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSummaryNotification.swift; sourceTree = "<group>"; };
+		EF99962B28FD6F8F00DE9D2E /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
 		EF9ADE6128F665F2008580ED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EF9ADE6328F66667008580ED /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EF9ADE6628F666A0008580ED /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -769,6 +773,7 @@
 		EF89A9C728EC284600598521 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				EF99962B28FD6F8F00DE9D2E /* Gilroy-Bold.ttf */,
 				EF59412428F54313001380B8 /* Gilroy-ExtraBold.otf */,
 				EF59412528F54313001380B8 /* Gilroy-Light.otf */,
 				EF639A7B28F0248800787C58 /* PPCirka-Bold.otf */,
@@ -1052,6 +1057,7 @@
 			isa = PBXGroup;
 			children = (
 				EF99962728FC650600DE9D2E /* UserSummaryView.swift */,
+				EF99962928FD6C1B00DE9D2E /* UserSummaryNotification.swift */,
 			);
 			path = UserSummary;
 			sourceTree = "<group>";
@@ -1203,6 +1209,7 @@
 				EF89A9DE28EC29BA00598521 /* Satoshi-Bold.otf in Resources */,
 				EF89A9E228EC29BA00598521 /* Satoshi-Regular.otf in Resources */,
 				EF89A9E628EC29BA00598521 /* Satoshi-BoldItalic.otf in Resources */,
+				EF99962C28FD6F8F00DE9D2E /* Gilroy-Bold.ttf in Resources */,
 				EF639A7D28F0248800787C58 /* PPCirka-Variable.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1297,6 +1304,7 @@
 				EF59410428F2FB01001380B8 /* PaymentViewModel.swift in Sources */,
 				EF59411328F421E9001380B8 /* CGPoint.swift in Sources */,
 				EF89AA4028EC82BF00598521 /* CollectionColumn.swift in Sources */,
+				EF99962A28FD6C1B00DE9D2E /* UserSummaryNotification.swift in Sources */,
 				EF59411528F4225C001380B8 /* Numeric.swift in Sources */,
 				EF5940D428F14E76001380B8 /* WalletViewModel.swift in Sources */,
 				EF89A9F428EC3F3300598521 /* CGFloat.swift in Sources */,

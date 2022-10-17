@@ -27,6 +27,9 @@ class QRCodeReaderViewController: UIViewController {
 		view.backgroundColor = .surfaceBackground
 		setupNavbar()
 		loadCaptureSession()
+		preferredContentSize = .init(width: .totalWidth, height: .totalHeight.half)
+		view.cornerRadius(16, corners: .top)
+		view.clipsToBounds = true
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +56,7 @@ class QRCodeReaderViewController: UIViewController {
 
 	private func setupNavbar() {
 		mainPageNavBar(title: "Scan QR Code", rightBarButton: .init(customView: closeButton))
+		navigationController?.additionalSafeAreaInsets.top = 10
 	}
 	
 	@objc
@@ -97,6 +101,8 @@ extension QRCodeReaderViewController: AVCaptureMetadataOutputObjectsDelegate {
 		
 		previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
 		previewLayer!.frame = view.layer.bounds
+		previewLayer!.frame.origin.y = (navigationController?.navigationBar.compressedSize.height ?? 0) + (navigationController?.additionalSafeAreaInsets.top ?? 0)
+		previewLayer?.frame.size.height = view.layer.bounds.height - (previewLayer?.frame.origin.y ?? 0)
 		previewLayer!.videoGravity = .resizeAspectFill
 		view.layer.addSublayer(previewLayer!)
 		

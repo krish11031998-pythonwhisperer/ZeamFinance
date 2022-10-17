@@ -66,12 +66,18 @@ class HomeViewController: UIViewController {
 	
 	private func addObserver() {
 		NotificationCenter.default.addObserver(self, selector: #selector(showAllTransactions), name: .showAllTransactions, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(showQRScanner), name: .payNow, object: nil)
 		observer = tableView.observe(\.contentOffset) { [weak self] tableView, _ in self?.handleScrollOffsetChange(tableView) }
 	}
 
 	@objc
 	func showAllTransactions() {
 		navigationController?.pushViewController(WalletTransactionViewController(), animated: true)
+	}
+	
+	@objc
+	func showQRScanner() {
+		presentCard(controller: QRCodeReaderViewController(), withNavigation: true, onDismissal: nil)
 	}
 	
 	private func handleScrollOffsetChange(_ scrollView: UIScrollView) {
@@ -87,7 +93,7 @@ class HomeViewController: UIViewController {
 	}
 }
 
-
+//MARK: - AnyTable
 extension HomeViewController: AnyTableView {
 	func reloadTableWithDataSource(_ dataSource: TableViewDataSource) {
 		tableView.reloadData(dataSource)
