@@ -67,14 +67,23 @@ class MainTabViewController: UITabBarController {
 	
 	@objc
 	private func readQRCode() {
-		presentCard(controller: QRCodeReaderViewController(), withNavigation: true) {
-			print("(DEBUG) read QR Code!")
-			if PaymentStorage.selectedPayment != nil {
-				self.presentCard(controller: PaymentModal(), withNavigation: false) {
-					PaymentStorage.selectedPayment = nil
-				}
-			}
-		}
+		 let presentedController = QRCodeReaderViewController<PaymentQRCodeModel> { payment in
+			 guard let validPayment = payment else { return }
+			 PaymentStorage.selectedPayment = .init(billCompany: validPayment.billCompany,
+													billDescription: validPayment.billDescription,
+													amount: validPayment.amount,
+													billCompanyLogo: .init(), receiptItems: validPayment.receiptItems,
+													type: validPayment.type)
+		 }
+		 presentCard(controller: presentedController, withNavigation: true) {
+			 print("(DEBUG) read QR Code!")
+			 if PaymentStorage.selectedPayment != nil {
+				 self.presentCard(controller: PaymentModal(), withNavigation: false) {
+					 PaymentStorage.selectedPayment = nil
+				 }
+			 }
+		 }
+	 
 	}
 	
 	@objc

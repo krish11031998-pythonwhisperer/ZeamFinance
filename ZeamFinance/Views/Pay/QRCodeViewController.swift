@@ -9,7 +9,7 @@ import Foundation
 import AVFoundation
 import UIKit
 
-class QRCodeReaderViewController: UIViewController {
+class QRCodeReaderViewController<T:Codable>: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 	
 	//MARK: - Properties
 	private lazy var closeButton: UIButton = {
@@ -20,8 +20,19 @@ class QRCodeReaderViewController: UIViewController {
 	}()
 	private var captureSession: AVCaptureSession?
 	private var previewLayer: AVCaptureVideoPreviewLayer?
+	private var onCompletion: ((T?) -> Void)?
 	
 	//MARK: - Overriden
+	
+	init(handler: ((T?) -> Void)? = nil) {
+		super.init(nibName: nil, bundle: nil)
+		self.onCompletion = handler
+	}
+	
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .surfaceBackground
@@ -57,17 +68,15 @@ class QRCodeReaderViewController: UIViewController {
 	private func setupNavbar() {
 		mainPageNavBar(title: "Scan QR Code", rightBarButton: .init(customView: closeButton))
 		navigationController?.additionalSafeAreaInsets.top = 10
+		navigationController?.navigationBar.clipsToBounds = true
 	}
 	
 	@objc
 	private func closeModal() {
 		dismiss(animated: true)
 	}
-}
-
-//MARK: - QRCodeReader Functions
-extension QRCodeReaderViewController: AVCaptureMetadataOutputObjectsDelegate {
 	
+	//MARK: - QRCode Reader Function
 	private func loadCaptureSession() {
 		captureSession = AVCaptureSession()
 		
@@ -125,18 +134,14 @@ extension QRCodeReaderViewController: AVCaptureMetadataOutputObjectsDelegate {
 			guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
 			guard let data = readableObject.stringValue else { return }
 			AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-			found(code: data)
-			guard let decodedData = try? JSONDecoder().decode(PaymentQRCodeModel.self, from: Data(data.utf8)) else {
+			guard let decodedData = try? JSONDecoder().decode(T.self, from: Data(data.utf8)) else {
+				onCompletion?(nil)
 				 return
 			}
-			print("(DEBUG) Decoded Data : ", decodedData)
-			PaymentStorage.selectedPayment = .init(billCompany: decodedData.billCompany,
-												   billDescription: decodedData.billDescription,
-												   amount: decodedData.amount,
-												   billCompanyLogo: .init(), receiptItems: decodedData.receiptItems, type: decodedData.type)
+			onCompletion?(decodedData)
 		}
 
-		dismiss(animated: true)
+		closeModal()
 	}
 
 	private func found(code: String) {
