@@ -14,7 +14,7 @@ class ProgressBar: UIView {
 	private var bgColor: UIColor = .clear
 	private var fillColor: UIColor = .clear
 	private var borderColor: UIColor = .clear
-	
+	private var ratio: CGFloat = 0
 	
 	private lazy var progressShape: CAShapeLayer = {
 		let progressbar = CAShapeLayer()
@@ -33,7 +33,9 @@ class ProgressBar: UIView {
 		return borderShape
 	}()
 	
-	init(bgColor: UIColor = .gray.withAlphaComponent(0.35), borderColor: UIColor = .white.withAlphaComponent(0.7), fillColor: UIColor = .white) {
+	init(bgColor: UIColor = .gray.withAlphaComponent(0.35),
+		 borderColor: UIColor = .white.withAlphaComponent(0.7),
+		 fillColor: UIColor = .surfaceBackgroundInverse) {
 		super.init(frame: .zero)
 		self.bgColor = bgColor
 		self.borderColor = borderColor
@@ -56,12 +58,15 @@ class ProgressBar: UIView {
 										  cornerRadius: 12).cgPath
 		layer.addSublayer(borderShape)
 		layer.addSublayer(progressShape)
-		
+		if ratio != 0 {
+			animateProgress(progress: ratio)
+		}
 		addedLayers.toggle()
 	}
 	
 	func animateProgress(progress: CGFloat = 0.5) {
-		let newPath = UIBezierPath(roundedRect: .init(origin: .zero, size: .init(width: bounds.width * progress, height: bounds.height)),
+		let newSize: CGSize = .init(width: bounds.width * progress, height: bounds.height)
+		let newPath = UIBezierPath(roundedRect: .init(origin: .zero, size: newSize),
 								   cornerRadius: 12).cgPath
 
 		let anim = CABasicAnimation(keyPath: "path")
@@ -71,6 +76,10 @@ class ProgressBar: UIView {
 		anim.fillMode = .forwards
 		
 		progressShape.add(anim, forKey: nil)
+	}
+	
+	func setProgress(progress: CGFloat) {
+		self.ratio = progress
 	}
 	
 }

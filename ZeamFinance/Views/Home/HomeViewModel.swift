@@ -43,7 +43,7 @@ class HomeViewModel {
 	
 	private var exclusiveOffersSection: TableSection {
 		let moreCell = CustomButton()
-		moreCell.configureButton(.init(title: "view more".bold(size: 13),
+		moreCell.configureButton(.init(title: "view more".medium(size: 11),
 									   buttonType: .slender,
 									   buttonStyling: .init(borderColor: .surfaceBackgroundInverse), action: showOffers))
 		moreCell.setWidth(width: moreCell.compressedSize.width, priority: .required)
