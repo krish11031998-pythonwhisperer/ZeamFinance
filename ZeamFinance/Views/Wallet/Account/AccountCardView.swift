@@ -13,8 +13,9 @@ class AccountCardView: UIView {
 	private lazy var currencyName: DualLabel = { .init() }()
 	private lazy var currencyAmount: DualLabel = { .init() }()
 	private lazy var accountSymbol: UILabel =  { .init() }()
+	private lazy var budgetOverFlow: DualLabel = { .init() }()
 	private lazy var progressView: ProgressBar = {
-		let progressbar = ProgressBar(fillColor: .surfaceBackgroundInverse)
+		let progressbar = ProgressBar(fillColor: .surfaceBackgroundInverse, borderWidth: 0.75)
 		return progressbar
 	}()
 	private var progress: CGFloat?
@@ -30,7 +31,7 @@ class AccountCardView: UIView {
 	}
 	
 	private func setupView() {
-		let stack = UIStackView.VStack(subViews: [currencyName, .spacer(), currencyAmount, progressView], spacing: 12)
+		let stack = UIStackView.VStack(subViews: [currencyName, .spacer(), currencyAmount, progressView, budgetOverFlow], spacing: 12)
 		progressView.setHeight(height: 7.5, priority: .required)
 		addSubview(stack)
 		setFittingConstraints(childView: stack, insets: .init(by: 15))
@@ -42,7 +43,13 @@ class AccountCardView: UIView {
 		currencyName.configureLabel(title: account.name.medium(size: 15), subTitle: account.accountId.regular(size: 10))
 		currencyAmount.configureLabel(title: "Balance".medium(size: 12), subTitle: String(format:"$ %.2f", account.balance).medium(size: 25))
 		account.currency.medium(size: 12).render(target: accountSymbol)
-		progressView.setProgress(progress: .random(in: 0.3..<1))
+		let progressVal: CGFloat = .random(in: 0.1..<1)
+		let color: UIColor = progressVal < 0.5 ? .success500 : progressVal < 0.75 ? .warning500 : .error500
+		budgetOverFlow.configureLabel(title: "Budget Spent".medium(size: 12),
+									  subTitle: String(format: "$ %.2f", CGFloat(account.balance) * progressVal).medium(color: color, size: 14),
+									  config: .init(alignment: .center, axis: .horizontal))
+		progressView.setProgress(progress: progressVal, color: color)
+		
 	}
 }
 

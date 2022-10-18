@@ -14,6 +14,7 @@ class ProgressBar: UIView {
 	private var bgColor: UIColor = .clear
 	private var fillColor: UIColor = .clear
 	private var borderColor: UIColor = .clear
+	private var borderWidth: CGFloat = 1
 	private var ratio: CGFloat = 0
 	
 	private lazy var progressShape: CAShapeLayer = {
@@ -28,17 +29,19 @@ class ProgressBar: UIView {
 		let borderShape = CAShapeLayer()
 		borderShape.fillColor = bgColor.cgColor
 		borderShape.strokeColor = borderColor.cgColor
-		borderShape.lineWidth = 2
+		borderShape.lineWidth = borderWidth
 		borderShape.lineJoin = .round
 		return borderShape
 	}()
 	
 	init(bgColor: UIColor = .gray.withAlphaComponent(0.35),
-		 borderColor: UIColor = .white.withAlphaComponent(0.7),
-		 fillColor: UIColor = .surfaceBackgroundInverse) {
+		 fillColor: UIColor = .surfaceBackgroundInverse,
+		 borderWidth: CGFloat = 1,
+		 borderColor: UIColor = .white.withAlphaComponent(0.7)) {
 		super.init(frame: .zero)
 		self.bgColor = bgColor
 		self.borderColor = borderColor
+		self.borderWidth = borderWidth
 		self.fillColor = fillColor
 	}
 	
@@ -78,8 +81,11 @@ class ProgressBar: UIView {
 		progressShape.add(anim, forKey: nil)
 	}
 	
-	func setProgress(progress: CGFloat) {
+	func setProgress(progress: CGFloat, color: UIColor? = nil) {
 		self.ratio = progress
+		if let validColor = color {
+			fillColor = validColor
+		}
 	}
 	
 }
