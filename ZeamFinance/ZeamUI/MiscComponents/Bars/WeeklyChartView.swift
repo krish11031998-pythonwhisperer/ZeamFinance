@@ -18,13 +18,21 @@ fileprivate extension TransactionWeeklyModel {
 
 class WeeklyChartView: UIView {
 	
-	private let innerStackInset: CGFloat = 20
-	private lazy var stackWidth: CGFloat = { .totalWidth - (2 * innerStackInset) }()
-	private let stackHeight: CGFloat = 175
+	private let innerStackInset: CGFloat = 15
 	private let indicatorWidth: CGFloat = 10
 	private lazy var stack: UIStackView = { .HStack(spacing: 0, alignment: .center) }()
-	private lazy var mainStack: UIStackView = { .VStack(spacing: 25, alignment: .leading) }()
-	
+	private lazy var mainStack: UIStackView = { .VStack(spacing: 10) }()
+	let dayStack: UIStackView = {
+		let view = UIStackView.HStack(spacing: 10)
+		view.distribution = .equalSpacing
+		Array(repeating: "Mon 22", count: 7).map {
+			let label = $0.medium(size: 12).generateLabel
+			label.numberOfLines = 2
+			label.textAlignment = .center
+			return label
+		}.addToView(view)
+		return view
+	}()
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setupView()
@@ -36,11 +44,9 @@ class WeeklyChartView: UIView {
 	}
 	
 	private func setupView() {
-		[stack].forEach(mainStack.addArrangedSubview(_:))
+		[stack, dayStack].forEach(mainStack.addArrangedSubview(_:))
 		addSubview(mainStack)
-		mainStack.setFittingConstraints(childView: stack, leading: 0, trailing: 0)
-		stack.distribution = .equalCentering
-		stack.setHeight(height: 200, priority: .required)
+		stack.distribution = .equalSpacing
 		setFittingConstraints(childView: mainStack, insets: .init(by: innerStackInset), priority: .needed)
 		addBackgroundView()
 	}
@@ -50,12 +56,12 @@ class WeeklyChartView: UIView {
 		view.backgroundColor = userInterface == .dark ? .popBlack300 : .popWhite300
 		insertSubview(view, at: 0)
 		setFittingConstraints(childView: view, insets: .init(by: 0), priority: .needed)
-		view.cornerRadius = 8
-		view.clipsToBounds = true
+		view.clippedCornerRadius = 8
 	}
 	
 	public func configureChart(_ weekly: TransactionWeeklyModel) {
 		stack.removeChildViews()
+		let stackHeight = frame.height - 2 * (innerStackInset + dayStack.compressedSize.height) - 10
 		weekly.normalizedHeight.compactMap { $0 * stackHeight }.forEach { h in
 			let size: CGSize = .init(width: indicatorWidth, height: h == 0 ? 10 : h)
 			let lineView = UIView()
@@ -71,7 +77,7 @@ class WeeklyChartView: UIView {
 			chartIndicator.setFittingConstraints(childView: view, centerY: 0)
 			chartIndicator.setFittingConstraints(childView: lineView,top: 0, bottom: 0, width: 0.5, centerX: 0)
 			chartIndicator.setFrame(width: indicatorWidth, height: stackHeight)
-			stack.addArrangedSubview(chartIndicator)
+			stack.addArrangedSubview(chartIndicator.embedInView(insets: .init(vertical: 0, horizontal: indicatorWidth)))
 		}
 	}
 }

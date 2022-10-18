@@ -26,7 +26,7 @@ class SpendingAnalyticsViewModel {
 	
 	//MARK: - Views
 	private var weeklySpendingChart: UIView {
-		let view = WeeklyChartView()
+		let view = WeeklyChartView(frame: .init(origin: .zero, size: .init(width: .totalWidth, height: 200)))
 		view.configureChart(.init(daily: Array(repeating: TransactionDailyModel(txns: Array(repeating: TransactionModel(detail: "Sample"),
 																							count: Int.random(in: 10..<100))) , count: 7)))
 		return view
@@ -34,7 +34,7 @@ class SpendingAnalyticsViewModel {
 	
 	//MARK: - Sections
 	private var weeklySpendingChartSection: TableSection {
-		.init(rows: [TableRow<CustomTableCell>(.init(view: weeklySpendingChart, inset: .init(by: 10)))], title: "Weekly Chart")
+		.init(rows: [TableRow<CustomTableCell>(.init(view: weeklySpendingChart, inset: .init(by: 10), height: 200))], title: "Weekly Chart")
 	}
 	
 	//MARK: - TableViewDataSource

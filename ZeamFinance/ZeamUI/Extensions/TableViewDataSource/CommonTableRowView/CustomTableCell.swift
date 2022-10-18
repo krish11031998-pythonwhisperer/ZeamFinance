@@ -15,6 +15,8 @@ struct CustomTableCellModel: ActionProvider {
 	let leading: CGFloat?
 	let bottom: CGFloat?
 	let trailing: CGFloat?
+	let width: CGFloat?
+	let height: CGFloat?
 	let name: String
 	var action: Callback?
 	
@@ -24,6 +26,8 @@ struct CustomTableCellModel: ActionProvider {
 		 leading: CGFloat? = nil,
 		 bottom: CGFloat? = nil,
 		 trailing: CGFloat? = nil,
+		 width: CGFloat? = nil,
+		 height: CGFloat? = nil,
 		 name:String = "",
 		 action: Callback? = nil) {
 		self.view = view
@@ -32,6 +36,8 @@ struct CustomTableCellModel: ActionProvider {
 		self.leading = leading
 		self.bottom = bottom
 		self.trailing = trailing
+		self.width = width
+		self.height = height
 		self.name = name
 		self.action = action
 	}
@@ -45,15 +51,13 @@ class CustomTableCell: ConfigurableCell {
 		selectionStyle = .none
 		backgroundColor = .surfaceBackground
 		contentView.addSubview(model.view)
-		if let validInset = model.inset {
-			contentView.setFittingConstraints(childView: model.view, insets: validInset)
-		} else {
-			contentView.setFittingConstraints(childView: model.view,
-											  top: model.top,
-											  leading: model.leading,
-											  trailing: model.trailing,
-											  bottom: model.bottom)
-		}
+		contentView.setFittingConstraints(childView: model.view,
+										  top: model.inset?.top ?? model.top,
+										  leading: model.inset?.left ?? model.leading,
+										  trailing: model.inset?.right ?? model.trailing,
+										  bottom: model.inset?.bottom ?? model.bottom,
+										  width: model.width,
+										  height: model.height, priority: .needed)
 	}
 	
 	static var cellName: String? {
