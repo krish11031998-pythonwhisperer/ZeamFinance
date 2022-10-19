@@ -20,20 +20,24 @@ class MultipleStrokeCircularProgressBar: UIView {
 	private let strokeWidth: CGFloat
 	private let radiusOffset: CGFloat
 	private let clockwise: Bool
+	private let isSemiCircle: Bool
 	private var addedlayer: Bool = false
 	private var strokes: [CAShapeLayer] = []
+
 	
 	init(start: CGFloat,
 		 end: CGFloat,
 		 frame: CGRect,
 		 strokeWidth: CGFloat = 10,
 		 radiusOffset: CGFloat = -10,
-		 clockwise: Bool = true) {
+		 clockwise: Bool = true,
+		 isSemiCircle: Bool = true) {
 		self.start = start
 		self.end = end
 		self.strokeWidth = strokeWidth
 		self.radiusOffset = radiusOffset
 		self.clockwise = clockwise
+		self.isSemiCircle = isSemiCircle
 		super.init(frame: frame)
 		setupView()
 	}
@@ -54,6 +58,7 @@ class MultipleStrokeCircularProgressBar: UIView {
 								  lineWidth: strokeWidth,
 								  strokeColor: userInterface == .light ? .popWhite200 : .popBlack200,
 								  clockwise: true,
+								  isSemiCircle: isSemiCircle,
 								  animateStrokeEnd: false)
 	}
 	
@@ -66,6 +71,7 @@ class MultipleStrokeCircularProgressBar: UIView {
 									  strokeColor: $0.color,
 									  clockwise: clockwise,
 									  addTrack: false,
+									  isSemiCircle: isSemiCircle,
 									  animateStrokeEnd: true)
 		}
 		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

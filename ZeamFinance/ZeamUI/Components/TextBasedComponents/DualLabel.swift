@@ -13,17 +13,23 @@ struct DualLabelConfig {
 	let axis: NSLayoutConstraint.Axis
 	let titleNumberOfLines: Int
 	let subTitleNumberOfLines: Int
+	let titleTextAlignment: NSTextAlignment
+	let subTitleTextAlignment: NSTextAlignment
 	let spacing: CGFloat
 	
 	init(alignment: UIStackView.Alignment = .leading,
 		 axis: NSLayoutConstraint.Axis = .vertical,
 		 titleNumberOfLines: Int = 1,
 		 subTitleNumberOfLines: Int = 1,
+		 titleTextAlignment: NSTextAlignment = .natural,
+		 subTitleTextAlignment: NSTextAlignment = .natural,
 		 spacing: CGFloat = 8) {
 		self.alignment = alignment
 		self.axis = axis
 		self.titleNumberOfLines = titleNumberOfLines
 		self.subTitleNumberOfLines = subTitleNumberOfLines
+		self.titleTextAlignment = titleTextAlignment
+		self.subTitleTextAlignment = subTitleTextAlignment
 		self.spacing = spacing
 	}
 }
@@ -60,6 +66,8 @@ class DualLabel: UIView {
 		mainStack.spacing = config.spacing
 		subTitleLabel.numberOfLines = config.subTitleNumberOfLines
 		titleLabel.numberOfLines = config.titleNumberOfLines
+		titleLabel.textAlignment = config.titleTextAlignment
+		subTitleLabel.textAlignment = config.subTitleTextAlignment
 	}
 	
 }

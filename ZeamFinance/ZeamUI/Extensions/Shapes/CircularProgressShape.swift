@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+fileprivate extension CGRect {
+	
+	var minDim: CGFloat { min(width, height) }
+}
+
 extension CALayer {
 	@discardableResult
 	func addCircularProgress(startAngle: CGFloat,
@@ -19,11 +24,13 @@ extension CALayer {
 							 strokeEnd: CGFloat = 1,
 							 addTrack: Bool = true,
 							 lineCap: CAShapeLayerLineCap = .round,
+							 isSemiCircle: Bool = false,
 							 animateStrokeEnd: Bool) -> CAShapeLayer {
 		let rect = bounds
-		let radius = min(rect.width, rect.height).half + radiusOffset
+		let radius = (isSemiCircle ? rect.width : rect.minDim).half + radiusOffset
 		let path = UIBezierPath()
-		path.addArc(withCenter: rect.center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: clockwise)
+		let center: CGPoint = isSemiCircle ? .init(x: rect.midX, y: rect.maxY) : rect.center
+		path.addArc(withCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: clockwise)
 		
 		if addTrack {
 			let trackShape = CAShapeLayer()

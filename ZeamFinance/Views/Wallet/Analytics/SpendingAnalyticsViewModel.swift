@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//MARK: - Definations
 fileprivate extension TransactionModel {
 	
 	init(detail: String) {
@@ -25,18 +26,59 @@ fileprivate extension Array where Element: Numeric {
 		}
 		return result
 	}
+}
+
+//MARK: - SplitModel
+struct SpendingSplitModel {
+	let name: String
+	let color: UIColor
+	let value: CGFloat
+}
+
+//MARK: - SpendingSplitModel Comparable
+
+extension SpendingSplitModel: Comparable {
+	static func < (lhs: SpendingSplitModel, rhs: SpendingSplitModel) -> Bool {
+		lhs.value < rhs.value
+	}
+}
+
+//MARK: - SpendingSplitModel View
+
+extension SpendingSplitModel {
+	
+	var view: UIView {
+		let typeIndicator: UIView = .init()
+		typeIndicator.circleFrame = .init(origin: .zero, size: .init(squared: 10))
+		typeIndicator.backgroundColor = color
+		typeIndicator.setFrame(.init(squared: 10))
+		let valueLabel = DualLabel()
+		valueLabel.configureLabel(title: name.medium(size: 12),
+								  subTitle: String(format: "$ %.2f", value).bold(size: 14),
+								  config: .init(axis: .horizontal, subTitleTextAlignment: .right, spacing: 30))
+		return .HStack(subViews: [typeIndicator, valueLabel], spacing: 8, alignment: .center)
+	}
 	
 }
+
+//MARK: - SpendingAnalyticsViewModel
 
 class SpendingAnalyticsViewModel {
 	
 	public weak var view: AnyTableView?
 	private var binding: [Events:Callback?] = [:]
-	
+	private var spendingSplit: [SpendingSplitModel] = []
+
 	public func loadData() {
+		spendingSplit = [.init(name: "Rent", color: .orangeSunshine500, value: .random(in: 300..<500)),
+						 .init(name: "Entertainment", color: .yoyo500, value: .random(in: 100..<200)),
+						 .init(name: "Expenses", color: .neoPacha500, value: .random(in: 200..<400))]
 		view?.reloadTableWithDataSource(buildDataSource())
 	}
 	
+	//MARK: - Computed Properties
+	
+
 	//MARK: - Views
 	private var weeklySpendingChart: UIView {
 		let view = WeeklyChartView(frame: .init(origin: .zero, size: .init(width: .totalWidth, height: 250)))
@@ -46,24 +88,34 @@ class SpendingAnalyticsViewModel {
 	}
 	
 	private var spendingSplitChart: UIView {
-		let values: [CGFloat] = [0.15, 0.35, 0.5].additiveValue.map { ($0 - 1) * 180 }
-		let colors: [UIColor] = [.manna500, .parkGreen500, .yoyo500].reversed()
+		let total = spendingSplit.map(\.value).reduce(0, +)
+		let sortedSpending = spendingSplit.sorted(by: { $0 < $1 })
+		var chartModel: [MultipleStrokeCircularProgressBarModel] = []
+		let angles:[CGFloat] = sortedSpending.map {$0.value/total}.additiveValue.map { ($0 - 1) * 180 }
+		for (spendingData, ratio) in zip(sortedSpending, angles) {
+			let data: MultipleStrokeCircularProgressBarModel = .init(color: spendingData.color, end: ratio)
+			if chartModel.isEmpty {
+				chartModel = [data]
+			} else {
+				chartModel.insert(data, at: 0)
+			}
+		}
+		
 		let view = MultipleStrokeCircularProgressBar(start: -180,
 													 end: 0,
-													 frame: .init(origin: .zero, size: .init(squared: 150)),
+													 frame: .init(origin: .zero, size: .init(width: 120, height: 60)),
 													 strokeWidth: 10,
 													 radiusOffset: -10,
-													 clockwise: true)
-		var chartModel: [MultipleStrokeCircularProgressBarModel] = []
-		for (value, color) in zip(values.sorted(by: { $0 > $1 }), colors) {
-			chartModel.append(.init(color: color, end: value))
-		}
+													 clockwise: true,
+													 isSemiCircle: true)
 		view.setupChart(model: chartModel)
+		view.setWidth(width: 120, priority: .required)
 		return view
 	}
 	
 	private var spendingSplitView: UIView {
-		let stack = UIStackView.HStack(subViews: [spendingSplitChart, .spacer()], spacing: 10)
+		let spendingStack = UIStackView.VStack(subViews: spendingSplit.map(\.view) + [.spacer()], spacing: 10)
+		let stack = UIStackView.HStack(subViews: [spendingSplitChart,.spacer(), spendingStack], spacing: 10)
 		return stack
 	}
 	
@@ -73,7 +125,7 @@ class SpendingAnalyticsViewModel {
 	}
 	
 	private var spendingSplitSection: TableSection {
-		.init(rows: [TableRow<CustomTableCell>(.init(view: spendingSplitView, inset: .init(by: 10), height: 150))], title: "Spending Indicator")
+		.init(rows: [TableRow<CustomTableCell>(.init(view: spendingSplitView, inset: .init(by: 10)))], title: "Spending Indicator")
 	}
 	
 	//MARK: - TableViewDataSource
