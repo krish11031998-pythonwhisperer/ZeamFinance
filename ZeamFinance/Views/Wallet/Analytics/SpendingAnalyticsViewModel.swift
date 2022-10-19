@@ -125,7 +125,8 @@ class SpendingAnalyticsViewModel {
 	}
 	
 	private var spendingSplitSection: TableSection {
-		.init(rows: [TableRow<CustomTableCell>(.init(view: spendingSplitView, inset: .init(by: 10)))], title: "Spending Indicator")
+		let view = spendingSplitView.background(spendingSplitView.userInterface == .light ? .popWhite300 : .popBlack300, inset: .init(by: 16))
+		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .init(vertical: 0, horizontal: 10)))], title: "Spending Indicator")
 	}
 	
 	//MARK: - TableViewDataSource

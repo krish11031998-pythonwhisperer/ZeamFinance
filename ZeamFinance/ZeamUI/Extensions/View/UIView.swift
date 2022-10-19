@@ -10,12 +10,14 @@ import UIKit
 
 extension UIView {
 	
-	func background(_ bgColor: UIColor = .surfaceBackgroundInverse) -> UIView {
+	func background(_ bgColor: UIColor = .surfaceBackgroundInverse,
+					inset: UIEdgeInsets = .init(by: 5),
+					cornerRadius: CGFloat = 8) -> UIView {
 		let bgView = UIView()
 		bgView.backgroundColor = bgColor
-		bgView.clippedCornerRadius = 8
+		bgView.clippedCornerRadius = cornerRadius
 		bgView.addSubview(self)
-		bgView.setFittingConstraints(childView: self, insets: .init(by: 5))
+		bgView.setFittingConstraints(childView: self, insets: inset)
 		return bgView
 	}
 }
