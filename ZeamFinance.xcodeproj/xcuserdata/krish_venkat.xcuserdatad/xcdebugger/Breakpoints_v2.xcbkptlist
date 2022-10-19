@@ -215,33 +215,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "63D39BF3-7337-4B33-AF02-DCE29FA92C42"
+            uuid = "E8BF49F3-20DF-4473-B8FA-CAEDC3797B87"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZeamFinance/ZeamUI/MiscComponents/Bars/WeeklyChartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "configureChart(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "05E1039E-E503-47E7-A316-27322DFAD25D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZeamFinance/ZeamUI/MiscComponents/Bars/WeeklyChartView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "setupView()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E8BF49F3-20DF-4473-B8FA-CAEDC3797B87 - e25b3cb3ee97447d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ZeamFinance.WeeklyChartView.configureChart(ZeamFinance.TransactionWeeklyModel) -&gt; ()"
+                  moduleName = "ZeamFinance"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krish_venkat/Desktop/ZeamFi/ZUI/ZeamFinance/ZeamUI/MiscComponents/Bars/WeeklyChartView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "E8BF49F3-20DF-4473-B8FA-CAEDC3797B87 - 45116863db5ce6fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (CoreGraphics.CGFloat) -&gt; Swift.Optional&lt;CoreGraphics.CGFloat&gt; in ZeamFinance.WeeklyChartView.configureChart(ZeamFinance.TransactionWeeklyModel) -&gt; ()"
+                  moduleName = "ZeamFinance"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krish_venkat/Desktop/ZeamFi/ZUI/ZeamFinance/ZeamUI/MiscComponents/Bars/WeeklyChartView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "E8BF49F3-20DF-4473-B8FA-CAEDC3797B87 - f9a96b19b5248fd4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (CoreGraphics.CGFloat) -&gt; () in ZeamFinance.WeeklyChartView.configureChart(ZeamFinance.TransactionWeeklyModel) -&gt; ()"
+                  moduleName = "ZeamFinance"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krish_venkat/Desktop/ZeamFi/ZUI/ZeamFinance/ZeamUI/MiscComponents/Bars/WeeklyChartView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

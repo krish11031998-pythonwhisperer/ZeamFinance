@@ -11,7 +11,7 @@ import UIKit
 fileprivate extension TransactionWeeklyModel {
 	
 	var normalizedHeight: [CGFloat] {
-		daily.compactMap{_ in CGFloat(Float.random(in: 100..<1000)) }.normalize()
+		daily.compactMap{_ in CGFloat(Float.random(in: 100..<1000)) }.normalize(fromZero: true)
 	}
 }
 
@@ -44,7 +44,7 @@ class WeeklyChartView: UIView {
 	}
 	
 	private func setupView() {
-		[stack, dayStack].forEach(mainStack.addArrangedSubview(_:))
+		[stack, dayStack].addToView(mainStack)
 		addSubview(mainStack)
 		stack.distribution = .equalSpacing
 		setFittingConstraints(childView: mainStack, insets: .init(by: innerStackInset), priority: .needed)
@@ -60,10 +60,11 @@ class WeeklyChartView: UIView {
 	}
 	
 	public func configureChart(_ weekly: TransactionWeeklyModel) {
+		//
 		stack.removeChildViews()
 		let stackHeight = frame.height - 2 * (innerStackInset + dayStack.compressedSize.height) - 10
 		weekly.normalizedHeight.compactMap { $0 * stackHeight }.forEach { h in
-			let size: CGSize = .init(width: indicatorWidth, height: h == 0 ? 10 : h)
+			let size: CGSize = .init(width: indicatorWidth, height: h)
 			let lineView = UIView()
 			lineView.backgroundColor = .popBlack100
 			let view = UIView()
