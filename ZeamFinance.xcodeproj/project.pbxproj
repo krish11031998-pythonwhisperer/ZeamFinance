@@ -142,6 +142,7 @@
 		EF89AA8828ED7F8500598521 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8728ED7F8500598521 /* TableDataSource.swift */; };
 		EF89AA8B28EDBADD00598521 /* CuratedBackgroundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8A28EDBADD00598521 /* CuratedBackgroundShape.swift */; };
 		EF89AA8E28EDBC6000598521 /* ShapesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89AA8D28EDBC6000598521 /* ShapesViewController.swift */; };
+		EF905D0828FFD8A5005ACFBD /* MutlipleStrokeCircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF905D0728FFD8A5005ACFBD /* MutlipleStrokeCircularProgressBar.swift */; };
 		EF99961B28FB20E100DE9D2E /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99961A28FB20E100DE9D2E /* UIImageView.swift */; };
 		EF99961E28FB483B00DE9D2E /* DataBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99961D28FB483B00DE9D2E /* DataBindable.swift */; };
 		EF99962028FB4C1700DE9D2E /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99961F28FB4C1700DE9D2E /* Cache.swift */; };
@@ -319,6 +320,7 @@
 		EF89AA8728ED7F8500598521 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		EF89AA8A28EDBADD00598521 /* CuratedBackgroundShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuratedBackgroundShape.swift; sourceTree = "<group>"; };
 		EF89AA8D28EDBC6000598521 /* ShapesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesViewController.swift; sourceTree = "<group>"; };
+		EF905D0728FFD8A5005ACFBD /* MutlipleStrokeCircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutlipleStrokeCircularProgressBar.swift; sourceTree = "<group>"; };
 		EF99961A28FB20E100DE9D2E /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		EF99961D28FB483B00DE9D2E /* DataBindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBindable.swift; sourceTree = "<group>"; };
 		EF99961F28FB4C1700DE9D2E /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 				EF639A6228EED4A100787C58 /* SphericalProgressBars.swift */,
 				EF59411C28F45475001380B8 /* MultipleStrokeProgressBar.swift */,
 				EF9ADE6828F67373008580ED /* WeeklyChartView.swift */,
+				EF905D0728FFD8A5005ACFBD /* MutlipleStrokeCircularProgressBar.swift */,
 			);
 			path = Bars;
 			sourceTree = "<group>";
@@ -1356,6 +1359,7 @@
 				EF89AA1328EC401F00598521 /* TableRow.swift in Sources */,
 				EF89AA7828ED482C00598521 /* SymbolImage.swift in Sources */,
 				EF89AA1628EC401F00598521 /* CustomTableCell.swift in Sources */,
+				EF905D0828FFD8A5005ACFBD /* MutlipleStrokeCircularProgressBar.swift in Sources */,
 				EF5940ED28F19D1D001380B8 /* ZeamOfferViewModel.swift in Sources */,
 				EF9ADE6228F665F2008580ED /* ProfileViewController.swift in Sources */,
 				EF5940FA28F1F01E001380B8 /* PaymentModel.swift in Sources */,

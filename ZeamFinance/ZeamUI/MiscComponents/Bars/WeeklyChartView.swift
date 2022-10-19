@@ -60,7 +60,6 @@ class WeeklyChartView: UIView {
 	}
 	
 	public func configureChart(_ weekly: TransactionWeeklyModel) {
-		//
 		stack.removeChildViews()
 		let stackHeight = frame.height - 2 * (innerStackInset + dayStack.compressedSize.height) - 10
 		weekly.normalizedHeight.compactMap { $0 * stackHeight }.forEach { h in

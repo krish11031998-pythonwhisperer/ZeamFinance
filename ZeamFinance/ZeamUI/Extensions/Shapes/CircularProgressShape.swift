@@ -17,20 +17,25 @@ extension CALayer {
 							 strokeColor: UIColor,
 							 clockwise: Bool,
 							 strokeEnd: CGFloat = 1,
+							 addTrack: Bool = true,
+							 lineCap: CAShapeLayerLineCap = .round,
 							 animateStrokeEnd: Bool) -> CAShapeLayer {
 		let rect = bounds
 		let radius = min(rect.width, rect.height).half + radiusOffset
 		let path = UIBezierPath()
 		path.addArc(withCenter: rect.center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: clockwise)
 		
-		
-		let trackShape = CAShapeLayer()
-		trackShape.path = path.cgPath
-		trackShape.fillColor = UIColor.clear.cgColor
-		trackShape.strokeColor = UIColor.popBlack100.withAlphaComponent(0.1).cgColor
-		trackShape.lineWidth = lineWidth
-		trackShape.strokeStart = 0
-		trackShape.strokeEnd = 1
+		if addTrack {
+			let trackShape = CAShapeLayer()
+			trackShape.path = path.cgPath
+			trackShape.fillColor = UIColor.clear.cgColor
+			trackShape.strokeColor = UIColor.popBlack100.withAlphaComponent(0.1).cgColor
+			trackShape.lineWidth = lineWidth
+			trackShape.strokeStart = 0
+			trackShape.strokeEnd = 1
+			trackShape.lineCap = lineCap
+			addSublayer(trackShape)
+		}
 		
 		let shape = CAShapeLayer()
 		shape.path = path.cgPath
@@ -39,8 +44,7 @@ extension CALayer {
 		shape.lineWidth = lineWidth
 		shape.strokeStart = 0
 		shape.strokeEnd = animateStrokeEnd ? 0 : strokeEnd
-		
-		addSublayer(trackShape)
+		shape.lineCap = lineCap
 		addSublayer(shape)
 		
 		return shape

@@ -94,10 +94,10 @@
             filePath = "ZeamFinance/ZeamUI/Extensions/Shapes/CircularProgressShape.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "configureChart(to:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -215,64 +215,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E8BF49F3-20DF-4473-B8FA-CAEDC3797B87"
-            shouldBeEnabled = "No"
+            uuid = "7B799EE8-2D71-49AD-AF25-6F3930AC8FB8"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ZeamFinance/ZeamUI/MiscComponents/Bars/WeeklyChartView.swift"
+            filePath = "ZeamFinance/ZeamUI/Extensions/Animation/Animation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "configureChart(_:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "animation(at:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E8BF49F3-20DF-4473-B8FA-CAEDC3797B87 - e25b3cb3ee97447d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ZeamFinance.WeeklyChartView.configureChart(ZeamFinance.TransactionWeeklyModel) -&gt; ()"
-                  moduleName = "ZeamFinance"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krish_venkat/Desktop/ZeamFi/ZUI/ZeamFinance/ZeamUI/MiscComponents/Bars/WeeklyChartView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "300">
-               </Location>
-               <Location
-                  uuid = "E8BF49F3-20DF-4473-B8FA-CAEDC3797B87 - 45116863db5ce6fb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (CoreGraphics.CGFloat) -&gt; Swift.Optional&lt;CoreGraphics.CGFloat&gt; in ZeamFinance.WeeklyChartView.configureChart(ZeamFinance.TransactionWeeklyModel) -&gt; ()"
-                  moduleName = "ZeamFinance"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krish_venkat/Desktop/ZeamFi/ZUI/ZeamFinance/ZeamUI/MiscComponents/Bars/WeeklyChartView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  uuid = "E8BF49F3-20DF-4473-B8FA-CAEDC3797B87 - f9a96b19b5248fd4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (CoreGraphics.CGFloat) -&gt; () in ZeamFinance.WeeklyChartView.configureChart(ZeamFinance.TransactionWeeklyModel) -&gt; ()"
-                  moduleName = "ZeamFinance"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krish_venkat/Desktop/ZeamFi/ZUI/ZeamFinance/ZeamUI/MiscComponents/Bars/WeeklyChartView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "92">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
