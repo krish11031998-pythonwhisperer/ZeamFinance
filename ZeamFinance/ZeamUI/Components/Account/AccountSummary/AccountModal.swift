@@ -26,25 +26,34 @@ class AccountModal: UIViewController {
 	private lazy var tableView: UITableView = {
 		let table = UITableView(frame: .zero, style: .grouped)
 		table.backgroundColor = .surfaceBackground
+        table.showsVerticalScrollIndicator = false
 		table.separatorStyle = .none
 		return table
 	}()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        setupNavbar()
 		setupView()
-		setupNavbar()
 	}
 	
 	private func setupView() {
-		let rowCellHeight: CGFloat = 75
+		let rowCellHeight: CGFloat = 200
 		let insets: CGFloat = UIWindow.key?.safeAreaInsets.bottom ?? 0 + 20
+        
+        view.backgroundColor = .surfaceBackground
+        view.cornerRadius(16, corners: .top)
+        view.clipsToBounds = true
+        
 		view.addSubview(tableView)
-		view.setFittingConstraints(childView: tableView, insets: .zero)
+        view.setFittingConstraints(childView: tableView, insets: .init(top: navbarHeight, left: 0, bottom: view.safeAreaInsets.bottom, right: 0))
 		tableView.reloadData(buildDatasource())
-		view.cornerRadius(16, corners: .top)
-		view.clipsToBounds = true
-		preferredContentSize = .init(width: .totalWidth, height: CGFloat(accounts?.count ?? 0) * rowCellHeight + insets)
+		
+        let tableContentHeight = CGFloat(accounts?.count ?? 0) * rowCellHeight + insets
+        
+        tableView.isScrollEnabled = tableContentHeight > .totalHeight
+        
+		preferredContentSize = .init(width: .totalWidth, height: tableContentHeight)
 	}
 	
 	private func setupNavbar() {
@@ -57,7 +66,6 @@ class AccountModal: UIViewController {
 		guard let validAccounts = accounts, let payment = PaymentStorage.paymentToBePaid else { return nil }
 		let cells = validAccounts.map { account in
 			TableRow<AccountCardTableCell>(.init(account: account) {
-//				AccountStorage.selectedAccount = account
 				TransactionStorage.selectedTransaction = TransactionModel(payment)
 				NotificationCenter.default.post(name: .showTxn, object: nil)
 			})

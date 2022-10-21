@@ -129,6 +129,16 @@ extension UIViewController {
 	}
 }
 
+//MARK: - UIViewController Properties
+
+extension UIViewController {
+    
+    var navbarHeight: CGFloat {
+        (navigationController?.navigationBar.frame.height ?? 0) + (navigationController?.additionalSafeAreaInsets.top ?? 0)
+    }
+    
+}
+
 
 //MARK: - Presentation Extension
 
