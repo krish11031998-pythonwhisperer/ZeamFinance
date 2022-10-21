@@ -43,7 +43,8 @@ class TransactionViewController: UIViewController {
 	}
 	
 	private var paymentQRCode: TableSection? {
-		guard let img = UIImage.generateQRCode(PaymentQRCodeModel(paymentModel: PaymentCardModel.person)) else { return nil }
+        let model = PaymentQRCodeModel(paymentModel: PaymentCardModel.person)
+		guard let img = UIImage.generateQRCode(model) else { return nil }
 		let imgView = UIImageView(image: img)
 		let view = UIView()
 		view.addSubview(imgView)

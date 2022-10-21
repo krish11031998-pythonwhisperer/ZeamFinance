@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -69,6 +69,7 @@
 		EF639A7F28F0248800787C58 /* PPCirka-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF639A7C28F0248800787C58 /* PPCirka-Light.otf */; };
 		EF639A8128F02A3300787C58 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A8028F02A3300787C58 /* HomeHeaderView.swift */; };
 		EF639A8328F02EF900787C58 /* ProfileAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639A8228F02EF900787C58 /* ProfileAssets.swift */; };
+		EF63CAF82901D5BF0041C95C /* SpendingAnalyticsBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63CAF72901D5BF0041C95C /* SpendingAnalyticsBudgetView.swift */; };
 		EF89A99028EC262100598521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A98F28EC262100598521 /* AppDelegate.swift */; };
 		EF89A99228EC262100598521 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A99128EC262100598521 /* SceneDelegate.swift */; };
 		EF89A99428EC262100598521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89A99328EC262100598521 /* ViewController.swift */; };
@@ -243,6 +244,7 @@
 		EF639A7C28F0248800787C58 /* PPCirka-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PPCirka-Light.otf"; sourceTree = "<group>"; };
 		EF639A8028F02A3300787C58 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		EF639A8228F02EF900787C58 /* ProfileAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssets.swift; sourceTree = "<group>"; };
+		EF63CAF72901D5BF0041C95C /* SpendingAnalyticsBudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingAnalyticsBudgetView.swift; sourceTree = "<group>"; };
 		EF89A98C28EC262100598521 /* ZeamFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeamFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF89A98F28EC262100598521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF89A99128EC262100598521 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1052,6 +1054,7 @@
 			children = (
 				EF99962228FC397400DE9D2E /* SpendingAnalyticsViewController.swift */,
 				EF99962428FC3A7700DE9D2E /* SpendingAnalyticsViewModel.swift */,
+				EF63CAF72901D5BF0041C95C /* SpendingAnalyticsBudgetView.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -1171,7 +1174,7 @@
 				};
 			};
 			buildConfigurationList = EF89A98728EC262100598521 /* Build configuration list for PBXProject "ZeamFinance" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1293,6 +1296,7 @@
 				EF89AA7728ED482C00598521 /* GenericButtonWrapper.swift in Sources */,
 				EF59412F28F58D34001380B8 /* UITableView.swift in Sources */,
 				EF99962528FC3A7700DE9D2E /* SpendingAnalyticsViewModel.swift in Sources */,
+				EF63CAF82901D5BF0041C95C /* SpendingAnalyticsBudgetView.swift in Sources */,
 				EF5940FC28F1F02D001380B8 /* PaymentStorage.swift in Sources */,
 				EF89AA3B28EC795000598521 /* SpotlightOfferCard.swift in Sources */,
 				EF89AA8E28EDBC6000598521 /* ShapesViewController.swift in Sources */,
@@ -1524,6 +1528,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

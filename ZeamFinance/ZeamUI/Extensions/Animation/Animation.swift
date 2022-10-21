@@ -10,8 +10,8 @@ import UIKit
 
 enum Animation {
 	case bouncy(duration: CFTimeInterval = 0.3)
-	case slideIn(from: CGFloat, to:CGFloat = 0, show: Bool = true, duration: CFTimeInterval = 0.33)
-	case circularProgress(from: CGFloat = 0, to: CGFloat, duration: CFTimeInterval = 0.33)
+    case slideIn(from: CGFloat, to:CGFloat = 0, show: Bool = true, frameAdditive: Bool = true, duration: CFTimeInterval = 0.33)
+    case circularProgress(from: CGFloat = 0, to: CGFloat, duration: CFTimeInterval = 0.33, delay: CFTimeInterval = 0)
 	case progress(cornerRadius: CGFloat = 0, to: CGFloat, duration: CFTimeInterval = 0.33)
 }
 
@@ -27,10 +27,10 @@ extension Animation {
 			animation.duration = duration
 			animation.isRemovedOnCompletion = true
 			return animation
-		case .slideIn(let from, let to, let show, let duration):
+		case .slideIn(let from, let to, let show, let frameAdditive, let duration):
 			let animation = CABasicAnimation(keyPath: "position.y")
-			animation.fromValue = from
-			animation.toValue = to
+            animation.fromValue = (frameAdditive ? layer.frame.height.half : 0) + from
+			animation.toValue = (frameAdditive ? layer.frame.height.half : 0) + to
 
 			let opacity = CABasicAnimation(keyPath: "opacity")
 			opacity.fromValue = show ? 0 : 1
@@ -43,13 +43,14 @@ extension Animation {
 			group.duration = duration
 			
 			return group
-		case .circularProgress(let from, let to, let duration):
+		case .circularProgress(let from, let to, let duration, let delay):
 			let animation = CABasicAnimation(keyPath: "strokeEnd")
 			animation.fromValue = from
 			animation.toValue = to
 			animation.duration = duration
 			animation.isRemovedOnCompletion = false
 			animation.fillMode = .forwards
+            animation.beginTime = CACurrentMediaTime() + delay
 			
 			return animation
 		case .progress(let cornerRadius, let to, let duration):

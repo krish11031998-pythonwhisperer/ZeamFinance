@@ -109,6 +109,7 @@ extension UIView {
 		removeSimilarConstraints([constraint])
 		constraint.priority = priority
 		constraint.isActive = true
+        frame.size.width = width
 	}
 	
 	func setHeight(height: CGFloat, priority: UILayoutPriority) {
@@ -116,6 +117,7 @@ extension UIView {
 		removeSimilarConstraints([constraint])
 		constraint.priority = priority
 		constraint.isActive = true
+        frame.size.height = height
 	}
 	
 	func removeChildViews() {

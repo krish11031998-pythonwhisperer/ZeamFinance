@@ -27,7 +27,7 @@ class SpendingAnalyticsViewController: UIViewController {
 		super.viewDidLoad()
 		setupView()
 		viewModel.loadData()
-		standardNavBar()
+        standardNavBar(title: "Spending Analytics", isTransparent: false)
 	}
 	
 	private func setupView() {
@@ -43,6 +43,11 @@ extension SpendingAnalyticsViewController: AnyTableView {
 	func reloadTableWithDataSource(_ dataSource: TableViewDataSource) {
 		tableView.reloadData(dataSource)
 	}
+    
+    func setupHeaderView(view: UIView) {
+        tableView.tableHeaderView = view
+        tableView.tableHeaderView?.frame = .init(origin: .zero, size: view.compressedSize)
+    }
 	
 }
 

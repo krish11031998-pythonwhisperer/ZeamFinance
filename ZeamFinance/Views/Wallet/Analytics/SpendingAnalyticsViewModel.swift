@@ -74,12 +74,20 @@ class SpendingAnalyticsViewModel {
 						 .init(name: "Entertainment", color: .yoyo500, value: .random(in: 100..<200)),
 						 .init(name: "Expenses", color: .neoPacha500, value: .random(in: 200..<400))]
 		view?.reloadTableWithDataSource(buildDataSource())
+        view?.setupHeaderView(view: budgetSplitView)
 	}
 	
 	//MARK: - Computed Properties
 	
 
 	//MARK: - Views
+    
+    private var budgetSplitView: UIView {
+        let view = SpendingAnalyticsBudgetView(frame: .init(origin: .zero, size: .init(width: .totalWidth, height: 200)))
+        view.configureView()
+        return view
+    }
+    
 	private var weeklySpendingChart: UIView {
 		let view = WeeklyChartView(frame: .init(origin: .zero, size: .init(width: .totalWidth, height: 250)))
 		view.configureChart(.init(daily: Array(repeating: TransactionDailyModel(txns: Array(repeating: TransactionModel(detail: "Sample"),
@@ -128,10 +136,20 @@ class SpendingAnalyticsViewModel {
 		let view = spendingSplitView.background(spendingSplitView.userInterface == .light ? .popWhite300 : .popBlack300, inset: .init(by: 16))
 		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .init(vertical: 0, horizontal: 10)))], title: "Spending Indicator")
 	}
+    
+    private var spendingSplitBreakdown: TableSection {
+        let rowCells: [TableCellProvider] = [1,2,3].map {
+            let view = ExperimentView()
+            view.configureView(val: $0)
+            return TableRow<CustomTableCell>(.init(view: view, inset: .zero))
+        }
+        return .init(rows: rowCells)
+    }
 	
 	//MARK: - TableViewDataSource
 	private func buildDataSource() -> TableViewDataSource {
 		.init(sections: [weeklySpendingChartSection, spendingSplitSection])
+//        .init(sections: [spendingSplitBreakdown])
 	}
 }
 
@@ -147,4 +165,37 @@ extension SpendingAnalyticsViewModel {
 	func addBinding(_ event: SpendingAnalyticsViewModel.Events, action: Callback?) {
 		binding[event] = action
 	}
+}
+
+
+//MARK: - ExperimentView
+
+class ExperimentView: UIView {
+    
+    private lazy var label: UILabel = { .init() }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+    
+    private func setupView() {
+        let labelWithCard = label.embedInView(insets: .init(vertical: 17.5, horizontal: 10))
+        labelWithCard.backgroundColor = .manna500
+        labelWithCard.clippedCornerRadius = 8
+        addSubview(labelWithCard)
+        setFittingConstraints(childView: labelWithCard, insets: .init(vertical: 2.5, horizontal: 10))
+        setHeight(height: 60, priority: .required)
+//        backgroundColor = .red
+    }
+    
+    func configureView(val: Int) {
+        "\(val)".bold(size: 15).render(target: label)
+        layer.animate(animation: .slideIn(from: -10, to: 0, show: true, duration: 1))
+    }
 }

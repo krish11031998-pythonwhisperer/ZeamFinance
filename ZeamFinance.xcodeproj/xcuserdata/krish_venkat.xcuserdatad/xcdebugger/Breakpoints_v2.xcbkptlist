@@ -215,32 +215,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7B799EE8-2D71-49AD-AF25-6F3930AC8FB8"
+            uuid = "CCB18A65-6DA2-49BE-921B-0D502BC2E6C0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZeamFinance/ZeamUI/Extensions/Animation/Animation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "animation(at:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "326820AA-33D4-4126-A876-928639FF0B25"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZeamFinance/ZeamUI/Extensions/Shapes/CircularProgressShape.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "addCircularProgress(startAngle:endAngle:radiusOffset:lineWidth:strokeColor:clockwise:strokeEnd:addTrack:lineCap:isSemiCircle:animateStrokeEnd:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
