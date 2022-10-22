@@ -138,17 +138,20 @@ class SpendingAnalyticsViewModel {
 	}
     
     private var spendingSplitBreakdown: TableSection {
-        let rowCells: [TableCellProvider] = [1,2,3].map {
-            let view = ExperimentView()
-            view.configureView(val: $0)
-            return TableRow<CustomTableCell>(.init(view: view, inset: .zero))
+        let rowCells: [TableCellProvider] = [1,2,3].map { _ in
+//            let view = ExperimentView()
+//            view.configureView(val: $0)
+//            return TableRow<CustomTableCell>(.init(view: view, inset: .zero))
+            return TableRow<ExperimentTableCell>(.init(action: {
+                print("(DEBUG) Clicked!")
+            }))
         }
         return .init(rows: rowCells)
     }
 	
 	//MARK: - TableViewDataSource
 	private func buildDataSource() -> TableViewDataSource {
-		.init(sections: [weeklySpendingChartSection, spendingSplitSection])
+		.init(sections: [weeklySpendingChartSection, spendingSplitSection, spendingSplitBreakdown])
 //        .init(sections: [spendingSplitBreakdown])
 	}
 }
@@ -173,6 +176,12 @@ extension SpendingAnalyticsViewModel {
 class ExperimentView: UIView {
     
     private lazy var label: UILabel = { .init() }()
+    private lazy var progressBar: ProgressBar = { .init() }()
+    private lazy var dualLabel: DualLabel = { .init() }()
+    private lazy var viewStack: UIStackView = {
+        .VStack(subViews: [dualLabel, progressBar], spacing: 10)
+    }()
+   
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -185,17 +194,55 @@ class ExperimentView: UIView {
     }
     
     private func setupView() {
-        let labelWithCard = label.embedInView(insets: .init(vertical: 17.5, horizontal: 10))
-        labelWithCard.backgroundColor = .manna500
-        labelWithCard.clippedCornerRadius = 8
-        addSubview(labelWithCard)
-        setFittingConstraints(childView: labelWithCard, insets: .init(vertical: 2.5, horizontal: 10))
-        setHeight(height: 60, priority: .required)
-//        backgroundColor = .red
+        dualLabel.configureLabel(title: "Rent".medium(size: 15), subTitle: String(format: "$ %.2f", Float.random(in: 100..<1000)).regular(size: 15), config: .init(alignment: .center, axis: .horizontal))
+        viewStack.insertArrangedSubview(.spacer(), at: 1)
+        let container = viewStack.embedInView(insets: .init(by: 17.5))
+        container.addBlurView()
+        container.clippedCornerRadius = 12
+        addSubview(container)
+        setFittingConstraints(childView: container, insets: .init(vertical: 2.5, horizontal: 10))
+        progressBar.setHeight(height: 12)
+//        label.setHeight(height: 20)
+        setHeight(height: compressedSize.height)
     }
     
     func configureView(val: Int) {
         "\(val)".bold(size: 15).render(target: label)
-        layer.animate(animation: .slideIn(from: -10, to: 0, show: true, duration: 1))
+        layer.animate(animation: .slideIn(from: -10, to: 0, show: true, duration: 1)) {
+            self.progressBar.setProgress(progress: .random(in: 0.3...1), color: .white)
+        }
+        
     }
+}
+
+//MARK: - ExperimentViewTableCell
+
+class ExperimentTableCell: ConfigurableCell {
+    private lazy var view: ExperimentView = {
+        .init()
+    }()
+    
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupView()
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    private func setupView() {
+        contentView.addSubview(view)
+        contentView.setFittingConstraints(childView: view, insets: .zero)
+        contentView.backgroundColor = .surfaceBackground
+    }
+    
+    func configure(with model: EmptyClickableModel) {
+        view.configureView(val: .random(in: 1...10))
+    }
+    
+    
 }

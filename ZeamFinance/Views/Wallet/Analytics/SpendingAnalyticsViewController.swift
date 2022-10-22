@@ -14,6 +14,7 @@ class SpendingAnalyticsViewController: UIViewController {
 		let table = UITableView(frame: .zero, style: .grouped)
 		table.separatorStyle = .none
 		table.backgroundColor = .surfaceBackground
+        table.showsVerticalScrollIndicator = false
 		return table
 	}()
 	

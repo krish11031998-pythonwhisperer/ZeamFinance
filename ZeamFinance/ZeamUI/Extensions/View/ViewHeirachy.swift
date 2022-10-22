@@ -88,6 +88,13 @@ extension UIView {
 		let validConstraints = zip(items, [width, height]).compactMap { $1 != nil ? $0 : nil }
 		removeSimilarConstraints(validConstraints)
 		addConstraints(validConstraints)
+//        if let validWidth = width {
+//            setWidth(width: validWidth)
+//        }
+//
+//        if let validHeight = height {
+//            setHeight(height: validHeight)
+//        }
 	}
 	
 	func removeSimilarConstraints(_ list: [NSLayoutConstraint]) {
@@ -104,7 +111,7 @@ extension UIView {
 		return view
 	}
 	
-	func setWidth(width: CGFloat, priority: UILayoutPriority) {
+    func setWidth(width: CGFloat, priority: UILayoutPriority = .required) {
 		let constraint = widthAnchor.constraint(equalToConstant: width)
 		removeSimilarConstraints([constraint])
 		constraint.priority = priority
@@ -112,7 +119,7 @@ extension UIView {
         frame.size.width = width
 	}
 	
-	func setHeight(height: CGFloat, priority: UILayoutPriority) {
+    func setHeight(height: CGFloat, priority: UILayoutPriority = .required) {
 		let constraint = heightAnchor.constraint(equalToConstant: height)
 		removeSimilarConstraints([constraint])
 		constraint.priority = priority

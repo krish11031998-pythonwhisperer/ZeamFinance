@@ -11,6 +11,10 @@ import UIKit
 struct EmptyModel {
 }
 
+struct EmptyClickableModel: ActionProvider {
+    var action: Callback?
+}
+
 class UserInfoView: UIView {
 	
 	private lazy var userInfo: UIStackView = { .HStack(spacing: 10) }()

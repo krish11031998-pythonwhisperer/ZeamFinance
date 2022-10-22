@@ -15,7 +15,7 @@ class ProgressBar: UIView {
 	private var fillColor: UIColor = .clear
 	private var borderColor: UIColor = .clear
 	private var borderWidth: CGFloat = 1
-	private var ratio: CGFloat = 0
+    private var ratio: CGFloat = 0
 	
 	private lazy var progressShape: CAShapeLayer = {
 		let progressbar = CAShapeLayer()
@@ -62,13 +62,13 @@ class ProgressBar: UIView {
 		layer.addSublayer(borderShape)
 		layer.addSublayer(progressShape)
 		if ratio != 0 {
-			animateProgress(progress: ratio)
+			animateProgress()
 		}
 		addedLayers.toggle()
 	}
 	
-	func animateProgress(progress: CGFloat = 0.5) {
-		let newSize: CGSize = .init(width: bounds.width * progress, height: bounds.height)
+	func animateProgress() {
+		let newSize: CGSize = .init(width: bounds.width * ratio, height: bounds.height)
 		let newPath = UIBezierPath(roundedRect: .init(origin: .zero, size: newSize),
 								   cornerRadius: 12).cgPath
 
@@ -86,6 +86,7 @@ class ProgressBar: UIView {
 		if let validColor = color {
 			fillColor = validColor
 		}
+        animateProgress() 
 	}
 	
 }
