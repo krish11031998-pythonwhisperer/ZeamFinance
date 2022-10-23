@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
 	
-	func background(_ bgColor: UIColor = .surfaceBackgroundInverse,
+	func embedIntoCard(_ bgColor: UIColor = .surfaceBackgroundInverse,
 					inset: UIEdgeInsets = .init(by: 5),
 					cornerRadius: CGFloat = 8) -> UIView {
 		let bgView = UIView()

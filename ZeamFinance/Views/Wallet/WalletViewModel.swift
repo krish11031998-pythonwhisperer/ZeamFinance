@@ -69,8 +69,8 @@ class WalletViewModel {
 			legends.addArrangedSubview(stack)
 		}
 		
-		let progressView = MultipleStrokeProgressBar(frame: .init(origin: .zero, size: .init(width: .totalWidth - 20, height: 24)))
-		progressView.setFrame(height: 24)
+		let progressView = MultipleStrokeProgressBarAlt(frame: .init(origin: .zero, size: .init(width: .totalWidth - 20, height: 16)))
+		progressView.setFrame(height: 16)
 		
 		let stack = UIView.VStack(subViews: [header, balance, legends, progressView], spacing: 5, alignment: .leading)
 		stack.setCustomSpacing(12, after: header)

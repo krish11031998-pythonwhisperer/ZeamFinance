@@ -85,7 +85,8 @@ class SpendingAnalyticsViewModel {
     private var budgetSplitView: UIView {
         let view = SpendingAnalyticsBudgetView(frame: .init(origin: .zero, size: .init(width: .totalWidth, height: 200)))
         view.configureView()
-        return view
+        view.setFrame(width: .totalWidth, height: 200)
+        return view.embedInView(insets: .init(vertical: 25, horizontal: 0), priority: .needed)
     }
     
 	private var weeklySpendingChart: UIView {
@@ -133,15 +134,12 @@ class SpendingAnalyticsViewModel {
 	}
 	
 	private var spendingSplitSection: TableSection {
-		let view = spendingSplitView.background(spendingSplitView.userInterface == .light ? .popWhite300 : .popBlack300, inset: .init(by: 16))
+		let view = spendingSplitView.embedIntoCard(spendingSplitView.userInterface == .light ? .popWhite300 : .popBlack300, inset: .init(by: 16))
 		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .init(vertical: 0, horizontal: 10)))], title: "Spending Indicator")
 	}
     
     private var spendingSplitBreakdown: TableSection {
         let rowCells: [TableCellProvider] = [1,2,3].map { _ in
-//            let view = ExperimentView()
-//            view.configureView(val: $0)
-//            return TableRow<CustomTableCell>(.init(view: view, inset: .zero))
             return TableRow<ExperimentTableCell>(.init(action: {
                 print("(DEBUG) Clicked!")
             }))

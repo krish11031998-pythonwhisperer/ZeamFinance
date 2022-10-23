@@ -88,13 +88,13 @@ extension UIView {
 		let validConstraints = zip(items, [width, height]).compactMap { $1 != nil ? $0 : nil }
 		removeSimilarConstraints(validConstraints)
 		addConstraints(validConstraints)
-//        if let validWidth = width {
-//            setWidth(width: validWidth)
-//        }
-//
-//        if let validHeight = height {
-//            setHeight(height: validHeight)
-//        }
+        if let validWidth = width {
+            frame.size.width = validWidth
+        }
+        
+        if let validHeight = height {
+            frame.size.height = validHeight
+        }
 	}
 	
 	func removeSimilarConstraints(_ list: [NSLayoutConstraint]) {

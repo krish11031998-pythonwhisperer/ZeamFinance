@@ -60,8 +60,7 @@ class HomeViewController: UIViewController {
 		let header = HomeHeaderView()
 		header.configureHeader()
 		header.setFrame(width: .totalWidth, height: header.compressedSize.height)
-		tableView.tableHeaderView = header
-		tableView.tableHeaderView?.frame = .init(origin: .zero, size: .init(width: .totalWidth, height: header.compressedSize.height))
+		tableView.headerView = header
 	}
 	
 	private func addObserver() {
@@ -100,7 +99,7 @@ class HomeViewController: UIViewController {
 		let contentOff = scrollView.contentOffset
 		if contentOff.y >= 0 && hide {
 			hide.toggle()
-			view.layer.animate(animation: .slideIn(from: view.frame.height, to: view.frame.height.half, duration: 0.25))
+            view.layer.animate(animation: .slideIn(from: view.frame.height, to: view.frame.height.half - 7.5, duration: 0.25))
 		} else if !hide && contentOff.y < 0 {
 			hide.toggle()
 			view.layer.animate(animation: .slideIn(from: view.frame.height.half, to: view.frame.height, show: false, duration: 0.25))

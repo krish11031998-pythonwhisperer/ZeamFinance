@@ -100,7 +100,7 @@ class WalletTransactionModalViewModel {
 		stack.setFittingConstraints(childView: imgView, width: 48, height: 48, priority: .needed)
 		let header = "ZFI earned from this transaction".medium(color: .textColorInverse, size: 13).generateLabel
 		let mainStack = UIStackView.VStack(subViews: [header.embedInView(insets: .init(by: 5)), stack], spacing: 5, alignment: .leading)
-		let view = mainStack.background()
+		let view = mainStack.embedIntoCard()
 		return .init(rows: [TableRow<CustomTableCell>(.init(view: view, inset: .init(vertical: 5, horizontal: 10))), generateMoreCoin].compactMap { $0 },
 					 title: "Zeam Coins Earned")
 	}

@@ -90,3 +90,22 @@ class ProgressBar: UIView {
 	}
 	
 }
+
+
+//MARK: - ProgressBar Array Extension
+
+extension Array where Element == ProgressBar {
+    
+    func animateSequentially(ratios: [CGFloat]) {
+        guard count == ratios.count else { return }
+        zip(self,ratios).enumerated().forEach {
+            let (bar, progress) = $0.element
+            let delay = 0.5 * Double($0.offset)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                bar.setProgress(progress: progress)
+            }
+        }
+    }
+    
+}

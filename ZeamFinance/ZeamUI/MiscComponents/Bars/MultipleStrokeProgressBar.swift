@@ -72,3 +72,50 @@ class MultipleStrokeProgressBar: UIView {
 	
 	
 }
+
+
+//MARK: - MultipleStrokeProgressBarAlt
+
+class MultipleStrokeProgressBarAlt: UIView {
+    
+    private var bars: [ProgressBar] = []
+    private lazy var stack: UIStackView = { .HStack(spacing: 5, alignment: .center) }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+    
+    private func setupView() {
+        addSubview(stack)
+        setFittingConstraints(childView: stack, insets: .zero)
+    }
+    
+    private func buildLayer(_ model: MultipleStrokeModel, _ total: Float) {
+        let width = CGFloat(model.val) * frame.width/CGFloat(total)
+        let bar = ProgressBar(fillColor: model.color, borderColor: .popBlack300)
+        bar.setFrame(width: width - stack.spacing, height: frame.height)
+        bars.append(bar)
+    }
+    
+    public func configureProgressBar(ratios model: [MultipleStrokeModel]) {
+        guard let sortedModel = try? model.sorted(by: { $0.val > $1.val }) else { return }
+        if !bars.isEmpty {
+            stack.removeChildViews()
+            bars.removeAll()
+        }
+        let total = model.reduce(0,  { $0 + $1.val })
+        sortedModel.forEach {
+            buildLayer($0, total)
+        }
+        bars.addToView(stack)
+        bars.animateSequentially(ratios: Array(repeating: 1, count: bars.count))
+    }
+    
+    
+}
